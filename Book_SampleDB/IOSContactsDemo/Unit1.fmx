@@ -1,0 +1,64 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 460
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
+  DesignerOrientation = 0
+  DesignerOSVersion = '7'
+  object ListBox1: TListBox
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Height = 233.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 32.000000000000000000
+    TabOrder = 0
+    Width = 305.000000000000000000
+    DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    OnChange = ListBox1Change
+  end
+  object Label1: TLabel
+    AutoSize = True
+    Height = 27.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Text = 'Contacts List(0)'
+    Width = 119.000000000000000000
+    WordWrap = False
+    Trimming = ttCharacter
+  end
+  object lbDetails: TLabel
+    Anchors = [akLeft, akRight, akBottom]
+    Height = 157.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 295.000000000000000000
+    VertTextAlign = taLeading
+    Width = 305.000000000000000000
+    Trimming = ttCharacter
+  end
+  object StyleBook1: TStyleBook
+    Left = 184
+    Top = 288
+    ResourcesBin = {464D585F5354594C4520322E350100}
+  end
+  object Label2: TLabel
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    Height = 27.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 270.000000000000000000
+    Text = 'Details'
+    Width = 55.000000000000000000
+    WordWrap = False
+    Trimming = ttCharacter
+  end
+end

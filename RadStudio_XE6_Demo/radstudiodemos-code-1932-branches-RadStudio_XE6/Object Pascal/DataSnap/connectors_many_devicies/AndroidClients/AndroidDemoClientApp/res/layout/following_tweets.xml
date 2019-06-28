@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="@android:color/white">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:background="#55B0E0E6">
+		<TextView android:id="@+id/txt_username"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textSize="18dip" android:textColor="@android:color/black" android:paddingLeft="5dip" android:text="user: "/>
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:gravity="center_vertical">
+		<EditText android:id="@+id/edt_create_tweet"
+			android:maxLength="140" android:minLines="1" android:layout_height="40dip" android:background="#DDB0E0E6"
+			android:selectAllOnFocus="true" android:paddingLeft="5dip" android:layout_margin="10dp" android:layout_width="210dip" android:inputType="textCapSentences|textAutoCorrect|textShortMessage" android:shadowDx="1" android:shadowDy="1" android:shadowColor="#AAC0C0C0"/>
+		<Button android:id="@+id/btn_create_tweet"
+			android:text="Tweet"
+			android:layout_alignParentRight="true" android:layout_height="40dip" android:layout_marginRight="5dip" android:layout_width="80dip"/>
+	</LinearLayout>
+	<ListView android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:id="@+id/listview"
+		android:stackFromBottom="true">
+	</ListView>
+</LinearLayout>

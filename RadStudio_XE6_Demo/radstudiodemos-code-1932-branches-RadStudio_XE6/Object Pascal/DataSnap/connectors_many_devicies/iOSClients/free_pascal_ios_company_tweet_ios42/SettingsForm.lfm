@@ -1,0 +1,114 @@
+object frmSettings: TfrmSettings
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 320
+  Visible = False
+  StyleBook = StyleBook1
+  StyleLookup = 'backgroundstyle'
+  object Rectangle1: TRectangle
+    Align = alTop
+    Width = 320.000000000000000000
+    Height = 41.000000000000000000
+    Fill.Color = xFFE5F5F7
+    object btnCancel: TButton
+      Position.Point = '(8,8)'
+      Width = 97.000000000000000000
+      Height = 25.000000000000000000
+      TabOrder = 0
+      ModalResult = 2
+      Text = 'Cancel'
+    end
+    object btnOK: TButton
+      Position.Point = '(216,8)'
+      Width = 96.000000000000000000
+      Height = 25.000000000000000000
+      TabOrder = 1
+      ModalResult = 1
+      Text = 'OK'
+    end
+  end
+  object edtHost: TEdit
+    Position.Point = '(72,88)'
+    Width = 225.000000000000000000
+    Height = 33.000000000000000000
+    TabOrder = 1
+    
+    Password = False
+    object Label1: TLabel
+      Position.Point = '(-55,10)'
+      Width = 80.000000000000000000
+      Height = 15.000000000000000000
+      StyleLookup = 'Label1Style1'
+      TabOrder = 0
+      Font.Size = 16.000000000000000000
+      Font.Style = [fsBold]
+      Text = 'Host:'
+    end
+  end
+  object edtPort: TEdit
+    Position.Point = '(72,144)'
+    Width = 225.000000000000000000
+    Height = 33.000000000000000000
+    TabOrder = 2
+    
+    Password = False
+    object Label2: TLabel
+      Position.Point = '(-55,10)'
+      Width = 80.000000000000000000
+      Height = 15.000000000000000000
+      StyleLookup = 'Label2Style1'
+      TabOrder = 0
+      Font.Size = 16.000000000000000000
+      Font.Style = [fsBold]
+      Text = 'Port:'
+    end
+  end
+  object StyleBook1: TStyleBook
+    Resource.Strings = (
+      'object _1: TLayout'
+      '  Align = alClient'
+      '  Position.Point = '#39'(0,33)'#39
+      '  Width = 504.000000000000000000'
+      '  Height = 387.000000000000000000'
+      '  object TLayout'
+      '    StyleName = '#39'Label1Style1'#39
+      '    Position.Point = '#39'(227,183)'#39
+      '    Width = 49.000000000000000000'
+      '    Height = 20.000000000000000000'
+      '    object TText'
+      '      StyleName = '#39'text'#39
+      '      Align = alClient'
+      '      Locked = True'
+      '      Width = 49.000000000000000000'
+      '      Height = 20.000000000000000000'
+      '      HitTest = False'
+      '      Text = '#39'label'#39
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'Label2Style1'#39
+      '    Position.Point = '#39'(227,183)'#39
+      '    Width = 49.000000000000000000'
+      '    Height = 20.000000000000000000'
+      '    object TText'
+      '      StyleName = '#39'text'#39
+      '      Align = alClient'
+      '      Locked = True'
+      '      Width = 49.000000000000000000'
+      '      Height = 20.000000000000000000'
+      '      HitTest = False'
+      '      Text = '#39'label'#39
+      '    end'
+      '  end'
+      'end')
+    Left = 32
+    Top = 200
+  end
+end
+'end')
+    Left = 32
+    Top = 200
+  end
+end

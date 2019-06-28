@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/settings" android:title="Settings"
+	     android:visible="false"
+		android:alphabeticShortcut="s" android:icon="@android:drawable/ic_menu_preferences"/>
+	<item android:id="@+id/create_tweet" android:title="Create Tweet"
+		android:visible="false" />
+	<item android:id="@+id/list_of_active_users" android:title="Active users"
+		android:visible="false" android:icon="@android:drawable/presence_online"/>
+	<item android:id="@+id/logout" android:title="Logout"
+		android:visible="false" android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+</menu>

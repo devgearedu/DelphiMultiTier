@@ -1,0 +1,9 @@
+inherited Form214_NmXhdpiPh: TForm214_NmXhdpiPh
+  ClientHeight = 615
+  ClientWidth = 400
+  DesignerMasterStyle = 0
+  inherited Layout1: TLayout
+    Size.Width = 400.000000000000000000
+    Size.Height = 615.000000000000000000
+  end
+end

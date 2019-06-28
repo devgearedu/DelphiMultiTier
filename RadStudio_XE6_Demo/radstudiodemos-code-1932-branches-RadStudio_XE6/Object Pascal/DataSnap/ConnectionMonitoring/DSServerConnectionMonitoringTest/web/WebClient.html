@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  <head>
+  <title>Connection Monitoring Demo REST Client
+</title>
+  <script type="text/javascript" src="js/json2.js"></script>
+  <script type="text/javascript" src="js/ServerFunctionExecutor.js"></script>
+  <script type="text/javascript" src="js/CallbackFramework.js"></script>
+  <script type="text/javascript" src="js/JSProxy.js"></script>
+    <script type="text/javascript">
+    window.onbeforeunload = KillClient;
+
+    var channel = null;
+    var Proxy = new TMonitorServerMethods();
+
+    function HandleChannelEvent(EventItem)
+    {
+      var startButton = document.getElementById("buttonStartCB");
+      var stopButton = document.getElementById("buttonStopCB");
+      var closeSessionButton = document.getElementById("buttonCloseSession");
+
+      switch(EventItem.eventType) {
+        case EventItem.channel.EVENT_CHANNEL_START:
+          startButton.disabled = true;
+          stopButton.disabled = false;
+          closeSessionButton.disabled = false; //enabled forever once first callback started
+          break;
+        case EventItem.channel.EVENT_CHANNEL_STOP:
+        case EventItem.channel.EVENT_SERVER_DISCONNECT:
+          channel = null;
+          startButton.disabled = false;
+          stopButton.disabled = true;
+          break;
+      }
+    }
+
+    function StartChannel()
+    {
+      if (channel == null) {
+        channel = new ClientChannel(null, "RESTMemoChannel");
+        channel.onChannelStateChange = HandleChannelEvent;
+
+        var callback = new ClientCallback(channel, null,
+         function(jsonValue, dataType) {
+           if (jsonValue != null) {
+             logMessage(JSON.stringify(jsonValue));
+           }
+           return true;
+         });
+
+        try {
+          channel.connect(callback);
+        } catch(err) {
+          alert("Failed! " + err);
+        }
+      } else {
+        alert("Channel already started");
+      }
+    }
+
+    function StopChannel()
+    {
+      if (channel != null) {
+        try {
+          channel.disconnect();
+        } catch(err) {}
+        channel = null;
+      } else {
+        alert("Channel already stopped");
+      }
+    }
+
+    function KillClient()
+    {
+      if (channel != null) {
+        channel.onChannelStateChange = null;
+        StopChannel();
+      }
+      CloseSession();
+    }
+
+    function CloseSession()
+    {
+      try {
+        Proxy.executor.closeSession();
+      } catch(err) {}
+    }
+
+    function ClearLog()
+    {
+      document.getElementById("logArea").value = "";
+    }
+
+    function logMessage(msg)
+    {
+      var logArea = document.getElementById("logArea");
+      logArea.value += msg + "\n";
+    }
+
+    function ReverseString()
+    {
+      var closeSessionButton = document.getElementById("buttonCloseSession");
+      closeSessionButton.disabled = false; //enabled forever once first reverse string invoked
+
+      try {
+        var revField = document.getElementById("reverseField");
+        revField.value = Proxy.ReverseString(revField.value).result;
+      } catch(err) {
+        alert("Failed! " + err);
+      }
+    }
+    </script>
+  </head>
+
+  <body>
+    <div style="border: 1px solid black; width: 400px; padding: 5px">
+      <div style="font-weight:bold;">Connection Monitor Demo REST Client</div>
+      <table width="100%"><tr><td width="50%"><button id="buttonStartCB" style="width:100%" onclick="StartChannel();">START CALLBACK</button></td><td width="50%"><button id="buttonStopCB" style="width:100%" onclick="StopChannel();" disabled="true">STOP CALLBACK</button></td></tr></table>
+      <div>Log:</div>
+      <textarea id="logArea" rows="4" cols="20" style="width:100%" readonly="true"></textarea>
+      <div style="text-align: right;"><button id="clearButton" onclick="ClearLog();">clear</button></div>
+      <div>Reverse String:</div>
+      <table width="100%"><tr><td width="100%"><input id="reverseField" type="text" size="25" maxlength="25" style="width:100%" value="Hello, World!"/></td><td width="1px"><button id="buttonReverseStr" onclick="ReverseString();">REVERSE</button></td></tr></table><br/>
+      <button id="buttonCloseSession" style="width:100%" disabled="true" onclick="CloseSession()">CLOSE SESSION</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4AA85D21-889D-4B09-9B6A-26F198B593FE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DBXClientWithUserTypes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DBXMarshalPersonCppProject.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MarshalUnmarshal.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RESTClientWithUserTypes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RESTMarshalPersonCppProject.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ServerProjectWithUserTypes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RESTMarshalPerson\RESTMarshalPerson.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DBXClientWithUserTypes">
+        <MSBuild Projects="DBXClientWithUserTypes.dproj"/>
+    </Target>
+    <Target Name="DBXClientWithUserTypes:Clean">
+        <MSBuild Projects="DBXClientWithUserTypes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBXClientWithUserTypes:Make">
+        <MSBuild Projects="DBXClientWithUserTypes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DBXMarshalPersonCppProject">
+        <MSBuild Projects="DBXMarshalPersonCppProject.cbproj"/>
+    </Target>
+    <Target Name="DBXMarshalPersonCppProject:Clean">
+        <MSBuild Projects="DBXMarshalPersonCppProject.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBXMarshalPersonCppProject:Make">
+        <MSBuild Projects="DBXMarshalPersonCppProject.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="MarshalUnmarshal">
+        <MSBuild Projects="MarshalUnmarshal.dproj"/>
+    </Target>
+    <Target Name="MarshalUnmarshal:Clean">
+        <MSBuild Projects="MarshalUnmarshal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MarshalUnmarshal:Make">
+        <MSBuild Projects="MarshalUnmarshal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RESTClientWithUserTypes">
+        <MSBuild Projects="RESTClientWithUserTypes.dproj"/>
+    </Target>
+    <Target Name="RESTClientWithUserTypes:Clean">
+        <MSBuild Projects="RESTClientWithUserTypes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTClientWithUserTypes:Make">
+        <MSBuild Projects="RESTClientWithUserTypes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RESTMarshalPersonCppProject">
+        <MSBuild Projects="RESTMarshalPersonCppProject.cbproj"/>
+    </Target>
+    <Target Name="RESTMarshalPersonCppProject:Clean">
+        <MSBuild Projects="RESTMarshalPersonCppProject.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTMarshalPersonCppProject:Make">
+        <MSBuild Projects="RESTMarshalPersonCppProject.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServerProjectWithUserTypes">
+        <MSBuild Projects="ServerProjectWithUserTypes.dproj"/>
+    </Target>
+    <Target Name="ServerProjectWithUserTypes:Clean">
+        <MSBuild Projects="ServerProjectWithUserTypes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServerProjectWithUserTypes:Make">
+        <MSBuild Projects="ServerProjectWithUserTypes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RESTMarshalPerson">
+        <MSBuild Projects="RESTMarshalPerson\RESTMarshalPerson.dproj"/>
+    </Target>
+    <Target Name="RESTMarshalPerson:Clean">
+        <MSBuild Projects="RESTMarshalPerson\RESTMarshalPerson.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTMarshalPerson:Make">
+        <MSBuild Projects="RESTMarshalPerson\RESTMarshalPerson.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DBXClientWithUserTypes;DBXMarshalPersonCppProject;MarshalUnmarshal;RESTClientWithUserTypes;RESTMarshalPersonCppProject;ServerProjectWithUserTypes;RESTMarshalPerson"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DBXClientWithUserTypes:Clean;DBXMarshalPersonCppProject:Clean;MarshalUnmarshal:Clean;RESTClientWithUserTypes:Clean;RESTMarshalPersonCppProject:Clean;ServerProjectWithUserTypes:Clean;RESTMarshalPerson:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DBXClientWithUserTypes:Make;DBXMarshalPersonCppProject:Make;MarshalUnmarshal:Make;RESTClientWithUserTypes:Make;RESTMarshalPersonCppProject:Make;ServerProjectWithUserTypes:Make;RESTMarshalPerson:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

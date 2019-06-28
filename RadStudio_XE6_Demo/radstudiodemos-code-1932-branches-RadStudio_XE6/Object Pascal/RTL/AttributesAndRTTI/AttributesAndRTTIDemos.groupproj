@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{EEAE4B1E-ABC4-4D3D-B208-98226F63A058}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="rtti_browser\rtti_browser.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="attribute_listing\attribute_listing.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="rtti_browser">
+			<MSBuild Projects="rtti_browser\rtti_browser.dproj"/>
+		</Target>
+		<Target Name="rtti_browser:Clean">
+			<MSBuild Targets="Clean" Projects="rtti_browser\rtti_browser.dproj"/>
+		</Target>
+		<Target Name="rtti_browser:Make">
+			<MSBuild Targets="Make" Projects="rtti_browser\rtti_browser.dproj"/>
+		</Target>
+		<Target Name="attribute_listing">
+			<MSBuild Projects="attribute_listing\attribute_listing.dproj"/>
+		</Target>
+		<Target Name="attribute_listing:Clean">
+			<MSBuild Targets="Clean" Projects="attribute_listing\attribute_listing.dproj"/>
+		</Target>
+		<Target Name="attribute_listing:Make">
+			<MSBuild Targets="Make" Projects="attribute_listing\attribute_listing.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="rtti_browser;attribute_listing"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="rtti_browser:Clean;attribute_listing:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="rtti_browser:Make;attribute_listing:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

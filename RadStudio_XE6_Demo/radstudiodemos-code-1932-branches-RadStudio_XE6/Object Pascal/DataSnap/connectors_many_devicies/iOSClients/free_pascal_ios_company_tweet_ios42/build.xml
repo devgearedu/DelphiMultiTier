@@ -1,0 +1,12 @@
+<project name="free_pascal_ios_company_tweet" default="Main" basedir=".">
+
+    <target name="Main" description="Main">
+    <exec dir="." failonerror="true" searchpath="true" executable="msbuild.exe">
+      <arg value="/nologo"/>
+      <arg value="/target:Build"/>
+      <arg value="/property:config=Release"/>
+      <arg value="CompanyTweet.dproj"/>
+    </exec>
+  </target>
+
+</project>

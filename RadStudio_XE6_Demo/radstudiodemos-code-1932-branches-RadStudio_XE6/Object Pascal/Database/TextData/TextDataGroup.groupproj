@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{9CDAC518-3B87-4B39-AF5F-9A90FE1C41EB}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="textpkg.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="texttest.dproj">
+				<Dependencies>textpkg.dproj</Dependencies>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="textpkg">
+			<MSBuild Projects="textpkg.dproj"/>
+		</Target>
+		<Target Name="textpkg:Clean">
+			<MSBuild Targets="Clean" Projects="textpkg.dproj"/>
+		</Target>
+		<Target Name="textpkg:Make">
+			<MSBuild Targets="Make" Projects="textpkg.dproj"/>
+		</Target>
+		<Target DependsOnTargets="textpkg" Name="texttest">
+			<MSBuild Projects="texttest.dproj"/>
+		</Target>
+		<Target DependsOnTargets="textpkg:Clean" Name="texttest:Clean">
+			<MSBuild Targets="Clean" Projects="texttest.dproj"/>
+		</Target>
+		<Target DependsOnTargets="textpkg:Make" Name="texttest:Make">
+			<MSBuild Targets="Make" Projects="texttest.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="textpkg;texttest"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="textpkg:Clean;texttest:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="textpkg:Make;texttest:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

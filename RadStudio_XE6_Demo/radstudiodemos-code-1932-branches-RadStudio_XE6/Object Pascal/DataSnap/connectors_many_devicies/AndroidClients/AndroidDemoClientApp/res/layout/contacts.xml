@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="@android:color/white">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_horizontal">
+		<Button android:layout_width="wrap_content" android:id="@+id/refresh_btn" android:textSize="18px" android:layout_height="wrap_content" android:background="@drawable/android:ic_menu_rotate" android:layout_marginRight="40dp"></Button>
+		<Button android:id="@+id/follow_btn" android:layout_height="wrap_content" android:textSize="18px" android:background="@drawable/android:ic_media_ff" android:clickable="true" android:layout_width="wrap_content" android:layout_marginLeft="40dp"/>
+	</LinearLayout>
+	<ScrollView android:layout_width="fill_parent" android:id="@+id/contacts_list"
+		android:layout_height="wrap_content" android:orientation="vertical">
+		<LinearLayout android:id="@+id/contactsll"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="vertical" />
+	</ScrollView>
+</LinearLayout>

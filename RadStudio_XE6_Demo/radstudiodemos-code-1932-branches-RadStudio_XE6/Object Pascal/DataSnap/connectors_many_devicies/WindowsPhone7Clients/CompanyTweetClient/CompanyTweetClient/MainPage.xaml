@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="CompanyTweetClient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    
+    <Grid x:Name="LayoutRoot" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"></StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox 
+                 Height="87"
+                 BorderBrush="Red"
+                 BorderThickness="2"
+                 HorizontalAlignment="Left" 
+                 Margin="6,482,0,0" 
+                 Name="txtName" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 Width="444"  />
+            <Image Height="246" HorizontalAlignment="Center" Margin="6,197,0,0" Name="image1" Stretch="None" VerticalAlignment="Top" Width="246" Source="/CompanyTweetClient;component/Images/delphi_PROJECTICON_256x256-32.png" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="6,460,0,0" Name="textBlock1" Text="Username" VerticalAlignment="Top" />
+            <Image Height="150" HorizontalAlignment="Left" Margin="0,6,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="456" Source="/CompanyTweetClient;component/Images/main.png" />
+            <CheckBox Content="I am 13 years of age, or older." Height="72" HorizontalAlignment="Left" Margin="6,558,0,0" Name="ageCheck" VerticalAlignment="Top" Width="397" />
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.next.rest.png" Text="Login" Click="btn_Login"></shell:ApplicationBarIconButton>
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.feature.settings.rest.png" Text="Settings" Click="mnuSetHost_Click"></shell:ApplicationBarIconButton>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

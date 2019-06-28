@@ -1,0 +1,2 @@
+This is the source to tregsvr.exe, Embarcadero's type library utility, which is installed to the product bin directory. 
+See the topic "TRegSvr.exe, the Type Library Registration Tool" in the help for details.

@@ -1,0 +1,116 @@
+object FmxMonitorClient: TFmxMonitorClient
+  Left = 0
+  Top = 0
+  Caption = 'Monitor Connections Client'
+  ClientHeight = 325
+  ClientWidth = 365
+  FormFactor.Width = 1920
+  FormFactor.Height = 1200
+  FormFactor.Devices = [dkDesktop]
+  OnActivate = FormActivate
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  object startButton: TButton
+    Height = 33.000000000000000000
+    Position.X = 272.000000000000000000
+    Position.Y = 48.000000000000000000
+    TabOrder = 0
+    Text = 'Start'
+    Width = 81.000000000000000000
+    OnClick = startButtonClick
+  end
+  object HostEdit: TEdit
+    TabOrder = 1
+    KeyboardType = vktDefault
+    Password = False
+    Text = '192.168.254.174'
+    Position.X = 88.000000000000000000
+    Position.Y = 21.000000000000000000
+    Width = 100.000000000000000000
+    Height = 22.000000000000000000
+  end
+  object IOMemo: TMemo
+    Touch.InteractiveGestures = [igPan]
+    Height = 201.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 88.000000000000000000
+    TabOrder = 2
+    Width = 345.000000000000000000
+    KeyboardType = vktDefault
+    Lines.Strings = (
+      'Hello world, this is a line of text to reverse.')
+  end
+  object ReqCountLabel: TLabel
+    Height = 25.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 296.000000000000000000
+    Text = 'ReqCountLabel'
+    Width = 177.000000000000000000
+  end
+  object Label1: TLabel
+    Height = 15.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'HOST SERVER:'
+    Width = 120.000000000000000000
+  end
+  object Label2: TLabel
+    Height = 15.000000000000000000
+    Position.X = 200.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'TCP/IP Port:'
+    Width = 73.000000000000000000
+  end
+  object PortEdit: TNumberBox
+    TabOrder = 6
+    Cursor = crIBeam
+    Max = 10000.000000000000000000
+    Value = 211.000000000000000000
+    KeyboardType = vktDefault
+    Position.X = 272.000000000000000000
+    Position.Y = 21.000000000000000000
+    Width = 49.000000000000000000
+    Height = 22.000000000000000000
+    VertIncrement = 5.000000000000000000
+  end
+  object Label3: TLabel
+    Height = 15.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 64.000000000000000000
+    Text = 'Hammer server every'
+    Width = 120.000000000000000000
+  end
+  object HammerEdit: TNumberBox
+    TabOrder = 8
+    Cursor = crIBeam
+    Max = 10000.000000000000000000
+    Value = 1000.000000000000000000
+    KeyboardType = vktDefault
+    Position.X = 128.000000000000000000
+    Position.Y = 61.000000000000000000
+    Width = 49.000000000000000000
+    Height = 22.000000000000000000
+    VertIncrement = 5.000000000000000000
+  end
+  object Label4: TLabel
+    Height = 15.000000000000000000
+    Position.X = 184.000000000000000000
+    Position.Y = 64.000000000000000000
+    Text = 'milliseconds'
+    Width = 81.000000000000000000
+  end
+  object CMCSQLConnection: TSQLConnection
+    DriverName = 'DataSnap'
+    LoginPrompt = False
+    Params.Strings = (
+      'Port=211'
+      'CommunicationProtocol=tcp/ip'
+      'DatasnapContext=datasnap/')
+    Left = 152
+    Top = 208
+    UniqueId = '{B20CFA38-BEDE-497B-B520-6C8FD3B34392}'
+  end
+end

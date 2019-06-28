@@ -1,0 +1,72 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{1C4111EB-E95E-47F3-8DB2-0A849A25F573}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="WordPad.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="MRU\ABMRU.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="DynaActionBands\DynaActionBands.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="AlphaBlendMenus\AlphaBlendDemo.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="WordPad">
+			<MSBuild Projects="WordPad.dproj"/>
+		</Target>
+		<Target Name="WordPad:Clean">
+			<MSBuild Targets="Clean" Projects="WordPad.dproj"/>
+		</Target>
+		<Target Name="WordPad:Make">
+			<MSBuild Targets="Make" Projects="WordPad.dproj"/>
+		</Target>
+		<Target Name="ABMRU">
+			<MSBuild Projects="MRU\ABMRU.dproj"/>
+		</Target>
+		<Target Name="ABMRU:Clean">
+			<MSBuild Targets="Clean" Projects="MRU\ABMRU.dproj"/>
+		</Target>
+		<Target Name="ABMRU:Make">
+			<MSBuild Targets="Make" Projects="MRU\ABMRU.dproj"/>
+		</Target>
+		<Target Name="DynaActionBands">
+			<MSBuild Projects="DynaActionBands\DynaActionBands.dproj"/>
+		</Target>
+		<Target Name="DynaActionBands:Clean">
+			<MSBuild Targets="Clean" Projects="DynaActionBands\DynaActionBands.dproj"/>
+		</Target>
+		<Target Name="DynaActionBands:Make">
+			<MSBuild Targets="Make" Projects="DynaActionBands\DynaActionBands.dproj"/>
+		</Target>
+		<Target Name="AlphaBlendDemo">
+			<MSBuild Projects="AlphaBlendMenus\AlphaBlendDemo.dproj"/>
+		</Target>
+		<Target Name="AlphaBlendDemo:Clean">
+			<MSBuild Targets="Clean" Projects="AlphaBlendMenus\AlphaBlendDemo.dproj"/>
+		</Target>
+		<Target Name="AlphaBlendDemo:Make">
+			<MSBuild Targets="Make" Projects="AlphaBlendMenus\AlphaBlendDemo.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="WordPad;ABMRU;DynaActionBands;AlphaBlendDemo"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="WordPad:Clean;ABMRU:Clean;DynaActionBands:Clean;AlphaBlendDemo:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="WordPad:Make;ABMRU:Make;DynaActionBands:Make;AlphaBlendDemo:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

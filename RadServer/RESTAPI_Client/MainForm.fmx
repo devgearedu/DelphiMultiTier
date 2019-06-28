@@ -1,0 +1,238 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 446
+  ClientWidth = 700
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object btnLoadData: TButton
+    Position.X = 24.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 0
+    Text = #45936#51060#53552' '#47196#46300
+    OnClick = btnLoadDataClick
+  end
+  object Grid1: TGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 24.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 369.000000000000000000
+    Size.Height = 353.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    RowCount = 9
+    OnSelChanged = Grid1SelChanged
+    Viewport.Width = 365.000000000000000000
+    Viewport.Height = 328.000000000000000000
+  end
+  object Label1: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 46.000000000000000000
+    Text = #51228#47785
+    TabOrder = 11
+  end
+  object edtTitle: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 12
+    Text = #45944#54028#51060' Begin...End'
+    Position.X = 408.000000000000000000
+    Position.Y = 65.000000000000000000
+    Size.Width = 257.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label2: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 94.000000000000000000
+    Text = #51200#51088
+    TabOrder = 6
+  end
+  object edtAuthor: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 7
+    Text = #44608#50896#44221
+    Position.X = 408.000000000000000000
+    Position.Y = 113.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label3: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 142.000000000000000000
+    Text = 'ISBN'
+    TabOrder = 4
+  end
+  object edtISBN: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Text = '9788996251613'
+    Position.X = 408.000000000000000000
+    Position.Y = 161.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label4: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 190.000000000000000000
+    Text = #44032#44201
+    TabOrder = 2
+  end
+  object edtPrice: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Text = '28,000'
+    Position.X = 408.000000000000000000
+    Position.Y = 209.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label5: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 238.000000000000000000
+    Text = #44288#47144#47553#53356
+    TabOrder = 9
+  end
+  object edtLink: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 10
+    Text = 
+      'http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&m' +
+      'allGb=KOR&barcode=9788996251613&orderClick=LAG&Kc=SETLBkserp1_5'
+    Position.X = 408.000000000000000000
+    Position.Y = 257.000000000000000000
+    Size.Width = 257.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label6: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 286.000000000000000000
+    Text = #49444#47749
+    TabOrder = 8
+  end
+  object mmoDescription: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      #45944#54028#51060#51032' '#49884#51089#48512#53552' '#45149#44620#51648' '#54028#54756#52824#45796'!'
+      ''
+      
+        #39#45944#54028#51060' Begin...End'#39#45716' '#45944#54028#51060#47484' '#52376#51020' '#49324#50857#54616#45716' '#52488#44553' '#44060#48156#51088#46308#51060' '#50508#44256#49910#50612#54616#45716' '#45944#54028#51060#50640' '#45824#54620' '#47784#46304' '#45236#50857#50640' '#45824 +
+        #54644' '#49884#51089#48512#53552' '#51473#44553' '#49688#51456#51032' '#54876#50857#44620#51648#47484' '#45812#51008' '#52293#51077#45768#45796'. '#45944#54028#51060#47484' "'#52376#51020'"'#53020#45716' '#44536' '#49692#44036#48512#53552' '#48373#54633#51201#51064' '#54532#47196#51229#53944#47484' "'#50756#49457'"'#54616 +
+        #44592#44620#51648#51032' '#47784#46304' '#45236#50857#51012' '#51060' '#54620' '#44428#51032' '#52293#51012' '#53685#54644' '#48176#50872' '#49688' '#51080#49845#45768#45796'.'
+      ''
+      
+        #51060' '#52293#51008' DataSnap, '#53364#46972#50864#46300' '#46321' '#51648#49549#51201#51004#47196' '#48156#51204#54644#50724#45716' '#45944#54028#51060#51032' '#52572#49888' '#44592#49696#44620#51648' '#47784#46160' '#52964#48260#54616#44256' '#51080#49845#45768#45796'. '#46608#54620' ' +
+        #45944)
+    Position.X = 408.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 257.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Viewport.Width = 237.000000000000000000
+    Viewport.Height = 77.000000000000000000
+  end
+  object btnNewData: TButton
+    Position.X = 408.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 16
+    Text = #49888#44508
+    OnClick = btnNewDataClick
+  end
+  object btnSaveData: TButton
+    Position.X = 584.000000000000000000
+    Position.Y = 408.000000000000000000
+    TabOrder = 14
+    Text = #51200#51109
+    OnClick = btnSaveDataClick
+  end
+  object ImageControl1: TImageControl
+    Position.X = 536.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 145.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+  end
+  object btnDeleteData: TButton
+    Position.X = 584.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 15
+    Text = #49325#51228
+    OnClick = btnDeleteDataClick
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dmDataAccess.memBookDetail
+    ScopeMappings = <>
+    Left = 336
+    Top = 208
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmDataAccess.memBookList
+    ScopeMappings = <>
+    Left = 336
+    Top = 152
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'BOOK_LINK'
+      Control = edtLink
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'BOOK_AUTHOR'
+      Control = edtAuthor
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'BOOK_DESCRIPTION'
+      Control = mmoDescription
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'BOOK_PRICE'
+      Control = edtPrice
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'BOOK_TITLE'
+      Control = edtTitle
+      Track = False
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'BOOK_ISBN'
+      Control = edtISBN
+      Track = False
+    end
+  end
+end

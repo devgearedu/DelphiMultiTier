@@ -1,0 +1,59 @@
+
+//---------------------------------------------------------------------------
+
+// This software is Copyright (c) 2011 Embarcadero Technologies, Inc. 
+// You may only use this software if you are an authorized licensee
+// of Delphi, C++Builder or RAD Studio (Embarcadero Products).
+// This software is considered a Redistributable as defined under
+// the software license agreement that comes with the Embarcadero Products
+// and is subject to that software license agreement.
+
+//---------------------------------------------------------------------------
+package ProductivityExperts;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Chee Wee''s Productivity Experts 0.8'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  designide,
+  rtl,
+  vcl;
+
+contains
+  ProductivityExpertImpl in 'ProductivityExpertImpl.pas',
+  XMLCommentsParserImpl in 'XMLCommentsParserImpl.pas',
+  DeclParserIntf in 'DeclParserIntf.pas',
+  DelphiParserImpl in 'DelphiParserImpl.pas',
+  TextUtils in 'TextUtils.pas',
+  ProductivityExpertsOTAUtils in 'ProductivityExpertsOTAUtils.pas',
+  ProductivityExpertsProductInfoImpl in 'ProductivityExpertsProductInfoImpl.pas',
+  RegionExpertImpl in 'RegionExpertImpl.pas',
+  MSDNExpertImpl in 'MSDNExpertImpl.pas';
+
+end.

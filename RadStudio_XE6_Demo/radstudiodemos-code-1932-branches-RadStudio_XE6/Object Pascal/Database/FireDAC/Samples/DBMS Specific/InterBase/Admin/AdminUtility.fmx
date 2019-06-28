@@ -1,0 +1,828 @@
+object Form14: TForm14
+  Left = 0
+  Top = 0
+  Caption = 'InterBase GUI'
+  ClientHeight = 529
+  ClientWidth = 800
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnCloseQuery = FormCloseQuery
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object tcMain: TTabControl
+    Align = Client
+    Height = 263.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    Width = 800.000000000000000000
+    object tabUsers: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = True
+      TabOrder = 0
+      Text = 'Server Users'
+      Width = 82.000000000000000000
+      object StringGridBindSourceDB1: TStringGrid
+        Align = Client
+        Height = 150.000000000000000000
+        PopupMenu = PopupMenu1
+        TabOrder = 0
+        Width = 686.000000000000000000
+        Options = [AlternatingRowBackground, Editing, ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick]
+        ReadOnly = True
+        RowCount = 100
+        RowHeight = 21.000000000000000000
+      end
+      object Button1: TButton
+        Action = actRefreshUsers
+        Align = Right
+        Height = 130.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 696.000000000000000000
+        Position.Y = 99.000000000000000000
+        TabOrder = 1
+        Width = 94.000000000000000000
+      end
+      object Expander1: TExpander
+        Align = Top
+        Height = 89.000000000000000000
+        ShowCheck = False
+        Text = 'Options'
+        Width = 800.000000000000000000
+        TabOrder = 2
+        ContentSize = '64'
+        object ListBox2: TListBox
+          Align = Client
+          Height = 64.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          Width = 780.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader3: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Embedded Authentication (Optional)'
+            Width = 780.000000000000000000
+          end
+          object ListBoxItem4: TListBoxItem
+            Height = 38.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Text = 'Database'
+            Width = 780.000000000000000000
+            object edtUserSecEUADatabase: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 0
+              Width = 670.000000000000000000
+              Height = 26.000000000000000000
+              Margins.Left = 100.000000000000000000
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              TextPrompt = 'Optional (Only required for Embedded Authentication)'
+              OnDblClick = GetDataBaseFilePath
+            end
+          end
+        end
+      end
+    end
+    object tabBackup: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Backup'
+      Width = 55.000000000000000000
+      object Expander2: TExpander
+        Align = Top
+        Height = 129.000000000000000000
+        ShowCheck = False
+        Text = 'Options'
+        Width = 800.000000000000000000
+        TabOrder = 0
+        ContentSize = '104'
+        object ListBox3: TListBox
+          Align = Client
+          Height = 104.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          Width = 366.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader4: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Paths'
+            Width = 366.000000000000000000
+          end
+          object ListBoxItem6: TListBoxItem
+            Height = 38.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Text = 'Database Path'
+            Width = 366.000000000000000000
+            object edtBackupDBPath: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 0
+              Width = 256.000000000000000000
+              Height = 26.000000000000000000
+              Margins.Left = 100.000000000000000000
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              OnDblClick = GetDataBaseFilePath
+            end
+          end
+          object ListBoxItem9: TListBoxItem
+            Height = 38.000000000000000000
+            Position.Y = 57.000000000000000000
+            TabOrder = 2
+            Text = 'Backup Path'
+            Width = 366.000000000000000000
+            object edtBackupBackupPath: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 0
+              Width = 256.000000000000000000
+              Height = 26.000000000000000000
+              Margins.Left = 100.000000000000000000
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              OnDblClick = GetDataBaseRestorePath
+            end
+          end
+        end
+        object ListBox6: TListBox
+          Align = Right
+          Height = 104.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 396.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 1
+          Width = 394.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader7: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Options'
+            Width = 394.000000000000000000
+          end
+          object ListBoxItem11: TListBoxItem
+            Height = 76.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Width = 394.000000000000000000
+            object cbBackup_IgnoreCheckSum: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 6.000000000000000000
+              TabOrder = 0
+              Text = 'Ignore Check Sums'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_IgnoreLimboTransactions: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 22.000000000000000000
+              TabOrder = 1
+              Text = 'Ignore Limbo Transactions'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_MetaDataOnly: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 38.000000000000000000
+              TabOrder = 2
+              Text = 'MetaData Only'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_NoGarbageCollection: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 54.000000000000000000
+              TabOrder = 3
+              Text = 'No Garbage Collection'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_OldDescriptions: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 22.000000000000000000
+              TabOrder = 5
+              Text = 'Old Descriptions'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_NonTransportable: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 6.000000000000000000
+              TabOrder = 4
+              Text = 'Non Transportable'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_Convert: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 38.000000000000000000
+              TabOrder = 6
+              Text = 'Convert'
+              Width = 170.000000000000000000
+            end
+            object cbBackup_Expand: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 54.000000000000000000
+              TabOrder = 7
+              Text = 'Expand'
+              Width = 170.000000000000000000
+            end
+          end
+        end
+      end
+      object btnBackup: TButton
+        Action = actBackup
+        Align = Right
+        Height = 90.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 712.000000000000000000
+        Position.Y = 139.000000000000000000
+        TabOrder = 1
+        Width = 78.000000000000000000
+      end
+      object MemoBackup: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 110.000000000000000000
+        TabOrder = 2
+        Width = 702.000000000000000000
+      end
+    end
+    object tabRestore: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Restore'
+      Width = 57.000000000000000000
+      object Expander3: TExpander
+        Align = Top
+        Height = 161.000000000000000000
+        ShowCheck = False
+        Text = 'Options'
+        Width = 800.000000000000000000
+        TabOrder = 0
+        ContentSize = '136'
+        object ListBox4: TListBox
+          Align = Client
+          Height = 136.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          Width = 366.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader5: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Paths'
+            Width = 366.000000000000000000
+          end
+          object ListBoxItem10: TListBoxItem
+            Height = 38.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Text = 'Backup Path'
+            Width = 366.000000000000000000
+            object edtRestoreBackupPath: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 0
+              Width = 256.000000000000000000
+              Height = 26.000000000000000000
+              Margins.Left = 100.000000000000000000
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              OnDblClick = GetDataBaseRestorePath
+            end
+          end
+          object ListBoxItem7: TListBoxItem
+            Height = 38.000000000000000000
+            Position.Y = 57.000000000000000000
+            TabOrder = 2
+            Text = 'Restore Path'
+            Width = 366.000000000000000000
+            object edtRestoreRestoreToPath: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 0
+              Width = 256.000000000000000000
+              Height = 26.000000000000000000
+              Margins.Left = 100.000000000000000000
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              OnDblClick = GetDataBaseFilePath
+            end
+          end
+        end
+        object ListBox7: TListBox
+          Align = Right
+          Height = 136.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 396.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 1
+          Width = 394.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader8: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Options'
+            Width = 394.000000000000000000
+          end
+          object ListBoxItem12: TListBoxItem
+            Height = 110.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Width = 394.000000000000000000
+            object cbRestore_Create: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 6.000000000000000000
+              TabOrder = 0
+              Text = 'Create'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_Replace: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 22.000000000000000000
+              TabOrder = 1
+              Text = 'Replace'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_DeactivateIdx: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 38.000000000000000000
+              TabOrder = 2
+              Text = 'Deactivate Indexs'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_FixFFSData: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 54.000000000000000000
+              TabOrder = 3
+              Text = 'Fix FSS Data'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_NoValidity: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 22.000000000000000000
+              TabOrder = 7
+              Text = 'No Validity'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_NoShadow: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 6.000000000000000000
+              TabOrder = 6
+              Text = 'No Shadow'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_OneAtATime: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 38.000000000000000000
+              TabOrder = 8
+              Text = 'One At A Time'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_UseAllSpace: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 54.000000000000000000
+              TabOrder = 9
+              Text = 'Use All Space'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_FixFSSMetaData: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 70.000000000000000000
+              TabOrder = 4
+              Text = 'Fix FSS Metadata'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_Validate: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 70.000000000000000000
+              TabOrder = 10
+              Text = 'Validate'
+              Width = 170.000000000000000000
+            end
+            object cbRestore_MetaDataOnly: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 86.000000000000000000
+              TabOrder = 5
+              Text = 'Meta Data Only'
+              Width = 170.000000000000000000
+            end
+          end
+        end
+      end
+      object btnRestore: TButton
+        Action = actRestore
+        Align = Right
+        Height = 58.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 712.000000000000000000
+        Position.Y = 171.000000000000000000
+        TabOrder = 1
+        Width = 78.000000000000000000
+      end
+      object MemoRestore: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 78.000000000000000000
+        TabOrder = 2
+        Width = 702.000000000000000000
+      end
+    end
+    object tabValidate: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Validate'
+      Width = 59.000000000000000000
+      OnDblClick = GetDataBaseFilePath
+      object Expander4: TExpander
+        Align = Top
+        Height = 113.000000000000000000
+        ShowCheck = False
+        Text = 'Options'
+        Width = 800.000000000000000000
+        TabOrder = 0
+        ContentSize = '88'
+        object ListBox5: TListBox
+          Align = Client
+          Height = 88.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          Width = 366.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader6: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Path'
+            Width = 366.000000000000000000
+          end
+          object ListBoxItem8: TListBoxItem
+            Height = 38.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Text = 'Database'
+            Width = 366.000000000000000000
+            object edtValidateDBPath: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Client
+              TabOrder = 0
+              Width = 256.000000000000000000
+              Height = 26.000000000000000000
+              Margins.Left = 100.000000000000000000
+              Margins.Top = 6.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              OnDblClick = GetDataBaseFilePath
+            end
+          end
+        end
+        object ListBox8: TListBox
+          Align = Right
+          Height = 88.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 396.000000000000000000
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 1
+          Width = 394.000000000000000000
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          GroupingKind = Grouped
+          object ListBoxGroupHeader9: TListBoxGroupHeader
+            Height = 19.000000000000000000
+            StyleLookup = 'listboxgroupheader'
+            TabOrder = 0
+            Text = 'Options'
+            Width = 394.000000000000000000
+          end
+          object ListBoxItem13: TListBoxItem
+            Height = 62.000000000000000000
+            Position.Y = 19.000000000000000000
+            TabOrder = 1
+            Width = 394.000000000000000000
+            object cbValidate_ValidateFull: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 6.000000000000000000
+              TabOrder = 0
+              Text = 'Validate (Full)'
+              Width = 170.000000000000000000
+            end
+            object cbValidate_ValidatePages: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 22.000000000000000000
+              TabOrder = 1
+              Text = 'Validate (Pages)'
+              Width = 170.000000000000000000
+            end
+            object cbValidate_IgnoreCheckSum: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 38.000000000000000000
+              TabOrder = 2
+              Text = 'Ignore Check Sums'
+              Width = 170.000000000000000000
+            end
+            object cbValidate_MendRecords: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 22.000000000000000000
+              TabOrder = 4
+              Text = 'Mend Records'
+              Width = 170.000000000000000000
+            end
+            object cbValidate_KillShaddows: TCheckBox
+              Height = 19.000000000000000000
+              Position.X = 200.000000000000000000
+              Position.Y = 6.000000000000000000
+              TabOrder = 3
+              Text = 'Kill Shadows'
+              Width = 170.000000000000000000
+            end
+          end
+        end
+      end
+      object btnValidate: TButton
+        Action = actValidate
+        Align = Right
+        Height = 106.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 712.000000000000000000
+        Position.Y = 123.000000000000000000
+        TabOrder = 1
+        Width = 78.000000000000000000
+      end
+      object memoValidate: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 126.000000000000000000
+        TabOrder = 2
+        Width = 702.000000000000000000
+      end
+    end
+  end
+  object expServer: TExpander
+    Align = Top
+    Height = 233.000000000000000000
+    Position.Y = 33.000000000000000000
+    ShowCheck = False
+    Text = 'Server'
+    Width = 800.000000000000000000
+    TabOrder = 1
+    ContentSize = '208'
+    object ListBox1: TListBox
+      Align = Client
+      Height = 198.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      StyleLookup = 'transparentlistboxstyle'
+      TabOrder = 0
+      Width = 780.000000000000000000
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      GroupingKind = Grouped
+      object ListBoxGroupHeader1: TListBoxGroupHeader
+        Height = 19.000000000000000000
+        StyleLookup = 'listboxgroupheader'
+        TabOrder = 0
+        Text = 'Server'
+        Width = 780.000000000000000000
+      end
+      object ListBoxItem1: TListBoxItem
+        Height = 38.000000000000000000
+        Position.Y = 19.000000000000000000
+        TabOrder = 1
+        Text = 'Name - TCP/IP'
+        Width = 780.000000000000000000
+        object edtHost: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 0
+          Text = 'localhost'
+          Width = 670.000000000000000000
+          Height = 26.000000000000000000
+          Margins.Left = 100.000000000000000000
+          Margins.Top = 6.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 6.000000000000000000
+        end
+      end
+      object ListBoxItem2: TListBoxItem
+        Height = 38.000000000000000000
+        Position.Y = 57.000000000000000000
+        TabOrder = 2
+        Text = 'User Name'
+        Width = 780.000000000000000000
+        object edtUserName: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 0
+          Text = 'SYSDBA'
+          Width = 670.000000000000000000
+          Height = 26.000000000000000000
+          Margins.Left = 100.000000000000000000
+          Margins.Top = 6.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 6.000000000000000000
+        end
+      end
+      object ListBoxItem3: TListBoxItem
+        Height = 38.000000000000000000
+        Position.Y = 95.000000000000000000
+        TabOrder = 3
+        Text = 'Password'
+        Width = 780.000000000000000000
+        object edtPassword: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 0
+          Password = True
+          Text = 'masterkey'
+          Width = 670.000000000000000000
+          Height = 26.000000000000000000
+          Margins.Left = 100.000000000000000000
+          Margins.Top = 6.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 6.000000000000000000
+        end
+      end
+      object ListBoxGroupHeader2: TListBoxGroupHeader
+        Height = 19.000000000000000000
+        Position.Y = 133.000000000000000000
+        StyleLookup = 'listboxgroupheader'
+        TabOrder = 4
+        Text = 'Embedded Authentication (Optional)'
+        Width = 780.000000000000000000
+      end
+      object ListBoxItem5: TListBoxItem
+        Height = 38.000000000000000000
+        Position.Y = 152.000000000000000000
+        TabOrder = 5
+        Text = 'Secret Key'
+        Width = 780.000000000000000000
+        object edtSEPassword: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 0
+          Password = True
+          Width = 670.000000000000000000
+          Height = 26.000000000000000000
+          Margins.Left = 100.000000000000000000
+          Margins.Top = 6.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 6.000000000000000000
+        end
+      end
+    end
+  end
+  object Label1: TLabel
+    Align = MostTop
+    StyledSettings = [Family, Style, FontColor]
+    Height = 33.000000000000000000
+    TextSettings.Font.Size = 24.000000000000000000
+    Text = 'InterBase Admin Demo using FireDAC'
+    Width = 800.000000000000000000
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 757
+    Top = 192
+    object MenuItem1: TMenuItem
+      Action = actRefreshUsers
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'InterBase Backups|*.ibk'
+    Left = 672
+    Top = 434
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 164
+    Top = 101
+    object LinkGridToDataSourceBindSourceDB2: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = bsUsers
+      GridControl = StringGridBindSourceDB1
+      Columns = <>
+    end
+  end
+  object ActionList1: TActionList
+    Left = 558
+    Top = 32
+    object actRefreshUsers: TAction
+      Text = 'Refresh Users'
+      OnExecute = actRefreshUsersExecute
+    end
+    object actBackup: TAction
+      Text = 'Backup'
+      OnExecute = actBackupExecute
+    end
+    object actRestore: TAction
+      Text = 'Restore'
+      OnExecute = actRestoreExecute
+    end
+    object actValidate: TAction
+      Text = 'Validate'
+      OnExecute = actValidateExecute
+    end
+  end
+  object bsUsers: TBindSourceDB
+    DataSet = AdminDM.FDMemTableUsers
+    ScopeMappings = <>
+    Left = 760
+    Top = 144
+  end
+end

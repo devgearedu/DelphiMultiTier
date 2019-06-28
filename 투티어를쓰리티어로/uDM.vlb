@@ -1,0 +1,16 @@
+﻿[DeptSource]
+Coordinates=69,250,72,33
+
+[InsaSource]
+Coordinates=0,0,69,33
+
+[InsaQuerySource]
+Coordinates=176,195,99,33
+
+[InsaForm.BindSourceDB1]
+Coordinates=10,10,141,249
+
+[]
+Coordinates=223,10,69,213
+Visible=False
+

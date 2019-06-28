@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3828D582-B0B3-49A4-8142-8D693139B53A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="richedit.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="richedit">
+        <MSBuild Projects="richedit.dproj"/>
+    </Target>
+    <Target Name="richedit:Clean">
+        <MSBuild Projects="richedit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="richedit:Make">
+        <MSBuild Projects="richedit.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="richedit"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="richedit:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="richedit:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,44 @@
+<Project DefaultTargets="default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <PropertyGroup>
+        <Platforms Condition="'$(Platforms)'==''">Win32;Win64;Osx32</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+
+        <PlatformIDEProjects
+            Include="
+                AnimationDemo3D\AnimationDemo3D.dproj;
+                AnimationDemoHD\AnimationDemoHD.dproj;
+                ControlsDemo\ControlsDemo.dproj;
+                ControlsDemo3D\ControlsDemo3D.dproj;
+                CustomListBox\CustomListBox.dproj;
+                CustomTreeView\CustomTree.dproj;
+                ShaderFilters\ShaderFilters.dproj;
+                GUI3D\GUI3D.dproj;
+                customcontrol\customcontrol.dproj;
+                helloworld3d\helloworld3d.dproj;
+                MultiLanguage\MultiLanguage.dproj;
+                CPUMonitor\CPUMonitor.dproj;
+                BitmapCodec\BitmapCodec.dproj;
+                CustomCaptureDevice\CustomCaptureDevice.dproj;
+                MediaPlayerHD\MediaPlayerHD.dproj;
+                VideoCaptureHD\VideoCaptureHD.dproj;
+                Cubes\Cubes.dproj;
+                Rects\Rects.dproj;
+                huddemo\huddemo.dproj;
+                ActionsDemo\ActionsDemo.dproj;
+                TextLayoutDemo\TL_DemoApp.dproj;
+                ScrollableFormDemo\ScrollableFormDemo.dproj;
+                FlyoutDemo\FlyoutDemo.dproj;
+		MagnifierGlassDemo\MagnifierGlassDemo.dproj;
+            ">
+            <!-- Remove the empty output directories left behind after the clean -->
+            <RemoveOutputDir>true</RemoveOutputDir>
+        </PlatformIDEProjects>
+
+    </ItemGroup>
+
+    <Import Project="$(TP)\Platform.targets"/>
+
+</Project>

@@ -1,0 +1,5 @@
+﻿[FDDrivers.ini]
+Encoding=UTF8
+
+[mysql]
+VendorHome=/opt/mysql-5.1.34-linux-i686-glibc23

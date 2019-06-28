@@ -1,0 +1,40 @@
+object DMeteorForm: TDMeteorForm
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'DMeteor'
+  ClientHeight = 493
+  ClientWidth = 481
+  Color = clBlack
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PaintBox1: TPaintBox
+    Left = 0
+    Top = 0
+    Width = 481
+    Height = 493
+    Align = alClient
+    OnPaint = PaintBox1Paint
+    ExplicitLeft = 144
+    ExplicitTop = 344
+    ExplicitWidth = 105
+    ExplicitHeight = 105
+  end
+  object Timer1: TTimer
+    Interval = 50
+    OnTimer = Timer1Timer
+    Left = 8
+    Top = 8
+  end
+end

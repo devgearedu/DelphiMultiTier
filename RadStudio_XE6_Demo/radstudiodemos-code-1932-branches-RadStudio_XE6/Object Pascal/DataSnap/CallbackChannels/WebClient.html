@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  <head>
+  <title>REST Callback Channel Client
+</title>
+  <script type="text/javascript" src="webfiles/json2.js"></script>
+  <script type="text/javascript" src="webfiles/ServerFunctionExecutor.js"></script>
+  <script type="text/javascript" src="webfiles/CallbackFramework.js"></script>
+  <script type="text/javascript" src="webfiles/JSProxy.js"></script>
+    <script type="text/javascript">
+    window.onbeforeunload = StopChannelsOptionally;
+
+    var clientChannelArray = [];
+    var Proxy = new DSAdmin();
+
+    function HandleChannelEvent(EventItem)
+    {
+      var showEventsCheck = document.getElementById("ckShowEvents");
+      if (showEventsCheck.checked) {
+        switch(EventItem.eventType) {
+          case EventItem.channel.EVENT_CHANNEL_START:
+            var msg = "Channel Started: " + EventItem.channel.channelId;
+            if (EventItem.callback != null) {
+              msg += ", with initial callback: " + EventItem.callback.callbackId;
+            }
+            alert(msg);
+            break;
+          case EventItem.channel.EVENT_CHANNEL_STOP:
+            alert("Channel Stopped: " + EventItem.channel.channelId);
+            break;
+          case EventItem.channel.EVENT_CALLBACK_ADDED:
+            alert("Callback Added: " + EventItem.callback.callbackId);
+            break;
+          case EventItem.channel.EVENT_CALLBACK_REMOVED:
+            alert("Callback Removed: " + EventItem.callback.callbackId);
+            break;
+          case EventItem.channel.EVENT_SERVER_DISCONNECT:
+            alert("Channel disconnected by server: " + EventItem.channel.channelId);
+            break;
+        }
+      }
+    }
+
+    function StopChannelsOptionally()
+    {
+      var shutdownCheck = document.getElementById("ckTerminateAll");
+      if (shutdownCheck.checked) {
+        //TerminateAllChannels(); //This also works
+        new ServerFunctionExecutor().closeSession();
+      }
+    }
+
+    function ClearLog()
+    {
+      document.getElementById("taLog").value = "";
+    }
+
+    function CreateChannel()
+    {
+      var channelName = document.getElementById("ddChannelName").value;
+      var clientID = document.getElementById("ddClientID").value;
+
+      var channel = new ClientChannel(clientID, channelName);
+
+      clientChannelArray.push(channel);
+
+      channel.onChannelStateChange = HandleChannelEvent;
+
+      RefreshChannelsList();
+    }
+
+    function RefreshChannelsList()
+    {
+      var channelsList = document.getElementById("lstChannels");
+
+      channelsList.options.length = 0;
+      document.getElementById("lstCallbacks").options.length = 0;
+
+      var length = clientChannelArray.length;
+      for (var i = 0; i < length; i++) {
+        var thisChannel = clientChannelArray[i];
+
+        var displayName = thisChannel.channelId;
+
+        displayName = isChannelStarted(thisChannel) ? displayName : displayName + " (stopped)";
+
+        var newOption = document.createElement('option');
+        newOption.value = thisChannel.channelId;
+        newOption.appendChild(document.createTextNode(displayName));
+
+        channelsList.appendChild(newOption);
+      }
+    }
+
+    function isChannelStarted(clientChannel)
+    {
+      return clientChannel != null && clientChannel.callbackLoop != null &&
+             !clientChannel.callbackLoop.stopped && clientChannel.callbacks.length > 0;
+    }
+
+    function getSelectedChannel()
+    {
+       var channelList = document.getElementById("lstChannels");
+       var selectionIndex = channelList.selectedIndex;
+
+       if (selectionIndex > -1 && selectionIndex < clientChannelArray.length)
+       {
+         return clientChannelArray[selectionIndex];
+       }
+       return null;
+    }
+
+    function getSelectedCallback()
+    {
+       var currentChannel = getSelectedChannel();
+       var callbackList = document.getElementById("lstCallbacks");
+       var selectionIndex = callbackList.selectedIndex;
+
+       if (isChannelStarted(currentChannel) && selectionIndex > -1) {
+         var callbacksArray = currentChannel.callbacks;
+
+         if (selectionIndex < callbacksArray.length) {
+           return callbacksArray[selectionIndex];
+         }
+       }
+       return null;
+    }
+
+    function logMessage(msg)
+    {
+      var logArea = document.getElementById("taLog");
+      logArea.value += msg + "\n";
+    }
+
+    function CreateCallback()
+    {
+      var callbackId = document.getElementById("ddCallbackID").value;
+      var currentChannel = getSelectedChannel();
+
+      var callback = new ClientCallback(currentChannel, callbackId,
+         function(jsonValue, dataType) {
+           if (jsonValue != null) {
+             logMessage(JSON.stringify(jsonValue));
+           }
+           return true;
+         });
+
+      if (currentChannel == null) {
+        //do nothing
+      }
+      else if (isChannelStarted(currentChannel)) {
+        currentChannel.registerCallback(callback);
+      } else {
+        currentChannel.connect(callback);
+      }
+
+      RefreshChannelsList();
+    }
+
+    function UpdateCallbackList()
+    {
+      var currentChannel = getSelectedChannel();
+      var callbacksList = document.getElementById("lstCallbacks");
+      callbacksList.options.length = 0;
+
+      if (isChannelStarted(currentChannel))
+      {
+        var callbacksArray = currentChannel.callbacks;
+
+        var length = callbacksArray.length;
+        for (var i = 0; i < length; i++) {
+          var thisCallback = callbacksArray[i];
+
+          var newOption = document.createElement('option');
+          newOption.value = thisCallback.callbackId;
+          newOption.appendChild(document.createTextNode(thisCallback.callbackId));
+
+          callbacksList.appendChild(newOption);
+        }
+      }
+    }
+
+    function TerminateCurrentChannel()
+    {
+      var currentChannel = getSelectedChannel();
+      if (isChannelStarted(currentChannel)) {
+        currentChannel.disconnect();
+        RefreshChannelsList();
+      }
+    }
+
+    function TerminateAllChannels()
+    {
+      var length = clientChannelArray.length;
+
+      for (var i = 0; i < length; i++) {
+        var thisChannel = clientChannelArray[i];
+        if (isChannelStarted(thisChannel)) {
+          thisChannel.disconnect();
+        }
+      }
+      RefreshChannelsList();
+    }
+
+    function TerminateSelectedCallback()
+    {
+      var currentChannel = getSelectedChannel();
+      var currentCallback = getSelectedCallback();
+
+      if (currentCallback != null && isChannelStarted(currentChannel)) {
+        currentChannel.unregisterCallback(currentCallback);
+        RefreshChannelsList();
+      }
+    }
+
+    function BroadcastMessage()
+    {
+      var channelName = document.getElementById("ddChannelNameB").value;
+      var msg = document.getElementById("taMessage").value;
+
+      Proxy.BroadcastToChannel(channelName, msg);
+    }
+
+    function NotifyMessage()
+    {
+      var clientId = document.getElementById("ddClientName").value;
+      var callbackId = document.getElementById("ddCallbackName").value;
+      var msg = document.getElementById("taMessage").value;
+
+      Proxy.NotifyCallback(clientId, callbackId, msg);
+    }
+
+    </script>
+  </head>
+
+  <body>
+    <p>
+</p>
+    <div style="BORDER-BOTTOM: black 1px solid; POSITION: relative; BORDER-LEFT: black 1px solid; WIDTH: 713px; HEIGHT: 543px; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-border-radius: 8px; border-radius: 8px" ms_positioning="GridLayout">
+      <div style="Z-INDEX: 1; POSITION: absolute; WIDTH: 99px; DISPLAY: inline; HEIGHT: 14px; TOP: 6px; LEFT: 6px" ms_positioning="FlowLayout">Channel Name:
+</div>
+      <div style="Z-INDEX: 2; POSITION: absolute; WIDTH: 70px; DISPLAY: inline; HEIGHT: 15px; TOP: 6px; LEFT: 182px" ms_positioning="FlowLayout">Client ID:
+</div><select style="Z-INDEX: 3; POSITION: absolute; WIDTH: 147px; TOP: 30px; LEFT: 6px" name="channelNames" id="ddChannelName">
+<option value="ChannelOne" selected="true">ChannelOne
+</option>
+<option value="ChannelTwo">ChannelTwo
+</option>
+<option value="ChannelThree">ChannelThree
+</option>
+</select>
+
+<select style="Z-INDEX: 4; POSITION: absolute; WIDTH: 147px; TOP: 30px; LEFT: 182px" name="ClientIDs" id="ddClientID">
+<option value="ClientFirst" selected="true">ClientFirst
+</option>
+<option value="ClientSecond">ClientSecond
+</option>
+<option value="ClientThird">ClientThird
+</option>
+</select><input style="Z-INDEX: 5; POSITION: absolute; WIDTH: 139px; HEIGHT: 24px; TOP: 30px; LEFT: 342px" value="Create Channel" size="40" type="button" id="btCreateChannel" onclick="CreateChannel()">
+      <hr style="Z-INDEX: 6; POSITION: absolute; WIDTH: 98.89%; HEIGHT: 1px; TOP: 62px; LEFT: 6px" size="1" width="98.89%">
+      <div style="Z-INDEX: 7; POSITION: absolute; WIDTH: 99px; DISPLAY: inline; HEIGHT: 14px; TOP: 70px; LEFT: 6px" ms_positioning="FlowLayout">Client Channels
+</div><select
+              style="Z-INDEX: 8; POSITION: absolute; WIDTH: 387px; HEIGHT: 78px; TOP: 94px; LEFT: 6px" size="2" id="lstChannels" onclick="UpdateCallbackList()">
+      </select>
+      <div style="Z-INDEX: 9; POSITION: absolute; WIDTH: 107px; DISPLAY: inline; HEIGHT: 14px; TOP: 174px; LEFT: 6px" ms_positioning="FlowLayout">Client Callbacks
+</div><select
+              style="Z-INDEX: 10; POSITION: absolute; WIDTH: 387px; HEIGHT: 54px; TOP: 198px; LEFT: 6px" size="2" id="lstCallbacks">
+      </select>
+      <div style="Z-INDEX: 11; BORDER-BOTTOM: black 1px solid; POSITION: absolute; BORDER-LEFT: black 1px solid; WIDTH: 595px; HEIGHT: 102px; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; TOP: 286px; LEFT: 6px; -moz-border-radius: 8px; border-radius: 8px" ms_positioning="GridLayout">
+        <div style="Z-INDEX: 12; POSITION: absolute; WIDTH: 101px; DISPLAY: inline; HEIGHT: 19px; TOP: 6px; LEFT: 6px" ms_positioning="FlowLayout">Channel Name:
+</div>
+        <div style="Z-INDEX: 13; POSITION: absolute; WIDTH: 101px; DISPLAY: inline; HEIGHT: 16px; TOP: 6px; LEFT: 134px" ms_positioning="FlowLayout">Callback Name:
+</div>
+        <div style="Z-INDEX: 14; POSITION: absolute; WIDTH: 85px; DISPLAY: inline; HEIGHT: 16px; TOP: 6px; LEFT: 270px" ms_positioning="FlowLayout">Client Name:
+</div>
+        <select style="Z-INDEX: 15; POSITION: absolute; WIDTH: 101px; TOP: 30px; LEFT: 6px" id="ddChannelNameB">
+        <option value="ChannelOne" selected="true">ChannelOne
+</option>
+<option value="ChannelTwo">ChannelTwo
+</option>
+<option value="ChannelThree">ChannelThree
+</option>
+        </select><select style="Z-INDEX: 16; POSITION: absolute; WIDTH: 117px; TOP: 30px; LEFT: 134px" id="ddCallbackName">
+        <option value="CallbackAAA" selected="true">CallbackAAA
+</option>
+<option value="CallbackBBB">CallbackBBB
+</option>
+<option value="CallbackCCC">CallbackCCC
+</option>
+        </select><select style="Z-INDEX: 17; POSITION: absolute; WIDTH: 141px; TOP: 30px; LEFT: 270px" id="ddClientName">
+        <option value="ClientFirst" selected="true">ClientFirst
+</option>
+<option value="ClientSecond">ClientSecond
+</option>
+<option value="ClientThird">ClientThird
+</option>
+        </select>
+        <div style="Z-INDEX: 18; POSITION: absolute; WIDTH: 70px; DISPLAY: inline; HEIGHT: 15px; TOP: 62px; LEFT: 6px" ms_positioning="FlowLayout">Message:
+</div><input
+               style="Z-INDEX: 19; POSITION: absolute; WIDTH: 325px; HEIGHT: 22px; TOP: 62px; LEFT: 86px" size="41" id="taMessage" value="Message"><input
+               style="Z-INDEX: 21; POSITION: absolute; WIDTH: 141px; HEIGHT: 24px; TOP: 14px; LEFT: 438px" value="Broadcast to Channel" size="14" type="button" id="btBroadcast" onclick="BroadcastMessage()">
+        <input style="Z-INDEX: 22; POSITION: absolute; WIDTH: 141px; HEIGHT: 24px; TOP: 54px; LEFT: 438px" value="Notify Callback" size="21" type="button" id="btNotify" onclick="NotifyMessage()">
+      </div>
+      <hr style="Z-INDEX: 6; POSITION: absolute; WIDTH: 98.89%; HEIGHT: 1px; TOP: 262px; LEFT: 6px" size="1" width="98.89%">
+      <hr style="Z-INDEX: 6; POSITION: absolute; WIDTH: 98.89%; HEIGHT: 1px; TOP: 398px; LEFT: 6px" size="1" width="98.89%">
+      <div style="Z-INDEX: 20; POSITION: absolute; BACKGROUND-COLOR: white; WIDTH: 107px; DISPLAY: inline; HEIGHT: 19px; TOP: 275px; LEFT: 10px" ms_positioning="FlowLayout">Broadcast/Notify
+</div>
+      <div style="Z-INDEX: 23; POSITION: absolute; WIDTH: 70px; DISPLAY: inline; HEIGHT: 15px; TOP: 406px; LEFT: 6px" ms_positioning="FlowLayout">Log
+</div><textarea
+                style="Z-INDEX: 24; POSITION: absolute; WIDTH: 691px; HEIGHT: 62px; TOP: 430px; LEFT: 6px" cols="54" id="taLog" readonly="true"></textarea><input
+             style="Z-INDEX: 25; POSITION: absolute; WIDTH: 75px; HEIGHT: 24px; TOP: 502px; LEFT: 6px" value="Clear" size="29" type="button" id="btClear" onclick="ClearLog()">
+      <div style="Z-INDEX: 27; POSITION: absolute; WIDTH: 275px; DISPLAY: inline; HEIGHT: 22px; TOP: 504px; LEFT: 156px" ms_positioning="FlowLayout">Terminate All Client Channels when close
+</div><input
+             style="Z-INDEX: 28; POSITION: absolute; WIDTH: 179px; HEIGHT: 24px; TOP: 198px; LEFT: 406px" value="Terminate Callback" size="54" type="button" id="btTerminate" onclick="TerminateSelectedCallback()">
+      <input style="Z-INDEX: 29; POSITION: absolute; TOP: 94px; LEFT: 406px" value="Create Callback" type="button" id="btCreateCallback" onclick="CreateCallback()">
+      <input style="Z-INDEX: 30; POSITION: absolute; WIDTH: 187px; HEIGHT: 24px; TOP: 118px; LEFT: 406px" value="Terminate Client channel" size="12" type="button" id="btTerminate" onclick="TerminateCurrentChannel()">
+      <input style="Z-INDEX: 31; POSITION: absolute; WIDTH: 187px; HEIGHT: 24px; TOP: 142px; LEFT: 406px" value="Terminate All Client Channels" size="11" type="button" id="btTerminateAll" onclick="TerminateAllChannels()">
+      <select style="Z-INDEX: 32; POSITION: absolute; WIDTH: 147px; TOP: 94px; LEFT: 550px" id="ddCallbackID">
+<option value="CallbackAAA" selected="true">CallbackAAA
+</option>
+<option value="CallbackBBB">CallbackBBB
+</option>
+<option value="CallbackCCC">CallbackCCC
+</option>
+      </select>
+      <input style="Z-INDEX: 26; POSITION: absolute; WIDTH: 19px; HEIGHT: 20px; TOP: 502px; LEFT: 134px" size="19" type="checkbox" id="ckTerminateAll" checked="true" value="">
+      <div style="Z-INDEX: 33; POSITION: absolute; WIDTH: 46px; DISPLAY: inline; HEIGHT: 19px; TOP: 169px; LEFT: 350px" ms_positioning="FlowLayout"><a href="javascript:RefreshChannelsList()">refresh
+</a></div><input style="Z-INDEX: 34; POSITION: absolute; TOP: 502px; LEFT: 446px" type="checkbox" id="ckShowEvents">
+      <div style="Z-INDEX: 35; POSITION: absolute; WIDTH: 171px; DISPLAY: inline; HEIGHT: 19px; TOP: 504px; LEFT: 470px" ms_positioning="FlowLayout">Show Event Messages</div>
+
+</div>
+
+  </body>
+</html>

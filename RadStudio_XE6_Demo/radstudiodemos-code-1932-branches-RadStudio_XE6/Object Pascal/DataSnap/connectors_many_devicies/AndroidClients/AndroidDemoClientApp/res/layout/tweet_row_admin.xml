@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:orientation="horizontal" android:id="@+id/row" android:layout_margin="10px" android:background="@android:color/white">
+	<ImageView android:id="@+id/Imageview" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:background="@drawable/admin" android:layout_marginLeft="2dp" android:layout_marginTop="2dp" android:layout_marginBottom="2dp"/>
+	<TextView android:layout_width="fill_parent"
+		android:id="@+id/rowText" android:layout_marginLeft="10px" android:paddingTop="2dp" android:textColor="#FFFF0000" android:layout_height="fill_parent" android:inputType="text|textMultiLine" android:maxLines="3" android:text="Hello World"/>
+</LinearLayout>

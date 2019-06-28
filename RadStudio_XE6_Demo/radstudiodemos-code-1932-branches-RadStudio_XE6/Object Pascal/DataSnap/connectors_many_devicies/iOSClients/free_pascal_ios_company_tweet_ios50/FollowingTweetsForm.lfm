@@ -1,0 +1,1023 @@
+object frmFollowingTweets: TfrmFollowingTweets
+  Left = 0
+  Top = 0
+  Caption = 'Following Tweets'
+  ClientHeight = 480
+  ClientWidth = 320
+  Visible = False
+  OnActivate = FormActivate
+  StyleBook = StyleBook1
+  StyleLookup = 'backgroundstyle'
+  object Rectangle1: TRectangle
+    Align = alTop
+    Width = 320.000000000000000000
+    Height = 41.000000000000000000
+    Fill.Color = xFFE5F5F7
+    object imgSettings: TImage
+      Align = alLeft
+      Width = 50.000000000000000000
+      Height = 41.000000000000000000
+      OnClick = imgSettingsClick
+      Bitmap.PNG = {
+        89504E470D0A1A0A0000000D494844520000001A0000001A0806000000A94A4C
+        CE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+        00097048597300000EC300000EC301C76FA864000001AC49444154484BBD564B
+        6AC330100D14BAEA2A1028E40A2E641B08087FD1054CA1A70AE43059E5000543
+        A10728047C8942A19D672C559D8E7E216DC0D848F3E669669E66B25864FCEABA
+        3E354DF38907DF19D03C534362DE7968C15A6BBDE2CB58E3443EBBE801BAAE5B
+        524A86A2283EE8FD68005555B544F2CC89B0863D6307CC8C1DE04B24ECFBFE96
+        402FAE33D44129751608A63A9907366EFDE61A0EF0F98B0C69C069624E53F7E1
+        4B4AED444CA77ABA16197C056BC55380082835EFB47EA06F8574E0C137D6B0C7
+        A34C927E59966F0C38B66DBBF19D0E7B643FF29AC5A2D10C80481E6272850D8F
+        8CD6B48823C5AD05D51D62248EB4915AAB44F8824F8B976AE20076A94484D9F9
+        1439D52C2457F11E78986781FCB85FAEEFAB11518DEE428706D13110F2363575
+        949E6D80E868FD78C4B0CF20DA07C5E03A8224FF5CDE20A482DE084D740CDD25
+        EC491716BE6297D64E51A73BE3E22235CA802167AC5DD482D00853BB73CCCEDB
+        54FF6D4C48838F1AEC6BEAE013DA973CF8907B36CAED3C811A31E2857130B8CD
+        D3CC33D87A47B9AB108AE2FED23F271236F52E5A3B1E51B68354006B57DF6D25
+        C1C1176D86494CCC6A0DF20000000049454E44AE426082}
+    end
+    object lblUser: TLabel
+      Align = alClient
+      Position.Point = '(55,0)'
+      Width = 265.000000000000000000
+      Height = 41.000000000000000000
+      Padding.Rect = '(5,0,0,0)'
+      TabOrder = 1
+      Font.Size = 16.000000000000000000
+      Font.Style = [fsBold]
+      Text = 'User: '
+    end
+  end
+  object lbTweets: TListBox
+    Align = alClient
+    Position.Point = '(3,85)'
+    Locked = True
+    Width = 314.000000000000000000
+    Height = 390.000000000000000000
+    Padding.Rect = '(3,3,3,5)'
+    TabOrder = 1
+    ItemHeight = 40.000000000000000000
+  end
+  object Rectangle2: TRectangle
+    Align = alTop
+    Position.Point = '(0,41)'
+    Width = 320.000000000000000000
+    Height = 41.000000000000000000
+    Fill.Color = xFFF1F2F2
+    object btnTweet: TButton
+      Align = alRight
+      Position.Point = '(237,3)'
+      Width = 80.000000000000000000
+      Height = 35.000000000000000000
+      Padding.Rect = '(3,3,3,3)'
+      OnClick = btnTweetClick
+      TabOrder = 0
+      Text = 'Tweet'
+    end
+    object edtTweet: TEdit
+      Align = alClient
+      Position.Point = '(3,3)'
+      Width = 228.000000000000000000
+      Height = 35.000000000000000000
+      Padding.Rect = '(3,3,3,3)'
+      TabOrder = 1
+      KeyboardType = vktDefault
+      Password = False
+    end
+  end
+  object StyleBook1: TStyleBook
+    Resource.Strings = (
+      'object _1: TLayout'
+      '  Align = alClient'
+      '  Position.Point = '#39'(0,33)'#39
+      '  Width = 504.000000000000000000'
+      '  Height = 411.000000000000000000'
+      '  object TLayout'
+      '    StyleName = '#39'Edit1Style1'#39
+      '    Position.Point = '#39'(206,193)'#39
+      '    Width = 91.000000000000000000'
+      '    Height = 24.000000000000000000'
+      '    DesignVisible = False'
+      '    object TRectangle'
+      '      StyleName = '#39'background'#39
+      '      Align = alContents'
+      '      Locked = True'
+      '      Width = 91.000000000000000000'
+      '      Height = 24.000000000000000000'
+      '      HitTest = False'
+      '      Fill.Color = xFFBBE4E9'
+      '      Stroke.Color = xFF5D738E'
+      '      XRadius = 4.000000000000000000'
+      '      YRadius = 4.000000000000000000'
+      '    end'
+      '    object TContent'
+      '      StyleName = '#39'content'#39
+      '      Align = alContents'
+      '      Position.Point = '#39'(4,4)'#39
+      '      Locked = True'
+      '      Width = 83.000000000000000000'
+      '      Height = 16.000000000000000000'
+      '      Padding.Rect = '#39'(4,4,4,4)'#39
+      '      HitTest = False'
+      '    end'
+      '    object TBrushObject'
+      '      StyleName = '#39'foreground'#39
+      '      Brush.Color = xFF373737'
+      '    end'
+      '    object TBrushObject'
+      '      StyleName = '#39'selection'#39
+      '      Brush.Color = x80306EEA'
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'lbTweetsStyle1'#39
+      '    Position.Point = '#39'(193,140)'#39
+      '    Width = 116.999992370605500000'
+      '    Height = 131.000000000000000000'
+      '    DesignVisible = False'
+      '    object TBrushObject'
+      '      StyleName = '#39'AlternatingRowBackground'#39
+      '      Brush.Color = x20879BB1'
+      '    end'
+      '    object TRectangle'
+      '      StyleName = '#39'background'#39
+      '      Align = alContents'
+      '      Locked = True'
+      '      Width = 116.999992370605500000'
+      '      Height = 131.000000000000000000'
+      '      Margins.Rect = '#39'(1,1,1,1)'#39
+      '      HitTest = False'
+      '      Fill.Color = xFFE6EDF7'
+      '      Stroke.Color = xFF8E8E8E'
+      '      object TLayout'
+      '        StyleName = '#39'content'#39
+      '        Align = alClient'
+      '        Position.Point = '#39'(1,1)'#39
+      '        Width = 106.999992370605500000'
+      '        Height = 121.000000000000000000'
+      '        ClipChildren = True'
+      '        object TRectangle'
+      '          StyleName = '#39'selection'#39
+      '          Width = 50.000000000000000000'
+      '          Height = 50.000000000000000000'
+      '          HitTest = False'
+      '          Fill.Color = x80306EEA'
+      '          Stroke.Kind = bkNone'
+      '        end'
+      '      end'
+      '      object TScrollBar'
+      '        StyleName = '#39'vscrollbar'#39
+      '        Align = alRight'
+      '        Position.Point = '#39'(107.999992370605,1)'#39
+      '        Width = 8.000000000000000000'
+      '        Height = 121.000000000000000000'
+      '        StyleLookup = '#39'lbTweetsvscrollbar1'#39
+      '        TabOrder = 1'
+      '        Max = 100.000000000000000000'
+      '        Orientation = orVertical'
+      '        SmallChange = 1.000000000000000000'
+      '      end'
+      '      object TScrollBar'
+      '        StyleName = '#39'hscrollbar'#39
+      '        Align = alBottom'
+      '        Position.Point = '#39'(1,122)'#39
+      '        Width = 114.999992370605500000'
+      '        Height = 8.000000000000000000'
+      '        StyleLookup = '#39'lbTweetshscrollbar1'#39
+      '        TabOrder = 2'
+      '        Max = 100.000000000000000000'
+      '        Orientation = orHorizontal'
+      '        SmallChange = 1.000000000000000000'
+      '      end'
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'lbTweetsvscrollbar1'#39
+      '    Position.Point = '#39'(164,179)'#39
+      '    Width = 176.000000000000000000'
+      '    Height = 53.000000000000000000'
+      '    Margins.Rect = '#39'(1,1,1,1)'#39
+      '    DesignVisible = False'
+      '    object TTrack'
+      '      StyleName = '#39'htrack'#39
+      '      Align = alClient'
+      '      Position.Point = '#39'(1,1)'#39
+      '      Locked = True'
+      '      Width = 174.000000000000000000'
+      '      Height = 51.000000000000000000'
+      '      StyleLookup = '#39'scrollbarhtrackstyle'#39
+      '      TabOrder = 0'
+      '      Max = 1.000000000000000000'
+      '      Orientation = orHorizontal'
+      '      ViewportSize = 0.100000001490116100'
+      '    end'
+      '    object TTrack'
+      '      StyleName = '#39'vtrack'#39
+      '      Align = alClient'
+      '      Position.Point = '#39'(1,1)'#39
+      '      Locked = True'
+      '      Width = 174.000000000000000000'
+      '      Height = 51.000000000000000000'
+      '      StyleLookup = '#39'scrollbarvtrackstyle'#39
+      '      TabOrder = 1'
+      '      Max = 1.000000000000000000'
+      '      Orientation = orHorizontal'
+      '      ViewportSize = 0.100000001490116100'
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'lbTweetshscrollbar1'#39
+      '    Position.Point = '#39'(164,179)'#39
+      '    Width = 176.000000000000000000'
+      '    Height = 53.000000000000000000'
+      '    Margins.Rect = '#39'(1,1,1,1)'#39
+      '    DesignVisible = False'
+      '    object TTrack'
+      '      StyleName = '#39'htrack'#39
+      '      Align = alClient'
+      '      Position.Point = '#39'(1,1)'#39
+      '      Locked = True'
+      '      Width = 174.000000000000000000'
+      '      Height = 51.000000000000000000'
+      '      StyleLookup = '#39'scrollbarhtrackstyle'#39
+      '      TabOrder = 0'
+      '      Max = 1.000000000000000000'
+      '      Orientation = orHorizontal'
+      '      ViewportSize = 0.100000001490116100'
+      '    end'
+      '    object TTrack'
+      '      StyleName = '#39'vtrack'#39
+      '      Align = alClient'
+      '      Position.Point = '#39'(1,1)'#39
+      '      Locked = True'
+      '      Width = 174.000000000000000000'
+      '      Height = 51.000000000000000000'
+      '      StyleLookup = '#39'scrollbarvtrackstyle'#39
+      '      TabOrder = 1'
+      '      Max = 1.000000000000000000'
+      '      Orientation = orHorizontal'
+      '      ViewportSize = 0.100000001490116100'
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'ListBoxItem1Style1'#39
+      '    Position.Point = '#39'(208,194)'#39
+      '    Width = 88.000000000000000000'
+      '    Height = 24.000000000000000000'
+      '    DesignVisible = False'
+      '    object TCheckBox'
+      '      StyleName = '#39'check'#39
+      '      Align = alLeft'
+      '      Width = 20.000000000000000000'
+      '      Height = 24.000000000000000000'
+      '      StyleLookup = '#39'ListBoxItem1check1'#39
+      '      TabOrder = 0'
+      '      CanFocus = False'
+      '      DisableFocusEffect = True'
+      '    end'
+      '    object TText'
+      '      BindingName = '#39'text'#39
+      '      StyleName = '#39'text'#39
+      '      Align = alClient'
+      '      Position.Point = '#39'(23,1)'#39
+      '      Width = 62.000000000000000000'
+      '      Height = 22.000000000000000000'
+      '      Padding.Rect = '#39'(3,1,3,1)'#39
+      '      HitTest = False'
+      '      HorzTextAlign = taLeading'
+      '      Text = '#39'Text'#39
+      '      WordWrap = False'
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'ListBoxItem1check1'#39
+      '    Position.Point = '#39'(191,195)'#39
+      '    Width = 121.000000000000000000'
+      '    Height = 21.000000000000000000'
+      '    DesignVisible = False'
+      '    object TLayout'
+      '      Align = alLeft'
+      '      Width = 20.000000000000000000'
+      '      Height = 21.000000000000000000'
+      '      object TRectangle'
+      '        Align = alCenter'
+      '        Position.Point = '#39'(4,5)'#39
+      '        Locked = True'
+      '        Width = 13.000000000000000000'
+      '        Height = 13.000000000000000000'
+      '        Padding.Rect = '#39'(1,1,-1,-1)'#39
+      '        HitTest = False'
+      '        Fill.Color = x35000000'
+      '        Stroke.Kind = bkNone'
+      '        XRadius = 4.000000000000000000'
+      '        YRadius = 4.000000000000000000'
+      '      end'
+      '      object TRectangle'
+      '        StyleName = '#39'background'#39
+      '        Align = alCenter'
+      '        Position.Point = '#39'(3,4)'#39
+      '        Locked = True'
+      '        Width = 13.000000000000000000'
+      '        Height = 13.000000000000000000'
+      '        HitTest = False'
+      '        Fill.Kind = bkGradient'
+      '        Fill.Gradient.Points = <'
+      '          item'
+      '            Color = xFFE8ECF1'
+      '          end'
+      '          item'
+      '            Color = xFF879BB1'
+      '            Offset = 0.498181819915771500'
+      '          end'
+      '          item'
+      '            Color = xFFE4E7ED'
+      '            Offset = 0.956363618373870900'
+      '          end'
+      '          item'
+      '            Color = xFF8793B1'
+      '            Offset = 1.000000000000000000'
+      '          end>'
+      '        Stroke.Color = xFF6E7FAB'
+      '        XRadius = 2.000000000000000000'
+      '        YRadius = 2.000000000000000000'
+      '        object TPath'
+      '          StyleName = '#39'checkmark'#39
+      '          Align = alCenter'
+      '          Position.Point = '#39'(2,-2)'#39
+      '          Locked = True'
+      '          Width = 13.000000000000000000'
+      '          Height = 13.000000000000000000'
+      '          Padding.Rect = '#39'(2,-3,-3,0)'#39
+      '          HitTest = False'
+      '          Fill.Color = x00292929'
+      '          Stroke.Kind = bkNone'
+      '          Data.Path = {'
+      
+        '            2E00000000000000C73BB343505D8543010000003333B443FEB4' +
+        '864302000000'
+      
+        '            8941B0432B97894302000000D3DDAB4331088E4302000000D508' +
+        'A7436D079443'
+      
+        '            01000000D508A7436D079443020000001934A2432B079A430200' +
+        '0000B6839E43'
+      
+        '            68A19F430200000052F89B43C9D6A4430100000052F89B43C9D6' +
+        'A44301000000'
+      
+        '            08EC9943772EA643020000001D3A98435A54A74302000000F212' +
+        '9743D32DA843'
+      
+        '            02000000E9769643A6BBA84301000000E9769643A6BBA8430200' +
+        '0000DB399643'
+      
+        '            BCE4A7430200000075B395439683A6430200000075E39443D598' +
+        'A44301000000'
+      
+        '            75E39443D598A44301000000501D9443FCD9A243020000002D02' +
+        '9343F658A043'
+      
+        '            02000000C1FA9143987E9E43020000008D079143444B9D430100' +
+        '00008D079143'
+      
+        '            444B9D43020000005A14904373189C4302000000F8038F436A4C' +
+        '9B4302000000'
+      
+        '            E3D58D430AE79A4301000000E3D58D430AE79A4302000000F8D3' +
+        '8F43EEDC9843'
+      
+        '            020000006DA79143AED7974302000000005093434CD797430100' +
+        '000000509343'
+      
+        '            4CD797430200000085BB9443AED79743020000005C4F9643C9B6' +
+        '994302000000'
+      
+        '            E10A984319749D4301000000E10A984319749D430100000066E6' +
+        '984360559F43'
+      
+        '            020000005A049C43853B9A4302000000BC04A043464695430200' +
+        '00008DE7A443'
+      
+        '            1F759043010000008DE7A4431F75904302000000C1CAA94339A4' +
+        '8B4302000000'
+      
+        '            4891AE43AAF1874302000000C73BB343505D854301000000C73B' +
+        'B343505D8543'
+      '            030000000000000000000000}'
+      '          object TColorAnimation'
+      '            Duration = 0.100000001490116100'
+      '            Trigger = '#39'IsChecked=true'#39
+      '            StartValue = x00034E9E'
+      '            StopValue = xFF111111'
+      '            PropertyName = '#39'Fill.Color'#39
+      '          end'
+      '          object TColorAnimation'
+      '            Duration = 0.000100000004749745'
+      '            Trigger = '#39'IsChecked=false'#39
+      '            StartValue = xFF111111'
+      '            StopValue = x00034E9E'
+      '            PropertyName = '#39'Fill.Color'#39
+      '          end'
+      '        end'
+      '      end'
+      '    end'
+      '    object TText'
+      '      StyleName = '#39'text'#39
+      '      Align = alClient'
+      '      Position.Point = '#39'(21,2)'#39
+      '      Locked = True'
+      '      Width = 99.000000000000000000'
+      '      Height = 19.000000000000000000'
+      '      Padding.Rect = '#39'(1,2,1,0)'#39
+      '      HitTest = False'
+      '      Text = '#39'CheckBox'#39
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'UserStyle'#39
+      '    Position.Point = '#39'(152,186)'#39
+      '    Width = 201.000000000000000000'
+      '    Height = 40.000000000000000000'
+      '    object TRectangle'
+      '      StyleName = '#39'Rectangle3'#39
+      '      Align = alClient'
+      '      Width = 201.000000000000000000'
+      '      Height = 40.000000000000000000'
+      '      Fill.Color = claWhite'
+      '      object TImage'
+      '        StyleName = '#39'Image1'#39
+      '        Align = alLeft'
+      '        Width = 32.000000000000000000'
+      '        Height = 40.000000000000000000'
+      '        Bitmap.PNG = {'
+      
+        '          FFD8FFE000104A46494600010101006000600000FFDB0043000101' +
+        '0101010101'
+      
+        '          010101010101010101010101010101010101010101010101010101' +
+        '0101010101'
+      
+        '          01010101010101010101010101010101010101010101010101FFDB' +
+        '0043010101'
+      
+        '          010101010101010101010101010101010101010101010101010101' +
+        '0101010101'
+      
+        '          010101010101010101010101010101010101010101010101010101' +
+        '010101FFC0'
+      
+        '          0011080026001603012200021101031101FFC4001F000001050101' +
+        '0101010100'
+      
+        '          000000000000000102030405060708090A0BFFC400B51000020103' +
+        '0302040305'
+      
+        '          0504040000017D0102030004110512213141061351610722711432' +
+        '8191A10823'
+      
+        '          42B1C11552D1F02433627282090A161718191A25262728292A3435' +
+        '363738393A'
+      
+        '          434445464748494A535455565758595A636465666768696A737475' +
+        '767778797A'
+      
+        '          838485868788898A92939495969798999AA2A3A4A5A6A7A8A9AAB2' +
+        'B3B4B5B6B7'
+      
+        '          B8B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6D7D8D9DAE1E2E3E4E5E6' +
+        'E7E8E9EAF1'
+      
+        '          F2F3F4F5F6F7F8F9FAFFC4001F0100030101010101010101010000' +
+        '0000000001'
+      
+        '          02030405060708090A0BFFC400B511000201020404030407050404' +
+        '0001027700'
+      
+        '          0102031104052131061241510761711322328108144291A1B1C109' +
+        '233352F015'
+      
+        '          6272D10A162434E125F11718191A262728292A35363738393A4344' +
+        '4546474849'
+      
+        '          4A535455565758595A636465666768696A737475767778797A8283' +
+        '8485868788'
+      
+        '          898A92939495969798999AA2A3A4A5A6A7A8A9AAB2B3B4B5B6B7B8' +
+        'B9BAC2C3C4'
+      
+        '          C5C6C7C8C9CAD2D3D4D5D6D7D8D9DAE2E3E4E5E6E7E8E9EAF2F3F4' +
+        'F5F6F7F8F9'
+      
+        '          FAFFDA000C03010002110311003F00FEFC1E4D878F7C707BFA0F51' +
+        'DC77EBC0E0'
+      
+        '          799FC57F8A7E03F837E02F15FC4CF893E22D3BC2BE0AF066897DAF' +
+        'F88B5BD527'
+      
+        '          8EDED2C74FD3E179E6CBCA544B2CA104505BC65A69E79238A25691' +
+        '954F05FB46'
+      
+        '          FED2BF0CFF00663F869AD7C4EF8A7ABC5A6687A55B335B5AC4C25D' +
+        '5B5ABF08CD'
+      
+        '          6FA568F65C49797B74EBE5C51210A326495E3851DD7F9E1F851E19' +
+        'F8F9FF0005'
+      
+        '          B9F8CD37C44F8F0758F879FB027C2AF1424BA07C17D2EEE6B5B4F8' +
+        'A7AEE9732C'
+      
+        '          F6767E2ABC88C6DAF476C7C99B5F9B234FB72FFD93A7461DEEAE07' +
+        'CE62F8932F'
+      
+        '          A58FA593616A43179B554A5F5483BCA953BA6EAE26CDFB2A693E66' +
+        'E5ABE97BA6'
+      
+        '          BF46E13E00C5E6F96E278AB399CB28E0ECB2A4563335AABDEC657B' +
+        'AE4CBF2BA5'
+      
+        '          2B3C562EACAD08A8AE4A4DB9D4969C92FE83BF640F8BFAE7C7DFD9' +
+        'C3E147C64D'
+      
+        '          6F4B9F48BCF88DE1A1E2A874FB8B76B6B8B7D2B55BBB8B9D0BCFB6' +
+        '65063965D1'
+      
+        '          5EC66906065A4DD8F9B82B84D3BE2A58E8FF00B4B5C7ECF5E0D8AD' +
+        '5348F02FEC'
+      
+        '          FDE1EF14EA1A2E96A90D87869EFF00C677DA0F866C7ECF0284B592' +
+        'EF46D3AEDA'
+      
+        '          0B72062D2CA274011B92BB166787A49529CE9D59D3F72A4D4934E7' +
+        '1B466B75AA'
+      
+        '          6A49AE8D5BA1E063322C4627155B1386A70C16171352588C2E1AAC' +
+        'D29D3C2D66'
+      
+        '          A787BF359BE6A328494B69A6A4B46AFF00CE0FFC1587E336A3F1DB' +
+        'F680F12FC3'
+      
+        '          F83529E7F0DFC27D5078660D3565DD6716A91E9D6979A8DF343F73' +
+        'ED2F7973F6'
+      
+        '          567601D12C046BF2EF15F597ECEFFF00053AF851FB377EC81E0BF8' +
+        '5BE13F875A'
+      
+        '          E5CFC4FF0008F87EE3495D1C5A4767E15B8D5DE49A693C45A86B8A' +
+        'E1A5B5BB9A'
+      
+        '          6179736F0C526A12485ADF6AEE13D7E76FEDD1F0DB56F815FF0005' +
+        '17F8CDE1DF'
+      
+        '          15A4F6DE14F8FAF65F133E19EAB740AE9F7B7B2D8D8D9F8834A82E' +
+        '1BE46BAB6D'
+      
+        '          62CAFF00CC88379AA752B125364B193F557FC13EBF657D1FE3D7C6' +
+        '986EFC536A'
+      
+        '          B71E09F8762CFC45AD584B1E62D5B53FB431D234CB856EB6A2781A' +
+        'EAE6365292'
+      
+        '          2431C4E363B57F08E2B37E3FE19F18F33C8329973663C4D8BAB4A8' +
+        'E331747DA4'
+      
+        '          2183AF5633955A3296908E1E11B2E5BF2C60B43FD3FCCB85BC29C7' +
+        '7D1EB84F38'
+      
+        '          CE954ABC37C2F93E5F9E7D5F2DC43A0B1999AC1C61530B8A8D26A5' +
+        '5655F155A5'
+      
+        '          4A7194A33F692BF32D59FAC7FF0004CEF83BF1013C35F11BF69EF8' +
+        'E771737BF1'
+      
+        '          7FF698D66C3C49A87DB14DADC68DE0BD221960F07E850DACA15EC2' +
+        'CA1B7B9B9B'
+      
+        '          CB6D3D4ECB4B7BAB781879D14A68AFD52B4821B4B2B682D6358A08' +
+        '2358628D54'
+      
+        '          2A2468A0222AA80A02A801401C01C515FDC792E43432ECAF0583AD' +
+        '378BAF4A8C'
+      
+        '          7EB189AAA32A95EBCFF795AAC9B4F59D494DEEEC9A5AA5AFF983C4' +
+        'DC4F8AE20C'
+      
+        '          F330CDA11860A8626AA585C1505CB430783A308D1C261A9462E294' +
+        '2861E9D3A6'
+      
+        '          B457E5E67AB67C93FB617EC49F047F6D5F87D1F823E2FE9171F6CD' +
+        '1EEC6A5E0C'
+      
+        '          F1B68130D33C65E07D70288D356F0EEAEA8ED0BB6D097567711CF6' +
+        '17B0FEEEEE'
+      
+        '          DA50136FC1FF00B2DFEC1DFB4B7EC93F13A4BCF0B7ED15E03F1FF8' +
+        '12FC5BE9BA'
+      
+        '          C5AF8CBE1D6B161E2FD5B46B7949B54D42FB41F13C3A14FABDA23B' +
+        'A43AA45A4D'
+      
+        '          A972CCD3C12EE2B4515E271870FE4D8AC4E579CD7CBE84B35C0E2E' +
+        '94B0998479'
+      
+        '          E9E2A837CA9A8D5A73849C64B49425CD192D1A6B43ED78338CB89E' +
+        '870D67BC2D'
+      
+        '          0CE3132E1DC5E124EBE515E343158393E78BE6853C4D2AAE8CB992' +
+        '9295174DA9'
+      
+        '          A534F9F53F6AED10C96906E383B4EEC127E618CE0B73B7AE01C903' +
+        '0327192514'
+      '          57DD53FE1C3FC11FFD251F9424BD357B5D2DDEC95923FFD9}'
+      '      end'
+      '      object TText'
+      '        BindingName = '#39'Txttweet'#39
+      '        StyleName = '#39'Text1'#39
+      '        Align = alClient'
+      '        Position.Point = '#39'(32,0)'#39
+      '        Width = 169.000000000000000000'
+      '        Height = 40.000000000000000000'
+      '        Font.Size = 12.000000000000000000'
+      '        HorzTextAlign = taLeading'
+      '        Text = '#39'usr: Hi all!'#39
+      '      end'
+      '    end'
+      '  end'
+      '  object TLayout'
+      '    StyleName = '#39'AdminStyle'#39
+      '    Position.Point = '#39'(151,185)'#39
+      '    Width = 201.000000000000000000'
+      '    Height = 40.000000000000000000'
+      '    DesignVisible = False'
+      '    object TRectangle'
+      '      StyleName = '#39'Rectangle3'#39
+      '      Align = alClient'
+      '      Width = 201.000000000000000000'
+      '      Height = 40.000000000000000000'
+      '      object TImage'
+      '        StyleName = '#39'Image1'#39
+      '        Align = alLeft'
+      '        Width = 50.000000000000000000'
+      '        Height = 40.000000000000000000'
+      '        Bitmap.PNG = {'
+      
+        '          89504E470D0A1A0A0000000D494844520000003000000030080600' +
+        '00005702F9'
+      
+        '          87000000017352474200AECE1CE90000000467414D410000B18F0B' +
+        'FC61050000'
+      
+        '          00097048597300000EC300000EC301C76FA86400000D6249444154' +
+        '6843C55A09'
+      
+        '          5456D5164ED3A8F7225DDA5C9A4F5329B5720A5F68F9C4345B61CE' +
+        '9633A64669'
+      
+        '          0EA508AF7C4EA869E5884F31B4C4500141101010F91984872020F3' +
+        '3CABA00C0A'
+      
+        '          02012A7E6F7FE7BFB8D4A5C9649DB5F65AD77BF7DEDFB787B3CFBD' +
+        '3F3EF248CB'
+      
+        '          AC56E2A69BC84211179114914A1168C26BDEE333EA5097367FF96A' +
+        '2D0CC68984'
+      
+        '          88D4B56AF5083A1A3E86DE9D0C31D8A80346BCF1B4125EF7927B7C' +
+        '461DEA6A36'
+      
+        '          B4A58FBF64F513D4706698C448D47AE29BD8BDF42338AE9B0DD7AD' +
+        '4B706C97B5'
+      
+        '          125EF31E9F5187BAB4D1AA431FF4F5A72D967E8948CD938FB78159' +
+        'FFE7B0665A'
+      
+        '          7F6C5FFC21ECAC273548A84B1BDAD2077D693E1F7A5BB1DC3B99B9' +
+        '579FFF3BBE'
+      
+        '          FAB01B564CE98755D38D9B24B4A50FFAD2AA41DF0FB5A5B610A86F' +
+        '97765830AA'
+      
+        '          2B1699F5C4E2660A7DD0177D6A4110E3A12C73F17AB3D7CB869863' +
+        'DA19738777'
+      
+        '          6951A14FFA268608B15A74BD22DECA9F6B6F80A9EFBE8CE9EF3D1C' +
+        'A16F62104B'
+      
+        '          84982DB61CDB3CDA0A66039EC3A7835F7AA8420C620973C79662CF' +
+        '43E7BAD14B'
+      
+        '          860F95F8ED892116314588DDECB5B675AB56183DF0F9160960EA90' +
+        '97E1B2EC5D'
+      
+        '          CCFFA0EB7DFD118B98C27C4DB3D98B83B867DA19B408F9F91F7647' +
+        'ACED64E0A4'
+      
+        '          2552768EC7CCA19DEFEB9798821DDBDC009E120775BD3B3DD5AC00' +
+        'E68EE80697'
+      
+        '          151FA1DAD70A38B30588DD0984AE41E28E716A92DD6B5F1193D822' +
+        '86CD09A2BF'
+      
+        '          18C3C4A863A3039821D9B5993508BAAD3350AD5B0BC4EC02520E01' +
+        'C9BF01097B'
+      
+        '          81B3B640D85A141F9E8D1F3F1B8829D25AB707424C628B904393D7' +
+        '077462DAE7'
+      
+        '          E93F0C60FA7B9DB1D0CC08DFCF1E8443DF8D46B4BD052A02D609C9' +
+        '3D42DA09C8'
+      
+        '          3EAE974C0F20CD451F44FCCF12D436E0B4E8055B21CB613AEC171A' +
+        'CBC9ACDF1B'
+      
+        '          C4D402208726ADC7C4EA7F8F1BB4C5F4F75FC312B3AE88DE321C91' +
+        'DB472376CF'
+      
+        '          142439CC438EA3054ADC16A2F6E40ADC0CFF4108ED06921C818C63' +
+        '405E00901F'
+      
+        '          A8890EC8F507727CF441A44A5089BF4A2BFD575A4AEC425702814B' +
+        '00BFCF50E7'
+      
+        '          3E0ECB3EEE861982496CE1C0973D7269F45AC00C1C5E3715F696A3' +
+        '603BB70FE0'
+      
+        '          F509E06F2119B394CCD908E1ADD20E92C9149276D3679944F385F0' +
+        '2DF2770591'
+      
+        '          ED0DA4BB6A55900A45CB9E38BD467C2E054ECC033C2709566F8549' +
+        '6CAD0AE4D2'
+      
+        '          E815D9B7FB33806E918CBDFE38F8757FC07B8A4C90F9C0296B2062' +
+        'BDB4C876C9'
+      
+        '          A4F473AAF476A6BB90F715E292F97342FA5E927752ABC251B13928' +
+        'C1DBEBDB28'
+      
+        '          429211B25C92F38524E953C1EAA730894D0EC23CB2B1EC59B2B285' +
+        '1F1BA9AC47'
+      
+        '          6E1A0C37AB8112C03420E02B09E0DF40E4F7FA8D98F88BF4F56120' +
+        '4B5AE34101'
+      
+        '          3038D546122C8366F031920426234492C2E4784D81DBF2010A93D8' +
+        'E4402E8D6D'
+      
+        '          230331285F3CBA1B706C222A8F4EC311CBB72580A95A00DF0AE86D' +
+        '01B0A7D9DB'
+      
+        '          39F51508920ADC43EE0840824ED82701ECB82B804FE16239506112' +
+        '9B1CC84584'
+      
+        '          9C1AB5628CBBB7075C4749C6BF4582DD04555E7D052480C80D5201' +
+        '0127096633'
+      
+        '          43B29A2DD9659BE4937CF09DC27B7CC67D92212D94727B0B691508' +
+        '900A784E46'
+      
+        '          FCEEF17A0CC136EEAE5EB3631AC55C535ECA0DE4B95C36EFB109A8' +
+        '0B58A43272'
+      
+        '          AB855876F62FFB989B981B33DB4BDAE8847E13AB0AD40741F2D23E' +
+        'B97ED26AA2'
+      
+        '          736B137394CA20E0400891438E2DE4315EB0162A4C626B9BF89BA6' +
+        '04F037318A'
+      
+        '          357CFC51FC3CAF3B2AF79B0047470BC897FA7EE5FC8E16F0789924' +
+        'C90EB20F9C'
+      
+        '          B536920CE731088E514E230AC9CBBD1C9E0552A93469B9A4FD409C' +
+        '8CDDA8CDE2'
+      
+        '          4B0E3AB58965C21D355358C424363988904B93D68B62758A593068' +
+        'D31A3E2B64'
+      
+        '          1FF89AEBB3455082C7C909CB99CE366266B33CB5712AD926692572' +
+        'AD0E32391F'
+      
+        '          A8C3F6E1E6E73910F52310CE312A01F8CC84CF7703149696796293' +
+        '43B3163FB4'
+      
+        '          878B140EEBD3514A3C4E3B070494E07CAFE1AB014F575681FD9D25' +
+        '4439EFEB4F'
+      
+        '          605EF31ECF0A663FF980BEF538C5789085AF0682E41C701F8361BD' +
+        'D52B44A186'
+      
+        '          D9A21FF9FC2502EE56329F59055501098024F85A90246DA4AA7044' +
+        '1F04A71249'
+      
+        '          5378CD7BE9F21A411DB60F6D38045400920C9F59E2BB5F7DE689D5' +
+        'E28B632CF1'
+      
+        '          C50E0628DCF7BE1CFD5F4B003F69156000428AADC12AB04D5410D2' +
+        'EF14455EEE'
+      
+        '          F119377C92B49C0A40826712E435A270AF29E89B18228D1E990F8A' +
+        'B6AD28AC10'
+      
+        '          F9BD4D9BB69837C914D5473ED68F3A6EC44419A56C0B5501C972C6' +
+        '1F04401DEA'
+      
+        '          F210A3AD1C8AD52EA3316FA229E89B181A16315B6475122FE1ADE4' +
+        '0BE98DB706'
+      
+        '          60C1926FB1D872350ED8DAA0CA65ACEC8765DA1492DEAE6F1F9ECA' +
+        '6A33CBC8A4'
+      
+        '          F0FA561B498BF1E4E6E492BEAF721EA37C2D5AB65AF97EE3CDFEF2' +
+        'F3A3FA1AE3'
+      
+        '          4B1CB19BB57A8875FE134F3C8199B32D60B371076C36D962E3163B' +
+        'EC3B700487'
+      
+        '          1CF6E2F231797F393E5DFF4AA0CE016DFAE4C94B1D0F2E2572ADA6' +
+        '919CD43C07'
+      
+        '          787E1C9F26B61638B8DF5EF9A24F9B8DB60A6386B90588496C1172' +
+        '68D27A49AC'
+      
+        '          F2DAB56B8F15AB36C076F77ED8ED3D28602E7074F680A7AF0ECE6E' +
+        'DE381B9F84'
+      
+        '          7391CEA839FEB9FE658F13852392C1D49F03BCE6BDF055EA5DA7E6' +
+        'F83C65435B'
+      
+        '          27372F78FAE8F09B9307F63AB860B7BD237608D6772B3780D8E420' +
+        '422E8D5A8F'
+      
+        '          8AB6CEC0C000EB366C86C3413738B97AC3DDCB1FDE7E8108083E8D' +
+        'D088180487'
+      
+        '          9E4164742C0A2F15A3F062114AB3A35015FDB37C8159CAB7C24894' +
+        '3A8F5292E3'
+      
+        '          3802D50196EA1975A84B1BDA06854622F4740C0282C2E1E51B88A3' +
+        '9E27E074C4'
+      
+        '          0B0E8E6EB0116C72201711726AF0E22F63B0F87221DC3CFC70DC2F' +
+        '083A923E1D'
+      
+        '          8D88E838C425A62231251DF14969F0D785E06A4525AAAA7E5772B1' +
+        'A41833ECBE'
+      
+        '          80D12663BCF6D32025461B8D3173F717B824CFEAF568435BFA4848' +
+        '4E573E23A2'
+      
+        '          E2702A3C4A05E32DC1B8B9FB2A0EE422D2E05FEB18695AD76EAFC2' +
+        'EBB80E3A71'
+      
+        '          763A3256CA9D8CA4944CA465E42027EF3CB229B9E7109B908CD8B8' +
+        '04DCB87103'
+      
+        '          C525A5D25ECE18BBDD14E31D4D30E1905E783D769BA9B48993E894' +
+        '28DDD8F804'
+      
+        '          654B1FF4459FA9E23B31250367E392111E711601815215E1402EE4' +
+        'D4D02A0C62'
+      
+        '          C45F7F6385E0904844C5242059886765E723FF5C01CE175CC4C5A2' +
+        '12D5060594'
+      
+        '          C2229C38198894D47438BBBA23E24C0CECBD7EC0F26326F8CFC921' +
+        '4A967B98A8'
+      
+        '          7B7CE674E4A8E8A6291BDAD2077DD1277DE7094666769E242B0351' +
+        'D109080A89'
+      
+        '          505CB42A90DB03D7B2D6AD5BC35536171DA4A4662257B243A0A292' +
+        'CB2829BD82'
+      
+        '          2B65E5B87CA5EC966464E5C03F2008D167E35172F90AFCC3023071' +
+        '573F58380C'
+      
+        '          C4E7FB0762ECCEFEEA1E9F5187BA996273BB0FFAA46F6230305684' +
+        'D851D1F18A'
+      
+        '          0B3909F3650F642F0A3B0D0D9F4268581412A42FB373F2F51BF472' +
+        '19CAAF56AA'
+      
+        '          7E2F28BC848ACAAA5BC2FB2969E9282BAF50CF3D425C316C6B47CC' +
+        '3CF02C26EF'
+      
+        '          7B16263F76847BB0AB7A56567E55E9D2E6761FF4C9E7E5572B1456' +
+        'A104416C72'
+      
+        '          20177222B7860460D7AE7D7B29779C6A9DBCFC021415972AC7CCD8' +
+        'A5A262B99F'
+      
+        '          86EAEA9A3BE477EDDF95129873F02F18B3477E8A74780163EC5FC0' +
+        'D06D2FC051'
+      
+        '          F70BF88C76F5BAB7FBA04FFA2606B18A8B2FAB76228748E1424E42' +
+        'DEAE2101AC'
+      
+        '          E7E80A0A0E572564DF9748592BB4EC0585844A7FA6E2DAF5EBF714' +
+        '923C18BC0D'
+      
+        '          330E74C1674EFFC0270E5D30725717EC09D8AE02B89F1D7DD2372B' +
+        '442C62129B'
+      
+        '          1CC8451BA7EB1B1200FF72085B5B3B242567202FEF028A8A4A7155' +
+        '4ACE8CA567'
+      
+        '          64AA4D78E346DD3DA5A2B212BF06AF8585730FCC3FDA13B30EF784' +
+        '997D0F6CF6'
+      
+        '          B39196A9BCAF1D7DA6896F62108B98C4260772D13631B93D703D29' +
+        '1AA5262643'
+      
+        '          101B9B8CCCCC5C5C28B88452D960EC5906C072DFA8AB431DE5E6CD' +
+        '3B8424F7E8'
+      
+        '          9662897B6F7CE3D5079FBBF6C6B8FDBDB0CADB520570B73E7D3019' +
+        'C952010650'
+      
+        '          5151A5B02E5CB8A4B0C9815CC84984DC1AB4ACF942B572E55A2426' +
+        'A6A9115A20'
+      
+        '          41704A70E6C72724A1B6F61AAE4B1B71A6AB40EA6EE2A604532924' +
+        'B7FBCFC172'
+      
+        '          EFBEB0F6EB87051E7D31D9F12D09689E7A461DEAEA89DFC0B56BD7' +
+        '5153538BB8'
+      
+        '          F8449C8D952926AD73E1C2456465E5296C72D05EEEAC1AC45C53E2' +
+        'EF42416DDB'
+      
+        '          3E86F5EB7F904990A6B271EE7C2142C3237126EAAC2A334F5596BC' +
+        '4682B9768D'
+      
+        '          721DE5328936FA4CC00ABF017206BC8D25DEF2C3EDE10198E53449' +
+        '3DA34EADE8'
+      
+        '          D6D4D62ADB4AF1C14D1B293E4F8545A8BECFC8C84542429A606F02' +
+        '39908B48A3'
+      
+        '          7F5E6C2F46A19CBFE3C64D445050989A08BE2774B2A9C2D498E374' +
+        'E2C82B2BBB'
+      
+        '          AAC8710C16159760A5872956FB0FC2DAC07F6299EF204C7731C618' +
+        '8791F2AC58'
+      
+        '          3F2A459736A5A565AAD73942E9D3D74F8764E9F9C0C03085A9CD7E' +
+        '7E17934B93'
+      
+        '          16BF8C7E12B96668688899336763876C282FEF13484BCB5265CECD' +
+        '3D8F739235'
+      
+        '          965DCDEEDC6C58BB19C346F70ED6870C86D50913CC727D07C3F70E' +
+        '46666E8E3A'
+      
+        '          A4A84B1BDA668A8FD4D42C788A4FFA9E2118C422A6C8669116F93A' +
+        '7B531CF13F'
+      
+        '          6AD4322B3D7B1AC17CF61CECD8B10B274F06234EDE5D9292D29122' +
+        '158A880D83'
+      
+        '          95EB40AC0F1C8C0DA786C0DA7F08CCDD4CF0AFBDEF20284646B3E8' +
+        '24F1E54D6C'
+      
+        '          684B1FE6E673D0437C6A19AFD5B088D9E2ABB378E40F5E2C6BB588' +
+        '02EDD0A103'
+      
+        '          5E7FBD17860E1D865166EF63D098E7613AAB3346CEED82F7CC5FC1' +
+        '5B933BA1F3'
+      
+        '          072FC2F4A3114A87BAB4D10833DBF4459FF44D8C3F65F1CF4FEF89' +
+        '2C12D925E2'
+      
+        '          23122F522052C5E0EE12DEE333EA509736B4A50FFA6AD2FA3F75A2' +
+        '9374DA7C6A'
+      '          740000000049454E44AE426082}'
+      '      end'
+      '      object TText'
+      '        BindingName = '#39'Txttweet'#39
+      '        StyleName = '#39'Text1'#39
+      '        Align = alClient'
+      '        Position.Point = '#39'(50,0)'#39
+      '        Width = 151.000000000000000000'
+      '        Height = 40.000000000000000000'
+      '        Font.Size = 12.000000000000000000'
+      '        Font.Style = [fsItalic]'
+      '        HorzTextAlign = taLeading'
+      '        Text = '#39'Admin: Hello!'#39
+      '      end'
+      '    end'
+      '  end'
+      'end')
+    Left = 16
+    Top = 152
+  end
+  object CBTimer: TTimer
+    OnTimer = CBTimerTimer
+    Left = 192
+    Top = 232
+  end
+  object CTCMDTimer: TTimer
+    OnTimer = CTCMDTimerTimer
+    Left = 208
+    Top = 136
+  end
+end

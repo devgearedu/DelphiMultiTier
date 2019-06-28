@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="Settings">
+	<CheckBoxPreference android:key="sound"
+		android:title="Sound" android:summary="Settings sound on/off"
+		android:defaultValue="true" />
+	<CheckBoxPreference android:key="vibrate"
+		android:title="Vibrate" android:summary="Setting vibrate on/off"
+		android:defaultValue="true" />
+	<EditTextPreference android:key="host"
+		android:title="Host" android:summary="Setting the server host"
+		android:defaultValue="localhost" />
+	<EditTextPreference android:key="port"
+		android:title="Port" android:summary="Setting the server port"
+		android:defaultValue="8080" />
+</PreferenceScreen>

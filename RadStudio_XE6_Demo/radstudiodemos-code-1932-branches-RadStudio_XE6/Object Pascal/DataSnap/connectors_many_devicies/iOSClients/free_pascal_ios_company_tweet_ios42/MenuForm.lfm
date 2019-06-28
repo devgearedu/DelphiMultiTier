@@ -1,0 +1,28 @@
+object frmMenu: TfrmMenu
+  Left = 0
+  Top = 0
+  ClientHeight = 480
+  ClientWidth = 320
+  Visible = False
+  StyleLookup = 'backgroundstyle'
+  object btnActiveUsers: TButton
+    Position.Point = '(32,104)'
+    Width = 257.000000000000000000
+    Height = 46.000000000000000000
+    OnClick = btnActiveUsersClick
+    TabOrder = 0
+    Font.Size = 20.000000000000000000
+    ModalResult = 1
+    Text = 'Active Users'
+  end
+  object btnLogout: TButton
+    Position.Point = '(32,168)'
+    Width = 257.000000000000000000
+    Height = 49.000000000000000000
+    OnClick = btnLogoutClick
+    TabOrder = 1
+    Font.Size = 20.000000000000000000
+    ModalResult = 1
+    Text = 'Logout'
+  end
+end

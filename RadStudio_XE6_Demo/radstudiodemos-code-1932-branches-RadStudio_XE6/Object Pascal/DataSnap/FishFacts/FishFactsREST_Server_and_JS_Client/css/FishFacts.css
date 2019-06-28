@@ -1,0 +1,102 @@
+body {
+}
+.fishname
+{
+   font-size: medium;
+   font-style: italic;
+   color: #FF0000;
+}
+.aboutText
+{
+  font-size: small;
+  color: blue;
+}
+.captiondiv
+{
+  padding: 3 3 3 3;
+  border-style: outset;
+  border-width: 1;
+  height: 100%;
+  width: 100%;
+}
+.divpadding
+{
+  padding: 3 3 3 3;
+  height: 100%;
+  width: 100%;
+}
+table
+{
+}
+table th {
+  padding: 10;
+}
+.memoDiv
+{
+  padding: 3 3 3 3;
+  background-color: white;
+  height: 200px;
+  width: 100%;
+  border-style: inset;
+  border-width: 1;
+  overflow: auto;
+}
+.imageDiv
+{
+  padding-top: 10;
+  height: 200px;
+  width: 100%;
+  border-style: inset;
+  border-width: 1;
+  background-color: white;
+  text-align: center;
+}
+.innerTable
+{
+  height: 100%;
+  width: 100%;
+}       
+.outerTable
+{
+  height: 340px;
+  width: 800px; 
+  background-color: #DADBDC;
+}
+.outerTableDiv
+{
+  width: 800px; 
+  border-width: 2; 
+  border-style: outset;
+}
+td.innertable
+{
+  height: 100%;
+  width: 100%;
+  vertical-align: top;
+}
+table.detailstable
+{
+  border-width: 1;
+  border-style: inset;
+  border-collapse: collapse;
+  font-size: Smaller;
+  font-family: sans-serif;
+  width:100%;
+  height: 100%;
+}
+td.detailstable
+{
+   width: 25%;
+        text-align:left;
+  border-width: 1;
+  border-style: inset;
+  background-color: white;
+  padding: 3 3 3 3;
+}
+th.detailstable
+{
+  text-align:left;
+  border-width: 1;
+  border-style: inset;
+  padding: 3 3 3 3;
+}

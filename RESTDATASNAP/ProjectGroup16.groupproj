@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{955DD426-C7FF-473D-818C-9FE89F1B66D7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RESTDATASNAP.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project_restClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RESTDATASNAP">
+        <MSBuild Projects="RESTDATASNAP.dproj"/>
+    </Target>
+    <Target Name="RESTDATASNAP:Clean">
+        <MSBuild Projects="RESTDATASNAP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTDATASNAP:Make">
+        <MSBuild Projects="RESTDATASNAP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project_restClient">
+        <MSBuild Projects="Project_restClient.dproj"/>
+    </Target>
+    <Target Name="Project_restClient:Clean">
+        <MSBuild Projects="Project_restClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project_restClient:Make">
+        <MSBuild Projects="Project_restClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RESTDATASNAP;Project_restClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RESTDATASNAP:Clean;Project_restClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RESTDATASNAP:Make;Project_restClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

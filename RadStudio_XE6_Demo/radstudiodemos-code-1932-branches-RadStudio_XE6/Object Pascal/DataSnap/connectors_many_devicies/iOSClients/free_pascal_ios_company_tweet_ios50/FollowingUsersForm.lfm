@@ -1,0 +1,75 @@
+object frmFollowingUsers: TfrmFollowingUsers
+  Left = 0
+  Top = 0
+  Caption = 'Following Users'
+  ClientHeight = 480
+  ClientWidth = 320
+  Visible = False
+  OnActivate = FormActivate
+  StyleLookup = 'backgroundstyle'
+  object Panel1: TPanel
+    Align = alTop
+    Width = 320.000000000000000000
+    Height = 65.000000000000000000
+    TabOrder = 0
+    object btnRefresh: TButton
+      Position.Point = '(8,11)'
+      Width = 65.000000000000000000
+      Height = 41.000000000000000000
+      ClipChildren = True
+      OnClick = btnRefreshClick
+      TabOrder = 0
+      Text = 'Refresh'
+    end
+    object btnNext: TButton
+      Position.Point = '(248,11)'
+      Width = 65.000000000000000000
+      Height = 41.000000000000000000
+      OnClick = btnNextClick
+      TabOrder = 1
+      Text = 'Next'
+    end
+    object Label1: TLabel
+      Position.Point = '(88,16)'
+      Width = 145.000000000000000000
+      Height = 33.000000000000000000
+      TabOrder = 2
+      Font.Size = 16.000000000000000000
+      Font.Style = [fsBold]
+      TextAlign = taCenter
+      Text = 'Following Users'
+    end
+  end
+  object lbFollowing: TListBox
+    Align = alClient
+    Position.Point = '(0,65)'
+    Width = 320.000000000000000000
+    Height = 415.000000000000000000
+    StyleLookup = 'lbFollowingStyle1'
+    TabOrder = 1
+    ItemHeight = 40.000000000000000000
+    MultiSelect = True
+    Sorted = True
+    ShowCheckboxes = True
+  end
+  object txtToast: TText
+    Position.Point = '(8,376)'
+    Width = 305.000000000000000000
+    Height = 50.000000000000000000
+    Opacity = 0.200000002980232200
+    Visible = False
+    Fill.Color = xFF020101
+    Font.Size = 14.000000000000000000
+    Font.Style = [fsBold]
+    Text = 'Welcome Cicciolippo'
+    object FloatAnimation1: TFloatAnimation
+      AnimationType = atInOut
+      Enabled = True
+      Duration = 2.500000000000000000
+      Trigger = 'IsVisible=true'
+      OnFinish = FloatAnimation1Finish
+      StopValue = 1.000000000000000000
+      PropertyName = 'Opacity'
+    end
+  end
+end

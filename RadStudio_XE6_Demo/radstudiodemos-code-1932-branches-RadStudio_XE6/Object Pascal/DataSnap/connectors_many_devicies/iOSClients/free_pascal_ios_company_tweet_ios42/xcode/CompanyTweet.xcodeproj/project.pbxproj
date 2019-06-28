@@ -1,0 +1,222 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7873F7C414A21D7E00DB1DF8 /* tweet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7873F7C314A21D7E00DB1DF8 /* tweet.mp3 */; };
+		78EDFDDF149F575B005C8BF1 /* cmd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 78EDFDDE149F575B005C8BF1 /* cmd.mp3 */; };
+		AA09353813E1BC6A0024EDC9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA09353713E1BC6A0024EDC9 /* Default.png */; };
+		AA34B80D13CEE78A00D32CC0 /* Icon79.png in Resources */ = {isa = PBXBuildFile; fileRef = AA34B80C13CEE78A00D32CC0 /* Icon79.png */; };
+		AA34B80F13CEE7BE00D32CC0 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = AA34B80E13CEE7BE00D32CC0 /* Icon114.png */; };
+		AA34B81113CEE7C700D32CC0 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = AA34B81013CEE7C700D32CC0 /* Icon72.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0000000008088405DC6DAC1E /* CompanyTweet.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = CompanyTweet.pas; path = ../CompanyTweet.pas; sourceTree = "<group>"; };
+		0A85A8AE10F0D28700AB8400 /* CompanyTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompanyTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A85A8B110F0D28700AB8400 /* CompanyTweet.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; path = CompanyTweet.plist; sourceTree = SOURCE_ROOT; };
+		33DC589B45DE2B0CABF18B41 /* FollowingUsersForm.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = FollowingUsersForm.pas; path = ../FollowingUsersForm.pas; sourceTree = "<group>"; };
+		5195C04A296B6D775F4B0358 /* MainForm.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = MainForm.pas; path = ../MainForm.pas; sourceTree = "<group>"; };
+		7873F7C314A21D7E00DB1DF8 /* tweet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tweet.mp3; sourceTree = "<group>"; };
+		78A5790314967EEB00AF7897 /* FollowingTweetsForm.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = FollowingTweetsForm.pas; path = ../FollowingTweetsForm.pas; sourceTree = "<group>"; };
+		78BACE1B149F7AF8001BB354 /* CTCallback.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = CTCallback.pas; path = ../CTCallback.pas; sourceTree = "<group>"; };
+		78E26BAB14960541004FC1D3 /* LockedStringListU.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = LockedStringListU.pas; path = ../LockedStringListU.pas; sourceTree = "<group>"; };
+		78EDFDDE149F575B005C8BF1 /* cmd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cmd.mp3; sourceTree = "<group>"; };
+		78F7641F149B3FB600BD6891 /* FPCProxyRegister.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = FPCProxyRegister.pas; path = ../FPCProxyRegister.pas; sourceTree = "<group>"; };
+		78F76421149B430100BD6891 /* DBXConnection.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = DBXConnection.pas; path = ../DBXConnection.pas; sourceTree = "<group>"; };
+		78F76422149B430100BD6891 /* DSRESTConnection.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = DSRESTConnection.pas; path = ../DSRESTConnection.pas; sourceTree = "<group>"; };
+		78F76423149B4C5000BD6891 /* DSFPCCallbackChannelManager.pas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; name = DSFPCCallbackChannelManager.pas; path = ../DSFPCCallbackChannelManager.pas; sourceTree = "<group>"; };
+		AA09353713E1BC6A0024EDC9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AA34B80C13CEE78A00D32CC0 /* Icon79.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon79.png; sourceTree = "<group>"; };
+		AA34B80E13CEE7BE00D32CC0 /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
+		AA34B81013CEE7C700D32CC0 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0A52AE8110F0D05300478C4F = {
+			isa = PBXGroup;
+			children = (
+				7873F7C314A21D7E00DB1DF8 /* tweet.mp3 */,
+				78EDFDDE149F575B005C8BF1 /* cmd.mp3 */,
+				78F76423149B4C5000BD6891 /* DSFPCCallbackChannelManager.pas */,
+				78BACE1B149F7AF8001BB354 /* CTCallback.pas */,
+				78F76421149B430100BD6891 /* DBXConnection.pas */,
+				78F76422149B430100BD6891 /* DSRESTConnection.pas */,
+				78F7641F149B3FB600BD6891 /* FPCProxyRegister.pas */,
+				AA09353713E1BC6A0024EDC9 /* Default.png */,
+				AA289C8A13728CEE0083B16F /* Sources */,
+				0A85A8AF10F0D28700AB8400 /* Products */,
+				AA34B81013CEE7C700D32CC0 /* Icon72.png */,
+				AA34B80E13CEE7BE00D32CC0 /* Icon114.png */,
+				AA34B80C13CEE78A00D32CC0 /* Icon79.png */,
+				0A85A8B110F0D28700AB8400 /* CompanyTweet.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		0A85A8AF10F0D28700AB8400 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A85A8AE10F0D28700AB8400 /* CompanyTweet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA289C8A13728CEE0083B16F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0000000008088405DC6DAC1E /* CompanyTweet.pas */,
+				78A5790314967EEB00AF7897 /* FollowingTweetsForm.pas */,
+				78E26BAB14960541004FC1D3 /* LockedStringListU.pas */,
+				33DC589B45DE2B0CABF18B41 /* FollowingUsersForm.pas */,
+				5195C04A296B6D775F4B0358 /* MainForm.pas */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A85A8AD10F0D28700AB8400 /* CompanyTweet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A85A8B410F0D28800AB8400 /* Build configuration list for PBXNativeTarget "CompanyTweet" */;
+			buildPhases = (
+				0A85A8B810F0D2D400AB8400 /* ShellScript */,
+				0A2C67A610F3CEFA00F48811 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CompanyTweet;
+			productName = CompanyTweet;
+			productReference = 0A85A8AE10F0D28700AB8400 /* CompanyTweet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A52AE8310F0D05300478C4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 0A52AE8610F0D05300478C4F /* Build configuration list for PBXProject "CompanyTweet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0A52AE8110F0D05300478C4F;
+			productRefGroup = 0A85A8AF10F0D28700AB8400 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A85A8AD10F0D28700AB8400 /* CompanyTweet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A2C67A610F3CEFA00F48811 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA34B80D13CEE78A00D32CC0 /* Icon79.png in Resources */,
+				AA34B80F13CEE7BE00D32CC0 /* Icon114.png in Resources */,
+				AA34B81113CEE7C700D32CC0 /* Icon72.png in Resources */,
+				AA09353813E1BC6A0024EDC9 /* Default.png in Resources */,
+				78EDFDDF149F575B005C8BF1 /* cmd.mp3 in Resources */,
+				7873F7C414A21D7E00DB1DF8 /* tweet.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A85A8B810F0D2D400AB8400 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH.or\nif [ \"$PLATFORM_NAME\" == \"iphonesimulator\" ]; then\n/usr/local/lib/fpc/2.5.1/ppcross386 -MDelphi -Tiphonesim -o$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH -B -gl -XR$SDKROOT -Fu/usr/local/lib/fpc/2.5.1/units/i386-iphonesim/fmi -Fu/Developer/Embarcadero/fmi -Fu/Developer/Embarcadero/fmi/coretext -Fu/Developer/Embarcadero/fmi/fpclib -FD$PLATFORM_DEVELOPER_BIN_DIR $PROJECT_DIR/../$PROJECT.pas\nelse\n/usr/local/lib/fpc/2.5.1/ppcrossarm -gw -g -godwarfsets -Xg -O1 -Cfvfpv2 -MDelphi -B -o$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH -Fu/usr/local/lib/fpc/2.5.1/units/arm-darwin/fmi -Fu/Developer/Embarcadero/fmi -Fu/Developer/Embarcadero/fmi/coretext -Fu/Developer/Embarcadero/fmi/fpclib -XR$SDKROOT -FD$PLATFORM_DEVELOPER_BIN_DIR  $PROJECT_DIR/../$PROJECT.pas \n# create DWARF if need\nif [ \"$DEBUGGING_SYMBOLS\" == \"YES\" ]; then\n  if [ ! -d $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME ]; then\n  mkdir $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME\n  fi\n  if [ ! -d $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents ]; then\n  mkdir $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents\n  fi\n  if [ ! -d $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources ]; then\n  mkdir $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources\n  fi\n  if [ ! -d $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF ]; then\n  mkdir $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF\n  fi\n\n  cp $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents/Info.plist $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Info.plist\n  cp $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents/Resources/DWARF/$EXECUTABLE_NAME $DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Resources/DWARF/$EXECUTABLE_NAME\n  \n  rm $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents/Info.plist\n  rm $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents/Resources/DWARF/$EXECUTABLE_NAME\n  rmdir $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents/Resources/DWARF\n  rmdir $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents/Resources\n  rmdir $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM/Contents\n  rmdir $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/$EXECUTABLE_NAME.dSYM\nrm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/*.o\nrm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/*.rst\nrm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/*.res\nrm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/*.ppu\nrm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/*.or\nrm -f $BUILT_PRODUCTS_DIR/$EXECUTABLE_FOLDER_PATH/*.lfm\n\nfi\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A52AE8510F0D05300478C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fabio moschella (2NW25YL9PU)";
+				COPY_PHASE_STRIP = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "DE586B28-548E-4E3F-9D6A-D8BAAF2049CE";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv6 armv7";
+			};
+			name = Release;
+		};
+		0A85A8B310F0D28800AB8400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = CompanyTweet.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PRODUCT_NAME = CompanyTweet;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A52AE8610F0D05300478C4F /* Build configuration list for PBXProject "CompanyTweet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A52AE8510F0D05300478C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A85A8B410F0D28800AB8400 /* Build configuration list for PBXNativeTarget "CompanyTweet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A85A8B310F0D28800AB8400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A52AE8310F0D05300478C4F /* Project object */;
+}

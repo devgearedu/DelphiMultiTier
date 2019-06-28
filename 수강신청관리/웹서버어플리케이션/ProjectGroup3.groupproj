@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A35A3DE3-2B54-41C9-BFD9-AA011FD5FA01}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Pweb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\새 폴더\Project23.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Pweb">
+        <MSBuild Projects="Pweb.dproj"/>
+    </Target>
+    <Target Name="Pweb:Clean">
+        <MSBuild Projects="Pweb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Pweb:Make">
+        <MSBuild Projects="Pweb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project23">
+        <MSBuild Projects="..\새 폴더\Project23.dproj"/>
+    </Target>
+    <Target Name="Project23:Clean">
+        <MSBuild Projects="..\새 폴더\Project23.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project23:Make">
+        <MSBuild Projects="..\새 폴더\Project23.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Pweb;Project23"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Pweb:Clean;Project23:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Pweb:Make;Project23:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

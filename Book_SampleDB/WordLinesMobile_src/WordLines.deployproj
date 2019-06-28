@@ -1,0 +1,162 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+    <ProjectExtensions>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup Condition="'$(Platform)'=='Win64'"/>
+    <ItemGroup Condition="'$(Platform)'=='Android'">
+        <DeployFile Include="Android\Release\libWordLines.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libWordLines.so</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\libWordLines.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>WordLines\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libWordLines.so</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="Android\Base\AndroidManifest.xml" Condition="'$(Config)'=='Base'">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="C:\Work\WordLinesMobile\Resources\icons\wl72.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="C:\Work\WordLinesMobile\Resources\icons\wl36.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\res\drawable-ldpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Resources\dictionary_en.txt">
+            <RemoteDir>WordLines\assets\internal\</RemoteDir>
+            <RemoteName>dictionary_en.txt</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Resources\dictionary_ru.txt">
+            <RemoteDir>WordLines\assets\internal\</RemoteDir>
+            <RemoteName>dictionary_ru.txt</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="C:\Work\WordLinesMobile\Resources\icons\wl96.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Android\Base\libWordLines.so" Condition="'$(Config)'=='Base'">
+            <RemoteDir>WordLines\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libWordLines.so</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="Resources\dictionary_fr.txt">
+            <RemoteDir>WordLines\assets\internal\</RemoteDir>
+            <RemoteName>dictionary_fr.txt</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="c:\program files\embarcadero\rad studio\12.0\lib\android\release\classes.dex" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\classes\</RemoteDir>
+            <RemoteName>classes.dex</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="c:\program files\embarcadero\rad studio\12.0\lib\android\debug\classes.dex" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>WordLines\classes\</RemoteDir>
+            <RemoteName>classes.dex</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="C:\Work\WordLinesMobile\Resources\icons\wl48.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="C:\Work\WordLinesMobile\Resources\icons\wl144.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Android\Release\AndroidManifest.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="Win32\Debug\WordLines.rsm" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>WordLines.rsm</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Resources\dictionary_en.txt">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>dictionary_en.txt</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Resources\dictionary_ru.txt">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>dictionary_ru.txt</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Resources\dictionary_fr.txt">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>dictionary_fr.txt</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+        </DeployFile>
+        <DeployFile Include="Win32\Debug\WordLines.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>WordLines\</RemoteDir>
+            <RemoteName>WordLines.exe</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+</Project>

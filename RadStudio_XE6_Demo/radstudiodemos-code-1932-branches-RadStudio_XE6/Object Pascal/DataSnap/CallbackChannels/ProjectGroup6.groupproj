@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{504C736B-D1FE-4860-9BEA-4E1D8C8E516D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ChannelsServerProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DBXClientChannels.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ChannelsServerProject">
+        <MSBuild Projects="ChannelsServerProject.dproj"/>
+    </Target>
+    <Target Name="ChannelsServerProject:Clean">
+        <MSBuild Projects="ChannelsServerProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ChannelsServerProject:Make">
+        <MSBuild Projects="ChannelsServerProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DBXClientChannels">
+        <MSBuild Projects="DBXClientChannels.dproj"/>
+    </Target>
+    <Target Name="DBXClientChannels:Clean">
+        <MSBuild Projects="DBXClientChannels.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBXClientChannels:Make">
+        <MSBuild Projects="DBXClientChannels.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ChannelsServerProject;DBXClientChannels"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ChannelsServerProject:Clean;DBXClientChannels:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ChannelsServerProject:Make;DBXClientChannels:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

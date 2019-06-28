@@ -1,0 +1,229 @@
+﻿<!-- !DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" -->
+<html>
+  <head>
+    <title>Fish Facts</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/FishFacts.css" />
+    <script type="text/javascript" src="js/base64.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/serverfunctionexecutor.js"></script>
+    <script type="text/javascript" src="js/connection.js"></script>
+    <script type="text/javascript" src="<#serverfunctionsjs>"></script>
+    <script type="text/javascript">
+function serverMethods()
+{
+  return new TFishFactsServerMethods(connectionInfo);
+}
+
+function addOption(selectbox,text,value )
+{
+  var optn = document.createElement("OPTION");
+  optn.text = text;
+  optn.value = value;
+  selectbox.options.add(optn);
+}
+
+function getList()
+{
+  return document.getElementById('list');
+}
+
+function getUp()
+{
+  return document.getElementById('up');
+}
+
+function getDown()
+{
+  return document.getElementById('down');
+}
+
+function refreshFacts()
+{
+  var list = getList();
+  var s = serverMethods().GetKeys().result;
+  var len = s.length;
+
+  for (i=0; i < len; i++)
+  {
+    var optn = document.createElement("OPTION");
+    optn.text = s[i];
+    optn.value = s[i];
+    list.options.add(optn);
+  }
+  if (list.length > 0)
+  {
+    list.selectedIndex = 0;
+  }
+  selectionChange();
+}
+
+function setInnerText(id, s)
+{
+  var e = document.getElementById(id);
+  if (e != null)
+  {
+    e.innerHTML = s;
+  }
+}
+
+function roundNumber(num, dec)
+{
+  var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+  return result;
+}
+
+function selectionChange()
+{
+  var list = getList();
+  getUp().disabled = (list.length == 0) || (list.selectedIndex == 0);
+  getDown().disabled = (list.length == 0) || (list.selectedIndex == list.length-1);
+  var key = list.value;
+
+  var s = serverMethods().GetFacts(key);
+  if (s.result)
+  {
+    var img = document.getElementById('image');
+    if (img != null)
+    {
+      img.src = serverMethods().GetImage_URL(key);
+    }
+    setInnerText('about', 'About the ' + s.ACommonName);
+    setInnerText('picturecaption', s.ACommonName);
+    setInnerText('category', s.ACategory);
+    setInnerText('species', s.ASpeciesName);
+    setInnerText('lengthcm', roundNumber(s.ALengthCm, 2));
+    setInnerText('lengthin', roundNumber(s.ALengthIn, 2));
+
+    var notes = serverMethods().GetNotes(key);
+    setInnerText('memo', notes.ANotes);
+  }
+}
+
+function onSelectionChange()
+{
+  selectionChange();
+}
+
+function up()
+{
+  var list = getList();
+  if (list.selectedIndex > 0)
+  {
+    list.selectedIndex--;
+    selectionChange();
+  }
+}
+
+function down()
+{
+  var list = getList();
+  if (list.selectedIndex < list.length-1)
+  {
+    list.selectedIndex++;
+    selectionChange();
+  }
+}
+
+function onUp()
+{
+  up();
+}
+
+function onDown()
+{
+  down();
+}
+    </script>
+  </head>
+  <body onload="refreshFacts()">
+      <h1>Fish Facts </h1>
+      <div id="contentdiv" class="contentdiv">
+        <div class="outerTableDiv">
+          <table class="outerTable">
+            <tr>
+              <td class="innertable" style="width:100%">
+                <table class="innerTable">
+                  <tr>
+                    <td class="innertable" style="width: 50%">
+                      <div class="divpadding">
+                        <table id="fishimageandtitle" class="innerTable">
+                          <tr>
+                            <td class="innertable">
+                              <div class="imagediv">
+                              <img id="image" alt="" xstyle="width:100%;background-color:blue">
+                              </div></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="captiondiv"><span id="picturecaption" class="fishname">Clown Triggerfish</span>
+                              </div></td>
+                          </tr>
+                        </table>
+                      </div></td>
+                    <td class="innertable">
+                      <div class="divpadding">
+                        <table class="innerTable">
+                          <tr>
+                            <td>
+                              <div class="captiondiv"><span id="about" class="aboutText">About goes here</span>
+                              </div></td>
+                          </tr>
+                          <tr>
+                            <td class="innertable">
+                              <div id="memo" class="memoDiv"> Details go here </div></td>
+                          </tr>
+                        </table>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td class="innertable" colspan="2">
+                      <table class="innertable">
+                        <tr>
+                          <td>
+                            <table class="innertable">
+                            <tr>
+                            <td>
+                                <table class="detailstable">
+                                <tr>
+                                  <th  class="detailstable">Category</th>
+                                  <th class="detailstable">Species Name</th>
+                                  <th class="detailstable">Length(cm)</th>
+                                  <th class="detailstable" style="width:100%">Length(in)</th>
+                                </tr>
+                                <tr>
+                                <td class="detailstable"><span id="category"></span></td>
+                                <td class="detailstable"><span id="species"></span></td>
+                                <td class="detailstable" style="text-align: right"><span id="lengthcm"></span></td>
+                                <td class="detailstable" style="width:100%; text-align:right"><span id="lengthin"></span></td>
+                                </tr>
+                                </table>
+                            </td>
+                            <td class ="innertable" style="width:2em">
+                              <table class="innertable" >
+                              <tr>
+                                <td><button id="up" style="width:2em;height:2em;padding-top:.5em" onclick="onUp();">^</button></td>
+                              </tr>
+                              <tr>
+                                <td><button id="down" style="width:2em;height:2em" onclick="onDown();">v</button></td>
+                              </tr>
+                              </table>
+                            </td>                            
+                            </table> 
+                          </td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                </table></td>
+              <td class="innertable" style="WIDTH: 0%">
+                <table class="innerTable">
+                  <tr>
+                    <td class="innerTable"><select id="list" onchange="onSelectionChange()" size="4" style="border-style: none; width: 100%; height: 100%"></select></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </body>
+</html>

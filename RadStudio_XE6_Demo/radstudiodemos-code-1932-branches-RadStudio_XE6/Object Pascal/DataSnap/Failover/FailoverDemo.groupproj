@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{C1C9F6D4-7653-4778-9D2C-C03A94EEAD1D}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="Failover.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="MyServer.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="Failover">
+			<MSBuild Projects="Failover.dproj"/>
+		</Target>
+		<Target Name="Failover:Clean">
+			<MSBuild Targets="Clean" Projects="Failover.dproj"/>
+		</Target>
+		<Target Name="Failover:Make">
+			<MSBuild Targets="Make" Projects="Failover.dproj"/>
+		</Target>
+		<Target Name="MyServer">
+			<MSBuild Projects="MyServer.dproj"/>
+		</Target>
+		<Target Name="MyServer:Clean">
+			<MSBuild Targets="Clean" Projects="MyServer.dproj"/>
+		</Target>
+		<Target Name="MyServer:Make">
+			<MSBuild Targets="Make" Projects="MyServer.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="Failover;MyServer"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="Failover:Clean;MyServer:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="Failover:Make;MyServer:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

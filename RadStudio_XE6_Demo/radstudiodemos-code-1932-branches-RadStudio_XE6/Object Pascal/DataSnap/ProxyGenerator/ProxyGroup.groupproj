@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E8F5914C-78CD-4A5D-9D23-C3DC4E30A8AB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DSProxyGen.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DSProxyReg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SampleProxyGenerator.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DSProxyGen">
+        <MSBuild Projects="DSProxyGen.dproj"/>
+    </Target>
+    <Target Name="DSProxyGen:Clean">
+        <MSBuild Projects="DSProxyGen.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DSProxyGen:Make">
+        <MSBuild Projects="DSProxyGen.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DSProxyReg">
+        <MSBuild Projects="DSProxyReg.dproj"/>
+    </Target>
+    <Target Name="DSProxyReg:Clean">
+        <MSBuild Projects="DSProxyReg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DSProxyReg:Make">
+        <MSBuild Projects="DSProxyReg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SampleProxyGenerator">
+        <MSBuild Projects="SampleProxyGenerator.dproj"/>
+    </Target>
+    <Target Name="SampleProxyGenerator:Clean">
+        <MSBuild Projects="SampleProxyGenerator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleProxyGenerator:Make">
+        <MSBuild Projects="SampleProxyGenerator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DSProxyGen;DSProxyReg;SampleProxyGenerator"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DSProxyGen:Clean;DSProxyReg:Clean;SampleProxyGenerator:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DSProxyGen:Make;DSProxyReg:Make;SampleProxyGenerator:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

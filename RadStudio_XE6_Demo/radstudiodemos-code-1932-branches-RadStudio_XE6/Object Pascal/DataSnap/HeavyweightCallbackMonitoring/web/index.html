@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>DataSnap Heavyweight Callback JavaScript REST Monitoring Client</title>
+
+  <script type="text/javascript" src="js/json2.js"></script>
+  <script type="text/javascript" src="js/ServerFunctions.js"></script>
+  <script type="text/javascript" src="js/ServerFunctionExecutor.js"></script>
+  <script type="text/javascript" src="js/CallbackFramework.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+  <div class="title">First Callback:</div>
+  <textarea id="CB1Memo" cols="36" rows="5"></textarea><br />
+  <button type="button" id="ButtonFirstStart" onclick="startCB1()">START</button> <button type="button" id="ButtonFirstStop" onclick="stopCB1()" disabled="true">STOP</button><br />
+  <br />
+  <div class="title">Second Callback:</div>
+  <textarea id="CB2Memo" cols="36" rows="5"></textarea><br />
+  <button type="button" id="ButtonSecondStart" onclick="startCB2()">START</button> <button type="button" id="ButtonSecondStop" onclick="stopCB2()" disabled="true">STOP</button><br />
+  <br />
+  <button type="button" id="ButtonAllStop" onclick="stopAllCallbacks()" disabled="true">STOP ALL CALLBACKS</button>
+</body>
+</html>

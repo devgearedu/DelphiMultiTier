@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="DBXUtils">
+  <class name="EDBXMigrator">
+    <ancestor name="Exception" namespace="SysUtils">
+      <methodref name="Create@" visibility="class private">
+      </methodref>
+      <methodref name="Destroy@" visibility="class private">
+      </methodref>
+      <methodref name="SetInnerException" visibility="protected">
+      </methodref>
+      <methodref name="SetStackInfo" visibility="protected">
+      </methodref>
+      <methodref name="GetStackTrace" visibility="protected">
+      </methodref>
+      <methodref name="RaisingException" visibility="public">
+      </methodref>
+      <methodref name="Create" visibility="public">
+      </methodref>
+      <methodref name="CreateFmt" visibility="public">
+      </methodref>
+      <methodref name="CreateRes" visibility="public">
+      </methodref>
+      <methodref name="CreateRes" visibility="public">
+      </methodref>
+      <methodref name="CreateResFmt" visibility="public">
+      </methodref>
+      <methodref name="CreateResFmt" visibility="public">
+      </methodref>
+      <methodref name="CreateHelp" visibility="public">
+      </methodref>
+      <methodref name="CreateFmtHelp" visibility="public">
+      </methodref>
+      <methodref name="CreateResHelp" visibility="public">
+      </methodref>
+      <methodref name="CreateResHelp" visibility="public">
+      </methodref>
+      <methodref name="CreateResFmtHelp" visibility="public">
+      </methodref>
+      <methodref name="CreateResFmtHelp" visibility="public">
+      </methodref>
+      <methodref name="Destroy" visibility="public">
+      </methodref>
+      <methodref name="GetBaseException" visibility="public">
+      </methodref>
+      <methodref name="ToString" visibility="public">
+      </methodref>
+      <propertyref name="BaseException" visibility="public">
+      </propertyref>
+      <propertyref name="HelpContext" visibility="public">
+      </propertyref>
+      <propertyref name="InnerException" visibility="public">
+      </propertyref>
+      <propertyref name="Message" visibility="public">
+      </propertyref>
+      <propertyref name="StackTrace" visibility="public">
+      </propertyref>
+      <propertyref name="StackInfo" visibility="public">
+      </propertyref>
+      <methodref name="RaiseOuterException" visibility="public">
+      </methodref>
+      <methodref name="ThrowOuterException" visibility="public">
+      </methodref>
+      <ancestor name="TObject" namespace="System">
+        <methodref name="Create" visibility="public">
+        </methodref>
+        <methodref name="Free" visibility="public">
+        </methodref>
+        <methodref name="InitInstance" visibility="public">
+        </methodref>
+        <methodref name="CleanupInstance" visibility="public">
+        </methodref>
+        <methodref name="ClassType" visibility="public">
+        </methodref>
+        <methodref name="ClassName" visibility="public">
+        </methodref>
+        <methodref name="ClassNameIs" visibility="public">
+        </methodref>
+        <methodref name="ClassParent" visibility="public">
+        </methodref>
+        <methodref name="ClassInfo" visibility="public">
+        </methodref>
+        <methodref name="InstanceSize" visibility="public">
+        </methodref>
+        <methodref name="InheritsFrom" visibility="public">
+        </methodref>
+        <methodref name="MethodAddress" visibility="public">
+        </methodref>
+        <methodref name="MethodAddress" visibility="public">
+        </methodref>
+        <methodref name="MethodName" visibility="public">
+        </methodref>
+        <methodref name="FieldAddress" visibility="public">
+        </methodref>
+        <methodref name="FieldAddress" visibility="public">
+        </methodref>
+        <methodref name="GetInterface" visibility="public">
+        </methodref>
+        <methodref name="GetInterfaceEntry" visibility="public">
+        </methodref>
+        <methodref name="GetInterfaceTable" visibility="public">
+        </methodref>
+        <methodref name="UnitName" visibility="public">
+        </methodref>
+        <methodref name="Equals" visibility="public">
+        </methodref>
+        <methodref name="GetHashCode" visibility="public">
+        </methodref>
+        <methodref name="ToString" visibility="public">
+        </methodref>
+        <methodref name="SafeCallException" visibility="public">
+        </methodref>
+        <methodref name="AfterConstruction" visibility="public">
+        </methodref>
+        <methodref name="BeforeDestruction" visibility="public">
+        </methodref>
+        <methodref name="Dispatch" visibility="public">
+        </methodref>
+        <methodref name="DefaultHandler" visibility="public">
+        </methodref>
+        <methodref name="NewInstance" visibility="public">
+        </methodref>
+        <methodref name="FreeInstance" visibility="public">
+        </methodref>
+        <methodref name="Destroy" visibility="public">
+        </methodref>
+      </ancestor>
+    </ancestor>
+  </class>
+  <array name="TStringArray">
+    <element type="string" />
+  </array>
+  <class name="TDBXIntObj">
+    <ancestor name="TObject" namespace="System">
+      <methodref name="Create" visibility="public">
+      </methodref>
+      <methodref name="Free" visibility="public">
+      </methodref>
+      <methodref name="InitInstance" visibility="public">
+      </methodref>
+      <methodref name="CleanupInstance" visibility="public">
+      </methodref>
+      <methodref name="ClassType" visibility="public">
+      </methodref>
+      <methodref name="ClassName" visibility="public">
+      </methodref>
+      <methodref name="ClassNameIs" visibility="public">
+      </methodref>
+      <methodref name="ClassParent" visibility="public">
+      </methodref>
+      <methodref name="ClassInfo" visibility="public">
+      </methodref>
+      <methodref name="InstanceSize" visibility="public">
+      </methodref>
+      <methodref name="InheritsFrom" visibility="public">
+      </methodref>
+      <methodref name="MethodAddress" visibility="public">
+      </methodref>
+      <methodref name="MethodAddress" visibility="public">
+      </methodref>
+      <methodref name="MethodName" visibility="public">
+      </methodref>
+      <methodref name="FieldAddress" visibility="public">
+      </methodref>
+      <methodref name="FieldAddress" visibility="public">
+      </methodref>
+      <methodref name="GetInterface" visibility="public">
+      </methodref>
+      <methodref name="GetInterfaceEntry" visibility="public">
+      </methodref>
+      <methodref name="GetInterfaceTable" visibility="public">
+      </methodref>
+      <methodref name="UnitName" visibility="public">
+      </methodref>
+      <methodref name="Equals" visibility="public">
+      </methodref>
+      <methodref name="GetHashCode" visibility="public">
+      </methodref>
+      <methodref name="ToString" visibility="public">
+      </methodref>
+      <methodref name="SafeCallException" visibility="public">
+      </methodref>
+      <methodref name="AfterConstruction" visibility="public">
+      </methodref>
+      <methodref name="BeforeDestruction" visibility="public">
+      </methodref>
+      <methodref name="Dispatch" visibility="public">
+      </methodref>
+      <methodref name="DefaultHandler" visibility="public">
+      </methodref>
+      <methodref name="NewInstance" visibility="public">
+      </methodref>
+      <methodref name="FreeInstance" visibility="public">
+      </methodref>
+      <methodref name="Destroy" visibility="public">
+      </methodref>
+    </ancestor>
+    <members>
+      <field name="FValue" type="Integer" visibility="private" />
+      <property name="Value" visibility="public" read="FValue" write="FValue" type="Integer" />
+      <constructor name="Create" visibility="public">
+        <parameters>
+          <parameter name="AValue" type="Integer" />
+        </parameters>
+      </constructor>
+    </members>
+  </class>
+  <function name="DBXGetConnectionList" visibility="public">
+    <parameters>
+      <retval type="TStrings" />
+    </parameters>
+  </function>
+  <function name="DBXConnectionExists" visibility="public">
+    <parameters>
+      <parameter name="AConnectionName" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="DBXGetConnectionFile" visibility="public">
+    <parameters>
+      <parameter name="ACreateIfMissing" type="Boolean">
+        <value>
+          False
+        </value>
+      </parameter>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="DBXCreateConnection" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AConnectionName" type="string" paramflags="const" />
+      <parameter name="AProperties" type="string" paramflags="const" />
+    </parameters>
+  </procedure>
+  <procedure name="DBXCreateConnection" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AConnectionName" type="string" />
+      <parameter name="AProperties" type="TStrings" />
+    </parameters>
+  </procedure>
+  <function name="DBXRemoveConnection" visibility="public">
+    <parameters>
+      <parameter name="AConnectionName" type="string" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="DBXSchemaToString" visibility="public">
+    <parameters>
+      <parameter name="AConnectionName" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetProcedures" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <retval type="TDBXProceduresTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetProcedureSources" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <retval type="TDBXProcedureSourcesTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetTables" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <retval type="TDBXTablesTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetColumns" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="ATableName" type="string" paramflags="const" />
+      <retval type="TDBXColumnsTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetColumnConstraints" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="ATableName" type="string" paramflags="const" />
+      <parameter name="AColumnName" type="string" paramflags="const" />
+      <retval type="TDBXColumnConstraintsTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetProcedureParameters" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="AProcName" type="string" paramflags="const" />
+      <retval type="TDBXProcedureParametersTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetIndexes" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="ATableName" type="string" paramflags="const" />
+      <retval type="TDBXIndexesTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetIndexColumns" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="ATableName" type="string" paramflags="const" />
+      <parameter name="AIndexName" type="string" paramflags="const" />
+      <retval type="TDBXIndexColumnsTableStorage" />
+    </parameters>
+  </function>
+  <function name="DBXGetCollectionCount" visibility="public">
+    <parameters>
+      <parameter name="ACollection" type="TDBXTable" paramflags="const" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="DBXGetTableCount" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="DBXGetTableList" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="ATableType" type="string">
+        <value>
+          
+        </value>
+      </parameter>
+      <retval type="TStringArray" />
+    </parameters>
+  </function>
+  <function name="DBXGetValueAsString" visibility="public">
+    <parameters>
+      <parameter name="AValue" type="TDBXValue" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXTableExists" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="ATableName" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="DBXProcedureExists" visibility="public">
+    <parameters>
+      <parameter name="AProvider" type="TDBXMetaDataProvider" paramflags="const" />
+      <parameter name="AProcedureName" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="DBXGetHostName" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetHostName" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AConnectionName" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetDataBaseName" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetDataBaseName" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AConnectionName" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetConnectionName" visibility="public">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetProcedureSource" visibility="public">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <parameter name="AProcedure" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DBXGetRowCount" visibility="public">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <parameter name="ATableName" type="string" paramflags="const" />
+      <retval type="Int64" />
+    </parameters>
+  </function>
+  <function name="DBXGetConnection" visibility="public">
+    <parameters>
+      <parameter name="AConnectionName" type="string" paramflags="const" />
+      <parameter name="AUserName" type="string" paramflags="const">
+        <value>
+          
+        </value>
+      </parameter>
+      <parameter name="APassword" type="string" paramflags="const">
+        <value>
+          
+        </value>
+      </parameter>
+      <retval type="TDBXConnection" />
+    </parameters>
+  </function>
+  <function name="DBXGetMetaProvider" visibility="public">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <retval type="TDBXMetaDataProvider" />
+    </parameters>
+  </function>
+  <function name="DBXGetDataTypes" visibility="public">
+    <parameters>
+      <parameter name="AConnection" type="TDBXConnection" paramflags="const" />
+      <retval type="TStrings" />
+    </parameters>
+  </function>
+  <function name="DBXGetTypeFromName" visibility="public">
+    <parameters>
+      <parameter name="ATypes" type="TStrings" />
+      <parameter name="AName" type="string" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+</namespace>

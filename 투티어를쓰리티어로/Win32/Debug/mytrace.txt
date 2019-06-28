@@ -1,0 +1,1311 @@
+--- new start of FireDAC Trace ---
+22702785619 11:08:58.008 -=#!!! FireDAC Tracer started !!!#=-
+22702809369 11:08:58.018  . CreateConnection [ConnectionDef="sample"]
+22702809996 11:08:58.018  . CreateTransaction [ConnectionDef="sample"]
+22702810093 11:08:58.018  . CreateTransaction [ConnectionDef="sample"]
+22702814139 11:08:58.020 >> Open [ConnectionDef="sample"]
+22702814199 11:08:58.020     >> Definition [Name="sample"]
+22702814217 11:08:58.020          . Database=D:\Book_SampleDB\SAMPLE.IB
+22702814420 11:08:58.020          . User_Name=SYSDBA
+22702814596 11:08:58.020          . Password=*****
+22702814607 11:08:58.020          . DriverID=IB
+22702814619 11:08:58.020          . Name=sample
+22702814631 11:08:58.020          . MonitorBy=FlatFile
+22702814646 11:08:58.020          . ConnectionDef=sample
+22702814701 11:08:58.020     << Definition [Name="sample"]
+22702816465 11:08:58.021     >> FireDAC info
+22702816535 11:08:58.021          . Tool=RAD Studio 10.3
+22702816549 11:08:58.021          . FireDAC=17.0.0 (Build 93731)
+22702816757 11:08:58.021          . Platform=Windows 32 bit
+22702816852 11:08:58.021          . Defines=FireDAC_NOLOCALE_META;FireDAC_MONITOR
+22702816947 11:08:58.021     << FireDAC info
+22702826970 11:08:58.025      . isc_attach_database [dbname="D:\Book_SampleDB\SAMPLE.IB", params="user_name=SYSDBA,password=*********,sql_dialect=3"]
+22702840137 11:08:58.030      . isc_database_info [db_handle=$00C53290, info=12]
+22702841119 11:08:58.031     >> Driver log
+22702841145 11:08:58.031          . Loading driver IB ...
+22702841158 11:08:58.031     << Driver log
+22702843598 11:08:58.032      . isc_database_info [db_handle=$00C53290, info=12]
+22702844167 11:08:58.032     >> Client info
+22702844203 11:08:58.032          . Brand=InterBase
+22702844218 11:08:58.032          . Client version=1302009900
+22702844231 11:08:58.032          . Client DLL name=C:\Windows\system32\gds32.dll
+22702844244 11:08:58.032     << Client info
+22702844323 11:08:58.032      . isc_database_info [db_handle=$00C53290, info=12]
+22702846464 11:08:58.033     >> Session info
+22702846490 11:08:58.033          . Current catalog=
+22702846503 11:08:58.033          . Current schema=
+22702846516 11:08:58.033          . Server version=WI-V13.3.0.328
+
+22702846528 11:08:58.033     << Session info
+22702846624 11:08:58.033 << Open [ConnectionDef="sample"]
+22702852886 11:08:58.035  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22702853040 11:08:58.035 >> Prepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702853212 11:08:58.035     >> StartTransaction [ConnectionDef="sample"]
+22702853405 11:08:58.036          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22702853939 11:08:58.036     << StartTransaction [ConnectionDef="sample"]
+22702854265 11:08:58.036      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702854774 11:08:58.036      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, C.RDB$RELATION_NAME AS TABLE_NAME, C.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, 'A' AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$RELATION_CONSTRAINTS C LEFT JOIN RDB$INDEX_SEGMENTS S ON C.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE C.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY' AND C.RDB$RELATION_NAME = ? ORDER BY 7", dialect=3]
+22702859411 11:08:58.038      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702859590 11:08:58.038      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702859918 11:08:58.038      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702860156 11:08:58.038 << Prepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702860331 11:08:58.038 >> Open [Command="Table PKey Fields (DEPT.DEPT)"]
+22702860502 11:08:58.038     >> Sent
+22702860608 11:08:58.038          . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='DEPT']
+22702860663 11:08:58.039     << Sent
+22702863282 11:08:58.040      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702863877 11:08:58.040 << Open [Command="Table PKey Fields (DEPT.DEPT)"]
+22702865842 11:08:58.041 >> Fetch [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)"]
+22702865931 11:08:58.041      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702866337 11:08:58.041      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22702866552 11:08:58.041 << Fetch [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)", RowsAffected=0]
+22702866653 11:08:58.041  . Eof reached [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)"]
+22702866779 11:08:58.041 >> Close [Command="Table PKey Fields (DEPT.DEPT)"]
+22702867092 11:08:58.041     >> Commit [ConnectionDef="sample", Retaining=False]
+22702867184 11:08:58.041         >> Unprepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702867377 11:08:58.041              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22702867648 11:08:58.041         << Unprepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702867691 11:08:58.041          . isc_commit_transaction [tra_handle=$00C531A0]
+22702868053 11:08:58.041     << Commit [ConnectionDef="sample", Retaining=False]
+22702868138 11:08:58.042 << Close [Command="Table PKey Fields (DEPT.DEPT)"]
+22702868216 11:08:58.042  . Destroy [Command="Table PKey Fields (DEPT.DEPT)"]
+22702869044 11:08:58.042  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22702869284 11:08:58.042  . Preprocessed [CMD="DEPT", FROM="", VP=0, VPE=0, OBP=0, CK=20]
+22702869396 11:08:58.042 >> Prepare [Command="Table Indexes (DEPT)"]
+22702869548 11:08:58.042     >> StartTransaction [ConnectionDef="sample"]
+22702869649 11:08:58.042          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22702870019 11:08:58.042     << StartTransaction [ConnectionDef="sample"]
+22702870325 11:08:58.042      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702870618 11:08:58.043      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, C.RDB$CONSTRAINT_NAME AS CONSTRAINT_NAME, CASE WHEN I.RDB$UNIQUE_FLAG IS NULL OR I.RDB$UNIQUE_FLAG = 0 THEN 0 WHEN I.RDB$UNIQUE_FLAG = 1 THEN CASE  WHEN C.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY' THEN 2 ELSE 1 END END AS INDEX_TYPE FROM RDB$INDICES I LEFT OUTER JOIN RDB$RELATION_CONSTRAINTS C ON  I.RDB$RELATION_NAME = C.RDB$RELATION_NAME AND I.RDB$INDEX_NAME = C.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? ORDER BY 7 DESC, 5 ASC", dialect=3]
+22702874155 11:08:58.044      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702874290 11:08:58.044      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702874770 11:08:58.044      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702874985 11:08:58.044 << Prepare [Command="Table Indexes (DEPT)"]
+22702875108 11:08:58.044 >> Open [Command="Table Indexes (DEPT)"]
+22702875284 11:08:58.044     >> Sent
+22702875390 11:08:58.044          . Var [N=0, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='DEPT']
+22702875467 11:08:58.045     << Sent
+22702875518 11:08:58.045      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702875985 11:08:58.045 << Open [Command="Table Indexes (DEPT)"]
+22702876113 11:08:58.045 >> Fetch [ATable="Table", Command="Table Indexes (DEPT)"]
+22702876244 11:08:58.045      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702876547 11:08:58.045     >> Fetched
+22702876616 11:08:58.045          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22702876781 11:08:58.045          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702876937 11:08:58.045          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702877102 11:08:58.045          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='DEPT']
+22702877264 11:08:58.045          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_CODE']
+22702877518 11:08:58.045          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data=NULL]
+22702877682 11:08:58.045          . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=1]
+22702877804 11:08:58.045     << Fetched
+22702878022 11:08:58.046      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702878119 11:08:58.046      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22702878463 11:08:58.046 << Fetch [ATable="Table", Command="Table Indexes (DEPT)", RowsAffected=1]
+22702878567 11:08:58.046  . Eof reached [ATable="Table", Command="Table Indexes (DEPT)"]
+22702878740 11:08:58.046 >> Close [Command="Table Indexes (DEPT)"]
+22702878972 11:08:58.046     >> Commit [ConnectionDef="sample", Retaining=False]
+22702879038 11:08:58.046         >> Unprepare [Command="Table Indexes (DEPT)"]
+22702879264 11:08:58.046              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22702879568 11:08:58.046         << Unprepare [Command="Table Indexes (DEPT)"]
+22702879613 11:08:58.046          . isc_commit_transaction [tra_handle=$00C531A0]
+22702880044 11:08:58.046     << Commit [ConnectionDef="sample", Retaining=False]
+22702880116 11:08:58.046 << Close [Command="Table Indexes (DEPT)"]
+22702880341 11:08:58.046  . Destroy [Command="Table Indexes (DEPT)"]
+22702880905 11:08:58.047  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22702881097 11:08:58.047  . Preprocessed [CMD="I_CODE", FROM="", VP=0, VPE=0, OBP=0, CK=20]
+22702881198 11:08:58.047 >> Prepare [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702881367 11:08:58.047     >> StartTransaction [ConnectionDef="sample"]
+22702881512 11:08:58.047          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22702882117 11:08:58.047     << StartTransaction [ConnectionDef="sample"]
+22702882431 11:08:58.047      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702882808 11:08:58.047      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, CASE WHEN I.RDB$INDEX_TYPE = 1 THEN 'D' ELSE 'A' END AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$INDICES I LEFT JOIN RDB$INDEX_SEGMENTS S ON I.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? AND I.RDB$INDEX_NAME = ? ORDER BY 7", dialect=3]
+22702884601 11:08:58.048      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702884798 11:08:58.048      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702885083 11:08:58.048      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702885279 11:08:58.048      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702885552 11:08:58.049 << Prepare [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702885671 11:08:58.049 >> Open [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702885883 11:08:58.049     >> Sent
+22702885972 11:08:58.049          . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='DEPT']
+22702886115 11:08:58.049          . Var [N=1, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='I_CODE']
+22702886290 11:08:58.049     << Sent
+22702886318 11:08:58.049      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702886976 11:08:58.049 << Open [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702887089 11:08:58.049 >> Fetch [ATable="Table", Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702887246 11:08:58.049      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702887787 11:08:58.049     >> Fetched
+22702887855 11:08:58.049          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22702887914 11:08:58.050          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702890534 11:08:58.051          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702890774 11:08:58.051          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='DEPT']
+22702890997 11:08:58.051          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_CODE']
+22702891036 11:08:58.051          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='CODE']
+22702891273 11:08:58.051          . Var [N=6, Type=SQL_INT64, Prec=0, Scale=0, Size=8, Data=1]
+22702891397 11:08:58.051          . Var [N=7, Type=SQL_TEXT, Prec=0, Scale=0, Size=1, Data='A']
+22702891516 11:08:58.051          . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702891610 11:08:58.051     << Fetched
+22702891690 11:08:58.051      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702891919 11:08:58.051      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22702892225 11:08:58.051 << Fetch [ATable="Table", Command="Table Index Fields (DEPT.DEPT, I_CODE)", RowsAffected=1]
+22702892309 11:08:58.051  . Eof reached [ATable="Table", Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702892436 11:08:58.051 >> Close [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702892685 11:08:58.051     >> Commit [ConnectionDef="sample", Retaining=False]
+22702892914 11:08:58.052         >> Unprepare [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702892969 11:08:58.052              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22702893328 11:08:58.052         << Unprepare [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702893362 11:08:58.052          . isc_commit_transaction [tra_handle=$00C531A0]
+22702893732 11:08:58.052     << Commit [ConnectionDef="sample", Retaining=False]
+22702893784 11:08:58.052 << Close [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702894011 11:08:58.052  . Destroy [Command="Table Index Fields (DEPT.DEPT, I_CODE)"]
+22702895078 11:08:58.052 >> TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702895147 11:08:58.052      . CreateCommand [ConnectionDef="sample"]
+22702895431 11:08:58.053     >> Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702895767 11:08:58.053          . Preprocessed [CMD="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", FROM="DEPT", VP=0, VPE=0, OBP=52, CK=1]
+22702895870 11:08:58.053         >> StartTransaction [ConnectionDef="sample"]
+22702896013 11:08:58.053              . isc_start_multiple [count=1, params="write,read_committed,rec_version,nowait"]
+22702896361 11:08:58.053         << StartTransaction [ConnectionDef="sample"]
+22702896429 11:08:58.053          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702896663 11:08:58.053          . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", dialect=3]
+22702898088 11:08:58.054          . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702898336 11:08:58.054          . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702898655 11:08:58.054          . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702898812 11:08:58.054     << Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702898889 11:08:58.054 << TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702899183 11:08:58.054 >> Define(TFDDatSManager) [ADatSManager="Manager", ATable="<nil>", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702899440 11:08:58.054      . CreateMetaInfoCommand [ConnectionDef="sample"]
+22702899580 11:08:58.054     >> Prepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702899736 11:08:58.054         >> StartTransaction [ConnectionDef="sample"]
+22702899956 11:08:58.054              . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22702900420 11:08:58.055         << StartTransaction [ConnectionDef="sample"]
+22702900872 11:08:58.055          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702901158 11:08:58.055          . isc_dsql_prepare [tra_handle=$00C531F0, stmt_handle=$00C53100, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, C.RDB$RELATION_NAME AS TABLE_NAME, C.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, 'A' AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$RELATION_CONSTRAINTS C LEFT JOIN RDB$INDEX_SEGMENTS S ON C.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE C.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY' AND C.RDB$RELATION_NAME = ? ORDER BY 7", dialect=3]
+22702902530 11:08:58.055          . isc_dsql_sql_info [stmt_handle=$00C53100, info=21]
+22702902791 11:08:58.056          . isc_dsql_describe [stmt_handle=$00C53100, dialect=3]
+22702905619 11:08:58.057          . isc_dsql_describe_bind [stmt_handle=$00C53100, dialect=3]
+22702905896 11:08:58.057     << Prepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702905994 11:08:58.057     >> Open [Command="Table PKey Fields (DEPT.DEPT)"]
+22702906282 11:08:58.057         >> Sent
+22702906378 11:08:58.057              . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='DEPT']
+22702906474 11:08:58.057         << Sent
+22702906501 11:08:58.057          . isc_dsql_execute2 [tra_handle=$00C531F0, stmt_handle=$00C53100, dialect=3]
+22702908069 11:08:58.058     << Open [Command="Table PKey Fields (DEPT.DEPT)"]
+22702908186 11:08:58.058     >> Fetch [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)"]
+22702908243 11:08:58.058          . isc_dsql_fetch [stmt_handle=$00C53100, dialect=3]
+22702910605 11:08:58.059          . isc_dsql_free_statement [stmt_handle=$00C53100, option="DSQL_close"]
+22702910899 11:08:58.059     << Fetch [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)", RowsAffected=0]
+22702910985 11:08:58.059      . Eof reached [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)"]
+22702911193 11:08:58.059     >> Close [Command="Table PKey Fields (DEPT.DEPT)"]
+22702911281 11:08:58.059         >> Commit [ConnectionDef="sample", Retaining=False]
+22702911495 11:08:58.059             >> Unprepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702911632 11:08:58.059                  . isc_dsql_free_statement [stmt_handle=$00C53100, option="DSQL_drop"]
+22702911980 11:08:58.059             << Unprepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22702912013 11:08:58.059              . isc_commit_transaction [tra_handle=$00C531F0]
+22702912385 11:08:58.059         << Commit [ConnectionDef="sample", Retaining=False]
+22702912438 11:08:58.059     << Close [Command="Table PKey Fields (DEPT.DEPT)"]
+22702912683 11:08:58.060      . Destroy [Command="Table PKey Fields (DEPT.DEPT)"]
+22702912813 11:08:58.060      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702913467 11:08:58.060      . Col add [Index=1, SrcName="CODE", SrcType=AnsiString, SrcSize=4, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=4, Prec=0, Scale=0, OrigTabName="DEPT", OrigColName="CODE"]
+22702913635 11:08:58.060      . Col add [Index=2, SrcName="DEPT", SrcType=AnsiString, SrcSize=6, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=6, Prec=0, Scale=0, OrigTabName="DEPT", OrigColName="DEPT"]
+22702913832 11:08:58.060      . Col add [Index=3, SrcName="SECTION", SrcType=AnsiString, SrcSize=8, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=8, Prec=0, Scale=0, OrigTabName="DEPT", OrigColName="SECTION"]
+22702913988 11:08:58.060      . Col add [Index=4, SrcName="DB_KEY", SrcType=ByteString, SrcSize=8, SrcPrec=0, SrcScale=0, Type=ByteString, Size=8, Prec=0, Scale=0, OrigTabName="DEPT", OrigColName="RDB$DB_KEY"]
+22702914053 11:08:58.060      . Primary key [Cols=""]
+22702914258 11:08:58.060 << Define(TFDDatSManager) [ADatSManager="Manager", ATable="<nil>", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702914415 11:08:58.060 >> Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702914620 11:08:58.060 << Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702915372 11:08:58.061 >> TFDCustomCommand.Unprepare [Command=""]
+22702915435 11:08:58.061     >> Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702915482 11:08:58.061          . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22702915854 11:08:58.061         >> Commit [ConnectionDef="sample", Retaining=False]
+22702915934 11:08:58.061             >> Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702916150 11:08:58.061                  . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22702916329 11:08:58.061             << Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702916462 11:08:58.061              . isc_commit_transaction [tra_handle=$00C531A0]
+22702916853 11:08:58.061         << Commit [ConnectionDef="sample", Retaining=False]
+22702916909 11:08:58.061     << Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702916993 11:08:58.061      . Destroy [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702917878 11:08:58.062 << TFDCustomCommand.Unprepare [Command=""]
+22702918335 11:08:58.062 >> TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702918407 11:08:58.062      . CreateCommand [ConnectionDef="sample"]
+22702918673 11:08:58.062     >> Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702919001 11:08:58.062          . Preprocessed [CMD="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", FROM="DEPT", VP=0, VPE=0, OBP=52, CK=1]
+22702919114 11:08:58.062         >> StartTransaction [ConnectionDef="sample"]
+22702919257 11:08:58.062              . isc_start_multiple [count=1, params="write,read_committed,rec_version,nowait"]
+22702919711 11:08:58.062         << StartTransaction [ConnectionDef="sample"]
+22702919790 11:08:58.062          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702920118 11:08:58.063          . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", dialect=3]
+22702920840 11:08:58.063          . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702921069 11:08:58.063          . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702921383 11:08:58.063          . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702921546 11:08:58.063     << Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702921608 11:08:58.063 << TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702921769 11:08:58.063 >> TFDCustomCommand.InternalOpen [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", ABlocked=True]
+22702922012 11:08:58.063     >> Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702922102 11:08:58.063          . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702922659 11:08:58.064     << Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702922761 11:08:58.064      . TFDCustomCommand.InternalOpenFinished [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", AState=2]
+22702922915 11:08:58.064 << TFDCustomCommand.InternalOpen [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", ABlocked=True]
+22702923057 11:08:58.064 >> TFDCustomCommand.Fetch [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", AAll=False, ABlocked=True]
+22702923216 11:08:58.064     >> Fetch [ATable="DEPT", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702923342 11:08:58.064          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702924386 11:08:58.064         >> Fetched
+22702924465 11:08:58.064              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='2222']
+22702924510 11:08:58.064              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='2222']
+22702924568 11:08:58.064              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='2222']
+22702927721 11:08:58.066              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702927848 11:08:58.066         << Fetched
+22702927919 11:08:58.066          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702928117 11:08:58.066         >> Fetched
+22702928244 11:08:58.066              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='3333']
+22702928364 11:08:58.066              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='3333']
+22702928404 11:08:58.066              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='3333']
+22702930138 11:08:58.067              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702930246 11:08:58.067         << Fetched
+22702930341 11:08:58.067          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702930537 11:08:58.067         >> Fetched
+22702930744 11:08:58.067              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='4444']
+22702930942 11:08:58.067              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='4444']
+22702930976 11:08:58.067              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='4444']
+22702931013 11:08:58.067              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702932560 11:08:58.068         << Fetched
+22702932895 11:08:58.068          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702932989 11:08:58.068         >> Fetched
+22702933244 11:08:58.068              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='5555']
+22702933411 11:08:58.068              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='555555']
+22702933575 11:08:58.068              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='55555555']
+22702933739 11:08:58.068              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   
+']
+22702933862 11:08:58.068         << Fetched
+22702934158 11:08:58.068          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702934256 11:08:58.068         >> Fetched
+22702934507 11:08:58.068              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='C001']
+22702934672 11:08:58.068              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='총무부']
+22702934842 11:08:58.069              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='비서실']
+22702935006 11:08:58.069              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702935131 11:08:58.069         << Fetched
+22702935429 11:08:58.069          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702935516 11:08:58.069         >> Fetched
+22702935768 11:08:58.069              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='C002']
+22702935932 11:08:58.069              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='총무부']
+22702936140 11:08:58.069              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='홍보실']
+22702936266 11:08:58.069              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   	']
+22702936389 11:08:58.069         << Fetched
+22702936686 11:08:58.069          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702936778 11:08:58.069         >> Fetched
+22702937031 11:08:58.069              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E001']
+22702937202 11:08:58.070              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='교육부']
+22702939788 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='델파이']
+22702939851 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702939871 11:08:58.071         << Fetched
+22702939997 11:08:58.071          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702940043 11:08:58.071         >> Fetched
+22702940102 11:08:58.071              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E002']
+22702940157 11:08:58.071              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='교육부']
+22702940211 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='자바']
+22702940266 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702940286 11:08:58.071         << Fetched
+22702940378 11:08:58.071          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702940407 11:08:58.071         >> Fetched
+22702940460 11:08:58.071              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E003']
+22702940511 11:08:58.071              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='교육부']
+22702940560 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='모바일']
+22702940610 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702940628 11:08:58.071         << Fetched
+22702940742 11:08:58.071          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702940774 11:08:58.071         >> Fetched
+22702940829 11:08:58.071              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E004']
+22702940882 11:08:58.071              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='교육부']
+22702940934 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='인터넷']
+22702940986 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702941004 11:08:58.071         << Fetched
+22702941107 11:08:58.071          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702941139 11:08:58.071         >> Fetched
+22702941212 11:08:58.071              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='M001']
+22702941266 11:08:58.071              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='관리부']
+22702941319 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='재고관리']
+22702941372 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702941391 11:08:58.071         << Fetched
+22702941494 11:08:58.071          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702941526 11:08:58.071         >> Fetched
+22702941580 11:08:58.071              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='M002']
+22702941631 11:08:58.071              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='관리부']
+22702941687 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='인사관리']
+22702941739 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702941757 11:08:58.071         << Fetched
+22702941859 11:08:58.071          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702941894 11:08:58.071         >> Fetched
+22702941944 11:08:58.071              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='M003']
+22702941992 11:08:58.071              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=6, Data='관리부']
+22702942038 11:08:58.071              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='구매관리']
+22702942087 11:08:58.071              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22702942116 11:08:58.072         << Fetched
+22702942231 11:08:58.072          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702942318 11:08:58.072          . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22702947093 11:08:58.074     << Fetch [ATable="DEPT", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", RowsAffected=13]
+22702949808 11:08:58.075      . Eof reached [ATable="DEPT", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702949941 11:08:58.075     >> Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702950200 11:08:58.075         >> Commit [ConnectionDef="sample", Retaining=False]
+22702950309 11:08:58.075             >> TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702950426 11:08:58.075                 >> Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702950566 11:08:58.075                      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22702950844 11:08:58.075                 << Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702950959 11:08:58.075             << TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702951058 11:08:58.075             >> TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702951224 11:08:58.075             << TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702951307 11:08:58.075              . isc_commit_transaction [tra_handle=$00C531A0]
+22702951709 11:08:58.075         << Commit [ConnectionDef="sample", Retaining=False]
+22702951791 11:08:58.075     << Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702951866 11:08:58.075      . TFDCustomCommand.FetchFinished [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", AState=2, FRowsAffected=13]
+22702951967 11:08:58.075      . Destroy [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC"]
+22702952298 11:08:58.076 << TFDCustomCommand.Fetch [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+ORDER BY A.CODE ASC", AAll=False, ABlocked=True]
+22702952585 11:08:58.076 >> TFDCustomCommand.Prepare [Command="select * from insa
+where dept_code = :code"]
+22702952682 11:08:58.076      . CreateCommand [ConnectionDef="sample"]
+22702952898 11:08:58.076     >> Prepare [Command="select * from insa
+where dept_code = :code"]
+22702953144 11:08:58.076          . Preprocessed [CMD="select * from insa
+where dept_code = ?", FROM="insa", VP=0, VPE=0, OBP=0, CK=1]
+22702953284 11:08:58.076         >> StartTransaction [ConnectionDef="sample"]
+22702953381 11:08:58.076              . isc_start_multiple [count=1, params="write,read_committed,rec_version,nowait"]
+22702953723 11:08:58.076         << StartTransaction [ConnectionDef="sample"]
+22702953814 11:08:58.076          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702954172 11:08:58.076          . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="select * from insa
+where dept_code = ?", dialect=3]
+22702956519 11:08:58.077          . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702956986 11:08:58.078          . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702957397 11:08:58.078          . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702957947 11:08:58.078     << Prepare [Command="select * from insa
+where dept_code = :code"]
+22702958026 11:08:58.078 << TFDCustomCommand.Prepare [Command="select * from insa
+where dept_code = :code"]
+22702958151 11:08:58.078 >> Define(TFDDatSManager) [ADatSManager="Manager", ATable="<nil>", Command="select * from insa
+where dept_code = :code"]
+22702958709 11:08:58.078      . CreateMetaInfoCommand [ConnectionDef="sample"]
+22702958831 11:08:58.078     >> Prepare [Command="Table PKey Fields (insa.insa)"]
+22702958998 11:08:58.078         >> StartTransaction [ConnectionDef="sample"]
+22702959229 11:08:58.078              . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22702959884 11:08:58.079         << StartTransaction [ConnectionDef="sample"]
+22702960159 11:08:58.079          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702960508 11:08:58.079          . isc_dsql_prepare [tra_handle=$00C531F0, stmt_handle=$00C53100, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, C.RDB$RELATION_NAME AS TABLE_NAME, C.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, 'A' AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$RELATION_CONSTRAINTS C LEFT JOIN RDB$INDEX_SEGMENTS S ON C.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE C.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY' AND C.RDB$RELATION_NAME = ? ORDER BY 7", dialect=3]
+22702962100 11:08:58.080          . isc_dsql_sql_info [stmt_handle=$00C53100, info=21]
+22702962271 11:08:58.080          . isc_dsql_describe [stmt_handle=$00C53100, dialect=3]
+22702962585 11:08:58.080          . isc_dsql_describe_bind [stmt_handle=$00C53100, dialect=3]
+22702962830 11:08:58.080     << Prepare [Command="Table PKey Fields (insa.insa)"]
+22702962940 11:08:58.080     >> Open [Command="Table PKey Fields (insa.insa)"]
+22702963129 11:08:58.080         >> Sent
+22702963212 11:08:58.080              . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='INSA']
+22702963309 11:08:58.080         << Sent
+22702963339 11:08:58.080          . isc_dsql_execute2 [tra_handle=$00C531F0, stmt_handle=$00C53100, dialect=3]
+22702964065 11:08:58.080     << Open [Command="Table PKey Fields (insa.insa)"]
+22702964181 11:08:58.080     >> Fetch [ATable="Table", Command="Table PKey Fields (insa.insa)"]
+22702964343 11:08:58.081          . isc_dsql_fetch [stmt_handle=$00C53100, dialect=3]
+22702964903 11:08:58.081         >> Fetched
+22702964961 11:08:58.081              . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22702965001 11:08:58.081              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702965040 11:08:58.081              . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702966971 11:08:58.082              . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22702967205 11:08:58.082              . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='RDB$PRIMARY6']
+22702967409 11:08:58.082              . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='ID']
+22702967444 11:08:58.082              . Var [N=6, Type=SQL_INT64, Prec=0, Scale=0, Size=8, Data=1]
+22702969435 11:08:58.083              . Var [N=7, Type=SQL_TEXT, Prec=0, Scale=0, Size=1, Data='A']
+22702969584 11:08:58.083              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22702969762 11:08:58.083         << Fetched
+22702969848 11:08:58.083          . isc_dsql_fetch [stmt_handle=$00C53100, dialect=3]
+22702969907 11:08:58.083          . isc_dsql_free_statement [stmt_handle=$00C53100, option="DSQL_close"]
+22702972072 11:08:58.084     << Fetch [ATable="Table", Command="Table PKey Fields (insa.insa)", RowsAffected=1]
+22702972151 11:08:58.084      . Eof reached [ATable="Table", Command="Table PKey Fields (insa.insa)"]
+22702972200 11:08:58.084     >> Close [Command="Table PKey Fields (insa.insa)"]
+22702972298 11:08:58.084         >> Commit [ConnectionDef="sample", Retaining=False]
+22702974630 11:08:58.085             >> Unprepare [Command="Table PKey Fields (insa.insa)"]
+22702974817 11:08:58.085                  . isc_dsql_free_statement [stmt_handle=$00C53100, option="DSQL_drop"]
+22702975050 11:08:58.085             << Unprepare [Command="Table PKey Fields (insa.insa)"]
+22702975259 11:08:58.085              . isc_commit_transaction [tra_handle=$00C531F0]
+22702975544 11:08:58.085         << Commit [ConnectionDef="sample", Retaining=False]
+22702975766 11:08:58.085     << Close [Command="Table PKey Fields (insa.insa)"]
+22702975816 11:08:58.085      . Destroy [Command="Table PKey Fields (insa.insa)"]
+22702975967 11:08:58.085     >> Sent
+22702977027 11:08:58.086          . Var [N=0, Name="CODE", Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data(0)='2222']
+22702977198 11:08:58.086     << Sent
+22702977229 11:08:58.086      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702977870 11:08:58.086      . Col add [Index=1, SrcName="ID", SrcType=Int32, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Int32, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="ID"]
+22702978048 11:08:58.086      . Col add [Index=2, SrcName="NAME", SrcType=AnsiString, SrcSize=20, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=20, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="NAME"]
+22702978352 11:08:58.086      . Col add [Index=3, SrcName="AGE", SrcType=Int16, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Int16, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="AGE"]
+22702978498 11:08:58.086      . Col add [Index=4, SrcName="DEPT_CODE", SrcType=AnsiString, SrcSize=4, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=4, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="DEPT_CODE"]
+22702978785 11:08:58.086      . Col add [Index=5, SrcName="CLASS", SrcType=AnsiString, SrcSize=4, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=4, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="CLASS"]
+22702979073 11:08:58.086      . Col add [Index=6, SrcName="IPSA_DATE", SrcType=Date, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Date, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="IPSA_DATE"]
+22702979223 11:08:58.087      . Col add [Index=7, SrcName="SALARY", SrcType=Int32, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Int32, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="SALARY"]
+22702979363 11:08:58.087      . Col add [Index=8, SrcName="PHOTO", SrcType=Blob, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Blob, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="PHOTO"]
+22702979501 11:08:58.087      . Col add [Index=9, SrcName="GRADE", SrcType=AnsiString, SrcSize=1, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=1, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="GRADE"]
+22702979615 11:08:58.087      . Primary key [Cols="ID"]
+22702979740 11:08:58.087 << Define(TFDDatSManager) [ADatSManager="Manager", ATable="<nil>", Command="select * from insa
+where dept_code = :code"]
+22702979817 11:08:58.087 >> Open [Command="select * from insa
+where dept_code = :code"]
+22702979931 11:08:58.087 << Open [Command="select * from insa
+where dept_code = :code"]
+22702980691 11:08:58.087 >> TFDCustomCommand.Fetch [Command="select * from insa
+where dept_code = :code", AAll=False, ABlocked=True]
+22702980767 11:08:58.087     >> Fetch [ATable="insa", Command="select * from insa
+where dept_code = :code"]
+22702980803 11:08:58.087          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22702981138 11:08:58.087          . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22702981617 11:08:58.088     << Fetch [ATable="insa", Command="select * from insa
+where dept_code = :code", RowsAffected=0]
+22702981702 11:08:58.088      . Eof reached [ATable="insa", Command="select * from insa
+where dept_code = :code"]
+22702981909 11:08:58.088     >> Close [Command="select * from insa
+where dept_code = :code"]
+22702982002 11:08:58.088         >> Commit [ConnectionDef="sample", Retaining=False]
+22702982063 11:08:58.088             >> TFDCustomCommand.Unprepare [Command="select * from insa
+where dept_code = :code"]
+22702984416 11:08:58.089                 >> Unprepare [Command="select * from insa
+where dept_code = :code"]
+22702984486 11:08:58.089                      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22702987014 11:08:58.090                 << Unprepare [Command="select * from insa
+where dept_code = :code"]
+22702987098 11:08:58.090             << TFDCustomCommand.Unprepare [Command="select * from insa
+where dept_code = :code"]
+22702987147 11:08:58.090             >> TFDCustomCommand.Unprepare [Command="select * from insa
+where dept_code = :code"]
+22702989303 11:08:58.091             << TFDCustomCommand.Unprepare [Command="select * from insa
+where dept_code = :code"]
+22702989429 11:08:58.091              . isc_commit_transaction [tra_handle=$00C531A0]
+22702989666 11:08:58.091         << Commit [ConnectionDef="sample", Retaining=False]
+22702989755 11:08:58.091     << Close [Command="select * from insa
+where dept_code = :code"]
+22702989950 11:08:58.091      . TFDCustomCommand.FetchFinished [Command="select * from insa
+where dept_code = :code", AState=2, FRowsAffected=0]
+22702990013 11:08:58.091      . Destroy [Command="select * from insa
+where dept_code = :code"]
+22702990079 11:08:58.091 << TFDCustomCommand.Fetch [Command="select * from insa
+where dept_code = :code", AAll=False, ABlocked=True]
+22702992359 11:08:58.092  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22702992536 11:08:58.092  . Preprocessed [CMD="INSA", FROM="", VP=0, VPE=0, OBP=0, CK=20]
+22702992754 11:08:58.092 >> Prepare [Command="Table Indexes (INSA)"]
+22702992826 11:08:58.092     >> StartTransaction [ConnectionDef="sample"]
+22702994216 11:08:58.093          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22702994786 11:08:58.093     << StartTransaction [ConnectionDef="sample"]
+22702995024 11:08:58.093      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22702995414 11:08:58.093      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, C.RDB$CONSTRAINT_NAME AS CONSTRAINT_NAME, CASE WHEN I.RDB$UNIQUE_FLAG IS NULL OR I.RDB$UNIQUE_FLAG = 0 THEN 0 WHEN I.RDB$UNIQUE_FLAG = 1 THEN CASE  WHEN C.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY' THEN 2 ELSE 1 END END AS INDEX_TYPE FROM RDB$INDICES I LEFT OUTER JOIN RDB$RELATION_CONSTRAINTS C ON  I.RDB$RELATION_NAME = C.RDB$RELATION_NAME AND I.RDB$INDEX_NAME = C.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? ORDER BY 7 DESC, 5 ASC", dialect=3]
+22702997196 11:08:58.094      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22702997559 11:08:58.094      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22702997878 11:08:58.094      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22702998243 11:08:58.094 << Prepare [Command="Table Indexes (INSA)"]
+22702998339 11:08:58.094 >> Open [Command="Table Indexes (INSA)"]
+22702998441 11:08:58.094     >> Sent
+22702999184 11:08:58.095          . Var [N=0, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='INSA']
+22702999283 11:08:58.095     << Sent
+22702999315 11:08:58.095      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22702999971 11:08:58.095 << Open [Command="Table Indexes (INSA)"]
+22703000078 11:08:58.095 >> Fetch [ATable="Table", Command="Table Indexes (INSA)"]
+22703000128 11:08:58.095      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703002008 11:08:58.096     >> Fetched
+22703002066 11:08:58.096          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703002102 11:08:58.096          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703002134 11:08:58.096          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703002176 11:08:58.096          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703004086 11:08:58.097          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='RDB$PRIMARY6']
+22703004215 11:08:58.097          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_ID']
+22703004399 11:08:58.097          . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=2]
+22703004411 11:08:58.097     << Fetched
+22703004475 11:08:58.097      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703004502 11:08:58.097     >> Fetched
+22703006519 11:08:58.098          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703006746 11:08:58.098          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703006784 11:08:58.098          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703006822 11:08:58.098          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703008995 11:08:58.099          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_DEPT']
+22703009237 11:08:58.099          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data=NULL]
+22703009389 11:08:58.099          . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=0]
+22703009504 11:08:58.099     << Fetched
+22703009789 11:08:58.099      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703009843 11:08:58.099     >> Fetched
+22703009990 11:08:58.099          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703010137 11:08:58.099          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703010279 11:08:58.099          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703010429 11:08:58.099          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703010580 11:08:58.099          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_ID']
+22703010723 11:08:58.099          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data=NULL]
+22703010868 11:08:58.099          . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=0]
+22703010981 11:08:58.099     << Fetched
+22703011231 11:08:58.100      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703011451 11:08:58.100     >> Fetched
+22703011600 11:08:58.100          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703011743 11:08:58.100          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703011887 11:08:58.100          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703012039 11:08:58.100          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703012189 11:08:58.100          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_NAME']
+22703012331 11:08:58.100          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data=NULL]
+22703012475 11:08:58.100          . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=0]
+22703012588 11:08:58.100     << Fetched
+22703012834 11:08:58.100      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703012967 11:08:58.100      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703013277 11:08:58.100 << Fetch [ATable="Table", Command="Table Indexes (INSA)", RowsAffected=4]
+22703013372 11:08:58.100  . Eof reached [ATable="Table", Command="Table Indexes (INSA)"]
+22703013530 11:08:58.100 >> Close [Command="Table Indexes (INSA)"]
+22703013787 11:08:58.101     >> Commit [ConnectionDef="sample", Retaining=False]
+22703013873 11:08:58.101         >> Unprepare [Command="Table Indexes (INSA)"]
+22703014061 11:08:58.101              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703014358 11:08:58.101         << Unprepare [Command="Table Indexes (INSA)"]
+22703014406 11:08:58.101          . isc_commit_transaction [tra_handle=$00C531A0]
+22703014844 11:08:58.101     << Commit [ConnectionDef="sample", Retaining=False]
+22703014915 11:08:58.101 << Close [Command="Table Indexes (INSA)"]
+22703015100 11:08:58.101  . Destroy [Command="Table Indexes (INSA)"]
+22703015686 11:08:58.101  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22703015947 11:08:58.101  . Preprocessed [CMD=""RDB$PRIMARY6"", FROM="", VP=0, VPE=0, OBP=0, CK=0]
+22703016067 11:08:58.101 >> Prepare [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703016257 11:08:58.102     >> StartTransaction [ConnectionDef="sample"]
+22703016371 11:08:58.102          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22703016772 11:08:58.102     << StartTransaction [ConnectionDef="sample"]
+22703017054 11:08:58.102      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703017323 11:08:58.102      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, CASE WHEN I.RDB$INDEX_TYPE = 1 THEN 'D' ELSE 'A' END AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$INDICES I LEFT JOIN RDB$INDEX_SEGMENTS S ON I.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? AND I.RDB$INDEX_NAME = ? ORDER BY 7", dialect=3]
+22703018988 11:08:58.103      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703019132 11:08:58.103      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703019442 11:08:58.103      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703019579 11:08:58.103      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703019855 11:08:58.103 << Prepare [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703019982 11:08:58.103 >> Open [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703020215 11:08:58.103     >> Sent
+22703020322 11:08:58.103          . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='INSA']
+22703020473 11:08:58.103          . Var [N=1, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='RDB$PRIMARY6']
+22703020597 11:08:58.103     << Sent
+22703020835 11:08:58.103      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703021475 11:08:58.104 << Open [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703021608 11:08:58.104 >> Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703021731 11:08:58.104      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703022135 11:08:58.104     >> Fetched
+22703022200 11:08:58.104          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703022446 11:08:58.104          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703022604 11:08:58.104          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703022662 11:08:58.104          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703022939 11:08:58.104          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='RDB$PRIMARY6']
+22703023103 11:08:58.104          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='ID']
+22703023262 11:08:58.104          . Var [N=6, Type=SQL_INT64, Prec=0, Scale=0, Size=8, Data=1]
+22703023424 11:08:58.104          . Var [N=7, Type=SQL_TEXT, Prec=0, Scale=0, Size=1, Data='A']
+22703023649 11:08:58.105          . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703023701 11:08:58.105     << Fetched
+22703023919 11:08:58.105      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703024060 11:08:58.105      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703024401 11:08:58.105 << Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")", RowsAffected=1]
+22703024500 11:08:58.105  . Eof reached [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703024673 11:08:58.105 >> Close [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703024910 11:08:58.105     >> Commit [ConnectionDef="sample", Retaining=False]
+22703025001 11:08:58.105         >> Unprepare [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703025186 11:08:58.105              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703025505 11:08:58.105         << Unprepare [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703025545 11:08:58.105          . isc_commit_transaction [tra_handle=$00C531A0]
+22703026125 11:08:58.106     << Commit [ConnectionDef="sample", Retaining=False]
+22703026196 11:08:58.106 << Close [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703026271 11:08:58.106  . Destroy [Command="Table Index Fields ("INSA"."INSA", "RDB$PRIMARY6")"]
+22703027013 11:08:58.106  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22703027245 11:08:58.106  . Preprocessed [CMD=""I_DEPT"", FROM="", VP=0, VPE=0, OBP=0, CK=0]
+22703027358 11:08:58.106 >> Prepare [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703027545 11:08:58.106     >> StartTransaction [ConnectionDef="sample"]
+22703027650 11:08:58.106          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22703028097 11:08:58.106     << StartTransaction [ConnectionDef="sample"]
+22703028363 11:08:58.106      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703028623 11:08:58.107      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, CASE WHEN I.RDB$INDEX_TYPE = 1 THEN 'D' ELSE 'A' END AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$INDICES I LEFT JOIN RDB$INDEX_SEGMENTS S ON I.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? AND I.RDB$INDEX_NAME = ? ORDER BY 7", dialect=3]
+22703030243 11:08:58.107      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703030525 11:08:58.107      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703031036 11:08:58.108      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703031174 11:08:58.108      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703031454 11:08:58.108 << Prepare [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703031716 11:08:58.108 >> Open [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703032002 11:08:58.108     >> Sent
+22703032072 11:08:58.108          . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='INSA']
+22703033790 11:08:58.109          . Var [N=1, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='I_DEPT']
+22703033912 11:08:58.109     << Sent
+22703033950 11:08:58.109      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703034409 11:08:58.109 << Open [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703034501 11:08:58.109 >> Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703034544 11:08:58.109      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703036336 11:08:58.110     >> Fetched
+22703036404 11:08:58.110          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703036448 11:08:58.110          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703036497 11:08:58.110          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703036544 11:08:58.110          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703038739 11:08:58.111          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_DEPT']
+22703038976 11:08:58.111          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='DEPT_CODE']
+22703039014 11:08:58.111          . Var [N=6, Type=SQL_INT64, Prec=0, Scale=0, Size=8, Data=1]
+22703041217 11:08:58.112          . Var [N=7, Type=SQL_TEXT, Prec=0, Scale=0, Size=1, Data='A']
+22703041350 11:08:58.112          . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703041528 11:08:58.112     << Fetched
+22703041618 11:08:58.112      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703041853 11:08:58.112      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703042170 11:08:58.112 << Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_DEPT")", RowsAffected=1]
+22703042255 11:08:58.112  . Eof reached [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703042299 11:08:58.112 >> Close [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703043704 11:08:58.113     >> Commit [ConnectionDef="sample", Retaining=False]
+22703043835 11:08:58.113         >> Unprepare [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703043986 11:08:58.113              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703044506 11:08:58.113         << Unprepare [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703044546 11:08:58.113          . isc_commit_transaction [tra_handle=$00C531A0]
+22703045029 11:08:58.113     << Commit [ConnectionDef="sample", Retaining=False]
+22703045087 11:08:58.113 << Close [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703045306 11:08:58.113  . Destroy [Command="Table Index Fields ("INSA"."INSA", "I_DEPT")"]
+22703045829 11:08:58.113  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22703046012 11:08:58.114  . Preprocessed [CMD=""I_ID"", FROM="", VP=0, VPE=0, OBP=0, CK=0]
+22703046132 11:08:58.114 >> Prepare [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703046302 11:08:58.114     >> StartTransaction [ConnectionDef="sample"]
+22703046450 11:08:58.114          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22703046949 11:08:58.114     << StartTransaction [ConnectionDef="sample"]
+22703047191 11:08:58.114      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703047569 11:08:58.114      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, CASE WHEN I.RDB$INDEX_TYPE = 1 THEN 'D' ELSE 'A' END AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$INDICES I LEFT JOIN RDB$INDEX_SEGMENTS S ON I.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? AND I.RDB$INDEX_NAME = ? ORDER BY 7", dialect=3]
+22703049444 11:08:58.115      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703049893 11:08:58.115      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703050355 11:08:58.115      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703050749 11:08:58.116      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703051164 11:08:58.116 << Prepare [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703051267 11:08:58.116 >> Open [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703051388 11:08:58.116     >> Sent
+22703051656 11:08:58.116          . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='INSA']
+22703051801 11:08:58.116          . Var [N=1, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='I_ID']
+22703051977 11:08:58.116     << Sent
+22703052005 11:08:58.116      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703052701 11:08:58.116 << Open [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703052846 11:08:58.116 >> Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703052987 11:08:58.116      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703053719 11:08:58.117     >> Fetched
+22703053788 11:08:58.117          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703053831 11:08:58.117          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703053886 11:08:58.117          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703055959 11:08:58.118          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703056155 11:08:58.118          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_ID']
+22703056193 11:08:58.118          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='ID']
+22703058293 11:08:58.119          . Var [N=6, Type=SQL_INT64, Prec=0, Scale=0, Size=8, Data=1]
+22703058453 11:08:58.119          . Var [N=7, Type=SQL_TEXT, Prec=0, Scale=0, Size=1, Data='A']
+22703060936 11:08:58.120          . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703061043 11:08:58.120     << Fetched
+22703061126 11:08:58.120      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703061361 11:08:58.120      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703061677 11:08:58.120 << Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_ID")", RowsAffected=1]
+22703061756 11:08:58.120  . Eof reached [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703061978 11:08:58.120 >> Close [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703062067 11:08:58.120     >> Commit [ConnectionDef="sample", Retaining=False]
+22703062279 11:08:58.120         >> Unprepare [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703062421 11:08:58.120              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703062653 11:08:58.120         << Unprepare [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703062689 11:08:58.120          . isc_commit_transaction [tra_handle=$00C531A0]
+22703063122 11:08:58.121     << Commit [ConnectionDef="sample", Retaining=False]
+22703063172 11:08:58.121 << Close [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703063386 11:08:58.121  . Destroy [Command="Table Index Fields ("INSA"."INSA", "I_ID")"]
+22703063832 11:08:58.121  . CreateMetaInfoCommand [ConnectionDef="sample"]
+22703063999 11:08:58.121  . Preprocessed [CMD=""I_NAME"", FROM="", VP=0, VPE=0, OBP=0, CK=0]
+22703064089 11:08:58.121 >> Prepare [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703064216 11:08:58.121     >> StartTransaction [ConnectionDef="sample"]
+22703064320 11:08:58.121          . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22703064628 11:08:58.121     << StartTransaction [ConnectionDef="sample"]
+22703064842 11:08:58.121      . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703065102 11:08:58.121      . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, I.RDB$RELATION_NAME AS TABLE_NAME, I.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, CASE WHEN I.RDB$INDEX_TYPE = 1 THEN 'D' ELSE 'A' END AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$INDICES I LEFT JOIN RDB$INDEX_SEGMENTS S ON I.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE I.RDB$RELATION_NAME = ? AND I.RDB$INDEX_NAME = ? ORDER BY 7", dialect=3]
+22703066623 11:08:58.122      . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703066994 11:08:58.122      . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703067276 11:08:58.122      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703067446 11:08:58.122      . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703067745 11:08:58.122 << Prepare [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703067913 11:08:58.122 >> Open [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703068202 11:08:58.123     >> Sent
+22703068272 11:08:58.123          . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='INSA']
+22703068523 11:08:58.123          . Var [N=1, Name="OBJ", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='I_NAME']
+22703068578 11:08:58.123     << Sent
+22703068689 11:08:58.123      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703069182 11:08:58.123 << Open [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703069296 11:08:58.123 >> Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703069358 11:08:58.123      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703071090 11:08:58.124     >> Fetched
+22703071160 11:08:58.124          . Var [N=0, Type=SQL_LONG, Prec=9, Scale=0, Size=4, Data=NULL]
+22703071201 11:08:58.124          . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703071249 11:08:58.124          . Var [N=2, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703073278 11:08:58.125          . Var [N=3, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='INSA']
+22703073431 11:08:58.125          . Var [N=4, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='I_NAME']
+22703073558 11:08:58.125          . Var [N=5, Type=SQL_TEXT, Prec=0, Scale=0, Size=67, Data='NAME']
+22703073678 11:08:58.125          . Var [N=6, Type=SQL_INT64, Prec=0, Scale=0, Size=8, Data=1]
+22703073877 11:08:58.125          . Var [N=7, Type=SQL_TEXT, Prec=0, Scale=0, Size=1, Data='A']
+22703073910 11:08:58.125          . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=67, Data=NULL]
+22703073922 11:08:58.125     << Fetched
+22703075772 11:08:58.126      . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703075930 11:08:58.126      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703076288 11:08:58.126 << Fetch [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_NAME")", RowsAffected=1]
+22703076368 11:08:58.126  . Eof reached [ATable="Table", Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703076416 11:08:58.126 >> Close [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703076521 11:08:58.126     >> Commit [ConnectionDef="sample", Retaining=False]
+22703078243 11:08:58.127         >> Unprepare [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703078424 11:08:58.127              . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703078727 11:08:58.127         << Unprepare [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703078763 11:08:58.127          . isc_commit_transaction [tra_handle=$00C531A0]
+22703079006 11:08:58.127     << Commit [ConnectionDef="sample", Retaining=False]
+22703079153 11:08:58.127 << Close [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703079366 11:08:58.127  . Destroy [Command="Table Index Fields ("INSA"."INSA", "I_NAME")"]
+22703080034 11:08:58.127 >> TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703080103 11:08:58.127      . CreateCommand [ConnectionDef="sample"]
+22703080395 11:08:58.128     >> Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703080617 11:08:58.128          . Preprocessed [CMD="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", FROM="INSA", VP=0, VPE=0, OBP=52, CK=1]
+22703080711 11:08:58.128         >> StartTransaction [ConnectionDef="sample"]
+22703080855 11:08:58.128              . isc_start_multiple [count=1, params="write,read_committed,rec_version,nowait"]
+22703081168 11:08:58.128         << StartTransaction [ConnectionDef="sample"]
+22703081246 11:08:58.128          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703081526 11:08:58.128          . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", dialect=3]
+22703082408 11:08:58.128          . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703082647 11:08:58.128          . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703083110 11:08:58.129          . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703083275 11:08:58.129     << Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703083340 11:08:58.129 << TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703083539 11:08:58.129 >> Define(TFDDatSManager) [ADatSManager="Manager", ATable="<nil>", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703083956 11:08:58.129      . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703084565 11:08:58.129      . Col add [Index=1, SrcName="ID", SrcType=Int32, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Int32, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="ID"]
+22703084754 11:08:58.129      . Col add [Index=2, SrcName="NAME", SrcType=AnsiString, SrcSize=20, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=20, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="NAME"]
+22703085862 11:08:58.130      . Col add [Index=3, SrcName="AGE", SrcType=Int16, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Int16, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="AGE"]
+22703086103 11:08:58.130      . Col add [Index=4, SrcName="DEPT_CODE", SrcType=AnsiString, SrcSize=4, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=4, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="DEPT_CODE"]
+22703086339 11:08:58.130      . Col add [Index=5, SrcName="CLASS", SrcType=AnsiString, SrcSize=4, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=4, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="CLASS"]
+22703086568 11:08:58.130      . Col add [Index=6, SrcName="IPSA_DATE", SrcType=Date, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Date, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="IPSA_DATE"]
+22703086795 11:08:58.130      . Col add [Index=7, SrcName="SALARY", SrcType=Int32, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Int32, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="SALARY"]
+22703087020 11:08:58.130      . Col add [Index=8, SrcName="PHOTO", SrcType=Blob, SrcSize=0, SrcPrec=0, SrcScale=0, Type=Blob, Size=0, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="PHOTO"]
+22703087247 11:08:58.130      . Col add [Index=9, SrcName="GRADE", SrcType=AnsiString, SrcSize=1, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=1, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="GRADE"]
+22703087476 11:08:58.130      . Col add [Index=10, SrcName="DB_KEY", SrcType=ByteString, SrcSize=8, SrcPrec=0, SrcScale=0, Type=ByteString, Size=8, Prec=0, Scale=0, OrigTabName="INSA", OrigColName="RDB$DB_KEY"]
+22703087663 11:08:58.130      . Primary key [Cols="ID"]
+22703087858 11:08:58.131 << Define(TFDDatSManager) [ADatSManager="Manager", ATable="<nil>", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703090494 11:08:58.132 >> Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703090607 11:08:58.132 << Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703092200 11:08:58.132 >> TFDCustomCommand.Unprepare [Command=""]
+22703092286 11:08:58.132     >> Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703092469 11:08:58.132          . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703092878 11:08:58.133         >> Commit [ConnectionDef="sample", Retaining=False]
+22703092982 11:08:58.133             >> Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703093174 11:08:58.133                  . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703093465 11:08:58.133             << Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703093508 11:08:58.133              . isc_commit_transaction [tra_handle=$00C531A0]
+22703094011 11:08:58.133         << Commit [ConnectionDef="sample", Retaining=False]
+22703094091 11:08:58.133     << Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703094318 11:08:58.133      . Destroy [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703094454 11:08:58.133 << TFDCustomCommand.Unprepare [Command=""]
+22703094975 11:08:58.133 >> TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703095069 11:08:58.133      . CreateCommand [ConnectionDef="sample"]
+22703095343 11:08:58.134     >> Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703095588 11:08:58.134          . Preprocessed [CMD="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", FROM="INSA", VP=0, VPE=0, OBP=52, CK=1]
+22703095734 11:08:58.134         >> StartTransaction [ConnectionDef="sample"]
+22703095898 11:08:58.134              . isc_start_multiple [count=1, params="write,read_committed,rec_version,nowait"]
+22703096295 11:08:58.134         << StartTransaction [ConnectionDef="sample"]
+22703096382 11:08:58.134          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703096720 11:08:58.134          . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", dialect=3]
+22703097751 11:08:58.135          . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703097896 11:08:58.135          . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703098166 11:08:58.135          . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703098334 11:08:58.135     << Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703098420 11:08:58.135 << TFDCustomCommand.Prepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703098619 11:08:58.135 >> TFDCustomCommand.InternalOpen [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", ABlocked=True]
+22703098803 11:08:58.135     >> Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703098999 11:08:58.135          . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703099231 11:08:58.135     << Open [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703099311 11:08:58.135      . TFDCustomCommand.InternalOpenFinished [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", AState=2]
+22703099503 11:08:58.135 << TFDCustomCommand.InternalOpen [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", ABlocked=True]
+22703099644 11:08:58.135 >> TFDCustomCommand.Fetch [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", AAll=False, ABlocked=True]
+22703099813 11:08:58.135     >> Fetch [ATable="INSA", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703099902 11:08:58.135          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703100911 11:08:58.136         >> Fetched
+22703100984 11:08:58.136              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=1]
+22703101148 11:08:58.136              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='이순신']
+22703101306 11:08:58.136              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=55]
+22703101473 11:08:58.136              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E002']
+22703101636 11:08:58.136              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='이사']
+22703101816 11:08:58.136              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2001-03-10]
+22703101975 11:08:58.136              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=9000000]
+22703102133 11:08:58.136              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703102295 11:08:58.136              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703102457 11:08:58.136              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703102588 11:08:58.137         << Fetched
+22703102720 11:08:58.137          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703103013 11:08:58.137         >> Fetched
+22703103083 11:08:58.137              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=2]
+22703103355 11:08:58.137              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='홍길동']
+22703103522 11:08:58.137              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=44]
+22703103692 11:08:58.137              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E001']
+22703103865 11:08:58.137              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='부장']
+22703104062 11:08:58.137              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2004-04-14]
+22703104227 11:08:58.137              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=6000000]
+22703104393 11:08:58.137              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703104560 11:08:58.137              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703104735 11:08:58.137              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703104863 11:08:58.137         << Fetched
+22703105297 11:08:58.138          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703105344 11:08:58.138         >> Fetched
+22703105598 11:08:58.138              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=7]
+22703105856 11:08:58.138              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='test']
+22703106117 11:08:58.138              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=33]
+22703106379 11:08:58.138              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E001']
+22703106631 11:08:58.138              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='사원']
+22703106810 11:08:58.138              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2019-03-03]
+22703106968 11:08:58.138              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=5500000]
+22703107129 11:08:58.138              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703107293 11:08:58.138              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703107462 11:08:58.139              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703107588 11:08:58.139         << Fetched
+22703108067 11:08:58.139          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703108116 11:08:58.139         >> Fetched
+22703108378 11:08:58.139              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=8]
+22703108543 11:08:58.139              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='아무개']
+22703108703 11:08:58.139              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=23]
+22703108857 11:08:58.139              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E001']
+22703108908 11:08:58.139              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='사원']
+22703109221 11:08:58.139              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2019-03-22]
+22703109423 11:08:58.139              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=5000000]
+22703109455 11:08:58.139              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703110337 11:08:58.140              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703110494 11:08:58.140              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703110673 11:08:58.140         << Fetched
+22703110812 11:08:58.140          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703111014 11:08:58.140         >> Fetched
+22703111215 11:08:58.140              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=9]
+22703111254 11:08:58.140              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='박보검']
+22703112788 11:08:58.141              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=27]
+22703113038 11:08:58.141              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='E003']
+22703113085 11:08:58.141              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='사원']
+22703113330 11:08:58.141              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2019-03-25]
+22703113449 11:08:58.141              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=3000000]
+22703113644 11:08:58.141              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703113679 11:08:58.141              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703115203 11:08:58.142              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703115435 11:08:58.142         << Fetched
+22703115772 11:08:58.142          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703115817 11:08:58.142         >> Fetched
+22703116049 11:08:58.142              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=10]
+22703116170 11:08:58.142              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='고소영']
+22703116209 11:08:58.142              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=40]
+22703117587 11:08:58.143              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='M001']
+22703117780 11:08:58.143              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='과장']
+22703117970 11:08:58.143              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2015-03-25]
+22703142232 11:08:58.153              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=40000000]
+22703142293 11:08:58.153              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703142335 11:08:58.153              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703144708 11:08:58.154              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703144878 11:08:58.154         << Fetched
+22703145023 11:08:58.154          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703147187 11:08:58.155         >> Fetched
+22703147389 11:08:58.155              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=11]
+22703147431 11:08:58.155              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='손예진']
+22703149652 11:08:58.156              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=33]
+22703149850 11:08:58.156              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='M003']
+22703149886 11:08:58.156              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='대리']
+22703149936 11:08:58.156              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2011-01-25]
+22703149970 11:08:58.156              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=3500000]
+22703152210 11:08:58.157              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=NULL]
+22703152440 11:08:58.157              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703152481 11:08:58.157              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703152493 11:08:58.157         << Fetched
+22703152602 11:08:58.157          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703154647 11:08:58.158         >> Fetched
+22703154878 11:08:58.158              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=15]
+22703154923 11:08:58.158              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='test']
+22703154958 11:08:58.158              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=32]
+22703157140 11:08:58.159              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='C001']
+22703157335 11:08:58.159              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='사원']
+22703157387 11:08:58.159              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2019-04-10]
+22703157423 11:08:58.159              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=5000000]
+22703157460 11:08:58.159              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=<BLOB> (131,0)]
+22703159618 11:08:58.160              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703159845 11:08:58.160              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703159862 11:08:58.160         << Fetched
+22703159922 11:08:58.160          . isc_open_blob2 [db_handle=$00C53290, tra_handle=$00C531A0, blob_id.high=131, blob_id.low=0]
+22703162433 11:08:58.161          . isc_blob_info [blob_handle=$00C53100, items="num_segments;max_segment;total_length;type"]
+22703162609 11:08:58.161          . isc_get_segment [blob_handle=$00C53100]
+22703163049 11:08:58.161          . isc_close_blob [blob_handle=$00C53100]
+22703163284 11:08:58.161          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703163331 11:08:58.161         >> Fetched
+22703163561 11:08:58.161              . Var [N=0, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=16]
+22703163715 11:08:58.161              . Var [N=1, Type=SQL_VARYING, Prec=0, Scale=0, Size=20, Data='test']
+22703163862 11:08:58.161              . Var [N=2, Type=SQL_SHORT, Prec=0, Scale=0, Size=2, Data=23]
+22703164011 11:08:58.161              . Var [N=3, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='C001']
+22703164159 11:08:58.161              . Var [N=4, Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data='사원']
+22703164330 11:08:58.162              . Var [N=5, Type=SQL_TYPE_DATE, Prec=0, Scale=0, Size=4, Data=2019-04-17]
+22703164379 11:08:58.162              . Var [N=6, Type=SQL_LONG, Prec=0, Scale=0, Size=4, Data=5000000]
+22703164630 11:08:58.162              . Var [N=7, Type=SQL_BLOB, Prec=0, Scale=0, Size=8, Data=<BLOB> (131,1)]
+22703164780 11:08:58.162              . Var [N=8, Type=SQL_VARYING, Prec=0, Scale=0, Size=1, Data='1']
+22703164931 11:08:58.162              . Var [N=9, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   	']
+22703165045 11:08:58.162         << Fetched
+22703165292 11:08:58.162          . isc_open_blob2 [db_handle=$00C53290, tra_handle=$00C531A0, blob_id.high=131, blob_id.low=1]
+22703165589 11:08:58.162          . isc_blob_info [blob_handle=$00C53100, items="num_segments;max_segment;total_length;type"]
+22703165729 11:08:58.162          . isc_get_segment [blob_handle=$00C53100]
+22703166042 11:08:58.162          . isc_close_blob [blob_handle=$00C53100]
+22703166252 11:08:58.162          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703166336 11:08:58.162          . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703166627 11:08:58.162     << Fetch [ATable="INSA", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", RowsAffected=9]
+22703166755 11:08:58.163      . Eof reached [ATable="INSA", Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703166923 11:08:58.163     >> Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703167177 11:08:58.163         >> Commit [ConnectionDef="sample", Retaining=False]
+22703167288 11:08:58.163             >> TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703167427 11:08:58.163                 >> Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703167621 11:08:58.163                      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703167962 11:08:58.163                 << Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703168083 11:08:58.163             << TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703168214 11:08:58.163             >> TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703168565 11:08:58.163             << TFDCustomCommand.Unprepare [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703168655 11:08:58.163              . isc_commit_transaction [tra_handle=$00C531A0]
+22703169084 11:08:58.163         << Commit [ConnectionDef="sample", Retaining=False]
+22703169170 11:08:58.164     << Close [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703169353 11:08:58.164      . TFDCustomCommand.FetchFinished [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", AState=2, FRowsAffected=9]
+22703169566 11:08:58.164      . Destroy [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC"]
+22703169755 11:08:58.164 << TFDCustomCommand.Fetch [Command="SELECT A.*, A.RDB$DB_KEY AS FD__DB_KEY
+FROM INSA A
+ORDER BY A.ID ASC", AAll=False, ABlocked=True]
+22703170791 11:08:58.164 >> TFDCustomCommand.Prepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703170891 11:08:58.164      . CreateCommand [ConnectionDef="sample"]
+22703171169 11:08:58.164     >> Prepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703171454 11:08:58.164          . Preprocessed [CMD="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = ?)
+ORDER BY A.CODE ASC
+", FROM="DEPT", VP=0, VPE=0, OBP=77, CK=1]
+22703171598 11:08:58.164         >> StartTransaction [ConnectionDef="sample"]
+22703171817 11:08:58.165              . isc_start_multiple [count=1, params="write,read_committed,rec_version,nowait"]
+22703172196 11:08:58.165         << StartTransaction [ConnectionDef="sample"]
+22703172323 11:08:58.165          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703172666 11:08:58.165          . isc_dsql_prepare [tra_handle=$00C531A0, stmt_handle=$00C53240, sql="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = ?)
+ORDER BY A.CODE ASC
+
+ROWS 1", dialect=3]
+22703173607 11:08:58.165          . isc_dsql_sql_info [stmt_handle=$00C53240, info=21]
+22703173739 11:08:58.165          . isc_dsql_describe [stmt_handle=$00C53240, dialect=3]
+22703173994 11:08:58.165          . isc_dsql_describe_bind [stmt_handle=$00C53240, dialect=3]
+22703174222 11:08:58.166     << Prepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703174302 11:08:58.166 << TFDCustomCommand.Prepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703174508 11:08:58.166 >> TFDCustomCommand.InternalOpen [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", ABlocked=True]
+22703174700 11:08:58.166     >> Open [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703174815 11:08:58.166         >> Sent
+22703174969 11:08:58.166              . Var [N=0, Name="FD__LC_CODE", Type=SQL_VARYING, Prec=0, Scale=0, Size=4, Data(0)='E002']
+22703175049 11:08:58.166         << Sent
+22703175099 11:08:58.166          . isc_dsql_execute2 [tra_handle=$00C531A0, stmt_handle=$00C53240, dialect=3]
+22703175571 11:08:58.166     << Open [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703175657 11:08:58.166      . TFDCustomCommand.InternalOpenFinished [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", AState=2]
+22703175847 11:08:58.166 << TFDCustomCommand.InternalOpen [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", ABlocked=True]
+22703176050 11:08:58.166 >> Define(TFDDatSTable) [ATable="Table", Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703176497 11:08:58.166      . CreateMetaInfoCommand [ConnectionDef="sample"]
+22703176647 11:08:58.167     >> Prepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22703176833 11:08:58.167         >> StartTransaction [ConnectionDef="sample"]
+22703176988 11:08:58.167              . isc_start_multiple [count=1, params="read,read_committed,rec_version,nowait"]
+22703177385 11:08:58.167         << StartTransaction [ConnectionDef="sample"]
+22703177657 11:08:58.167          . isc_dsql_allocate_statement [db_handle=$00C53290]
+22703177893 11:08:58.167          . isc_dsql_prepare [tra_handle=$00C531F0, stmt_handle=$00C53100, sql="SELECT CAST(NULL AS NUMERIC) AS RECNO, CAST(NULL AS VARCHAR(67)) AS CATALOG_NAME, CAST(NULL AS VARCHAR(67)) AS SCHEMA_NAME, C.RDB$RELATION_NAME AS TABLE_NAME, C.RDB$INDEX_NAME AS INDEX_NAME, S.RDB$FIELD_NAME AS COLUMN_NAME, S.RDB$FIELD_POSITION + 1 AS COLUMN_POSITION, 'A' AS SORT_ORDER, CAST(NULL AS VARCHAR(67)) AS FILTER_ FROM RDB$RELATION_CONSTRAINTS C LEFT JOIN RDB$INDEX_SEGMENTS S ON C.RDB$INDEX_NAME = S.RDB$INDEX_NAME WHERE C.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY' AND C.RDB$RELATION_NAME = ? ORDER BY 7", dialect=3]
+22703179296 11:08:58.168          . isc_dsql_sql_info [stmt_handle=$00C53100, info=21]
+22703179433 11:08:58.168          . isc_dsql_describe [stmt_handle=$00C53100, dialect=3]
+22703179663 11:08:58.168          . isc_dsql_describe_bind [stmt_handle=$00C53100, dialect=3]
+22703179866 11:08:58.168     << Prepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22703179981 11:08:58.168     >> Open [Command="Table PKey Fields (DEPT.DEPT)"]
+22703180163 11:08:58.168         >> Sent
+22703180272 11:08:58.168              . Var [N=0, Name="BAS", Type=SQL_TEXT, Prec=0, Scale=0, Size=70, Data(0)='DEPT']
+22703180350 11:08:58.168         << Sent
+22703180497 11:08:58.168          . isc_dsql_execute2 [tra_handle=$00C531F0, stmt_handle=$00C53100, dialect=3]
+22703180958 11:08:58.168     << Open [Command="Table PKey Fields (DEPT.DEPT)"]
+22703181089 11:08:58.168     >> Fetch [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)"]
+22703181184 11:08:58.168          . isc_dsql_fetch [stmt_handle=$00C53100, dialect=3]
+22703181556 11:08:58.169          . isc_dsql_free_statement [stmt_handle=$00C53100, option="DSQL_close"]
+22703181763 11:08:58.169     << Fetch [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)", RowsAffected=0]
+22703181862 11:08:58.169      . Eof reached [ATable="Table", Command="Table PKey Fields (DEPT.DEPT)"]
+22703181989 11:08:58.169     >> Close [Command="Table PKey Fields (DEPT.DEPT)"]
+22703182222 11:08:58.169         >> Commit [ConnectionDef="sample", Retaining=False]
+22703182302 11:08:58.169             >> Unprepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22703182484 11:08:58.169                  . isc_dsql_free_statement [stmt_handle=$00C53100, option="DSQL_drop"]
+22703182755 11:08:58.169             << Unprepare [Command="Table PKey Fields (DEPT.DEPT)"]
+22703182795 11:08:58.169              . isc_commit_transaction [tra_handle=$00C531F0]
+22703183127 11:08:58.169         << Commit [ConnectionDef="sample", Retaining=False]
+22703183197 11:08:58.169     << Close [Command="Table PKey Fields (DEPT.DEPT)"]
+22703183447 11:08:58.169      . Destroy [Command="Table PKey Fields (DEPT.DEPT)"]
+22703183872 11:08:58.169      . Col add [Index=1, SrcName="SECTION", SrcType=AnsiString, SrcSize=8, SrcPrec=0, SrcScale=0, Type=AnsiString, Size=8, Prec=0, Scale=0, OrigTabName="DEPT", OrigColName="SECTION"]
+22703184060 11:08:58.170      . Col add [Index=2, SrcName="DB_KEY", SrcType=ByteString, SrcSize=8, SrcPrec=0, SrcScale=0, Type=ByteString, Size=8, Prec=0, Scale=0, OrigTabName="DEPT", OrigColName="RDB$DB_KEY"]
+22703184299 11:08:58.170      . Primary key [Cols=""]
+22703184418 11:08:58.170 << Define(TFDDatSTable) [ATable="Dept_1", Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703184664 11:08:58.170 >> TFDCustomCommand.Fetch [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", AAll=True, ABlocked=True]
+22703184788 11:08:58.170     >> Fetch [ATable="DEPT", Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703184873 11:08:58.170          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703185502 11:08:58.170         >> Fetched
+22703185582 11:08:58.170              . Var [N=0, Type=SQL_VARYING, Prec=0, Scale=0, Size=8, Data='자바']
+22703185630 11:08:58.170              . Var [N=1, Type=SQL_TEXT, Prec=0, Scale=0, Size=8, Data='?   ']
+22703186754 11:08:58.171         << Fetched
+22703186968 11:08:58.171          . isc_dsql_fetch [stmt_handle=$00C53240, dialect=3]
+22703187033 11:08:58.171          . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_close"]
+22703187376 11:08:58.171     << Fetch [ATable="DEPT", Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", RowsAffected=1]
+22703187449 11:08:58.171      . Eof reached [ATable="DEPT", Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703187490 11:08:58.171     >> Close [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703187582 11:08:58.171         >> Commit [ConnectionDef="sample", Retaining=False]
+22703189186 11:08:58.172             >> TFDCustomCommand.Unprepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703189331 11:08:58.172                 >> Unprepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703189393 11:08:58.172                      . isc_dsql_free_statement [stmt_handle=$00C53240, option="DSQL_drop"]
+22703189899 11:08:58.172                 << Unprepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703189988 11:08:58.172             << TFDCustomCommand.Unprepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703190042 11:08:58.172             >> TFDCustomCommand.Unprepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703190276 11:08:58.172             << TFDCustomCommand.Unprepare [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703190332 11:08:58.172              . isc_commit_transaction [tra_handle=$00C531A0]
+22703190776 11:08:58.172         << Commit [ConnectionDef="sample", Retaining=False]
+22703190841 11:08:58.172     << Close [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703190899 11:08:58.172      . TFDCustomCommand.FetchFinished [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", AState=2, FRowsAffected=1]
+22703190978 11:08:58.172      . Destroy [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}"]
+22703191684 11:08:58.173 << TFDCustomCommand.Fetch [Command="SELECT A.SECTION, A.RDB$DB_KEY AS FD__DB_KEY
+FROM DEPT A
+WHERE (A.CODE = :FD__LC_CODE)
+ORDER BY A.CODE ASC
+{LIMIT(1)}", AAll=True, ABlocked=True]
+22740988161 11:09:13.489 >> Close [ConnectionDef="sample"]
+22740988281 11:09:13.489      . isc_detach_database [db_handle=$00C53290]
+22740989546 11:09:13.489 << Close [ConnectionDef="sample"]
+22740989690 11:09:13.489  . DestroyConnection [ConnectionDef="sample"]
+22740993230 11:09:13.491 -=#!!! FireDAC Tracer stopped !!!#=-

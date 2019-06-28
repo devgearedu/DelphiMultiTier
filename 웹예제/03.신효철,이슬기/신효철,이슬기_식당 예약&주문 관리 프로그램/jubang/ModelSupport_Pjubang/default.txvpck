@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="fw0jm0acmkoempdoi_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::ygggipwxgqpi8s9ek_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,20,100,160" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:Pjubang:uBarDM.TDM" />
+      <reference referencedUin="delphi:e_class:src:Pjubang:uBarDM.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::e8ju34pokqpphxbhi_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="360,20,101,134" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:Pjubang:Pjubang.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::c4bgkjc2nqpowz2qn_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="200,20,100,151" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:Pjubang:ujubang.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:Pjubang:ujubang.Tjubang" />
+    </reference>
+  </view>
+</nodeSet>

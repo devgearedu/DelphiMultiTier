@@ -1,0 +1,4 @@
+[main]
+FDHOME=$(HOME)/.firedac
+ConnectionDefFile=$(FDHOME)/FDConnectionDefs.ini
+DriverFile=$(FDHOME)/FDDrivers.ini
