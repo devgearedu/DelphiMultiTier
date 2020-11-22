@@ -2,7 +2,7 @@
 {                                                       }
 {            Delphi Visual Component Library            }
 {                                                       }
-{ Copyright(c) 1995-2018 Embarcadero Technologies, Inc. }
+{ Copyright(c) 1995-2020 Embarcadero Technologies, Inc. }
 {              All rights reserved                      }
 {                                                       }
 {*******************************************************}

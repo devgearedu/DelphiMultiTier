@@ -1,14 +1,10 @@
 object ServerMethods1: TServerMethods1
   OldCreateOrder = False
-  Height = 363
-  Width = 454
-  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
-    Provider = 'Forms'
-    Left = 176
-    Top = 40
-  end
+  Height = 290
+  Width = 540
   object FDConnection1: TFDConnection
     Params.Strings = (
+      'MonitorBy=FlatFile'
       'ConnectionDef=sample')
     Connected = True
     LoginPrompt = False
@@ -16,19 +12,42 @@ object ServerMethods1: TServerMethods1
     Top = 40
   end
   object FDPhysIBDriverLink1: TFDPhysIBDriverLink
-    Left = 96
+    Left = 128
     Top = 40
   end
-  object Insa: TFDTable
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 208
+    Top = 40
+  end
+  object FDMoniFlatFileClientLink1: TFDMoniFlatFileClientLink
+    FileName = 'mytrace.txt'
+    Tracing = True
+    Left = 344
+    Top = 40
+  end
+  object Dept: TFDTable
     Filtered = True
+    IndexFieldNames = 'CODE'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = 'DEPT'
+    TableName = 'DEPT'
+    Left = 40
+    Top = 120
+  end
+  object Insa: TFDTable
+    Constraints = <
+      item
+        FromDictionary = False
+      end>
     IndexFieldNames = 'ID'
+    ConstraintsEnabled = True
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'INSA'
     TableName = 'INSA'
     Left = 40
-    Top = 192
+    Top = 184
     object InsaID: TIntegerField
-      AutoGenerateValue = arAutoInc
       FieldName = 'ID'
       Origin = 'ID'
       Required = True
@@ -116,21 +135,12 @@ object ServerMethods1: TServerMethods1
       Size = 1
     end
   end
-  object Dept: TFDTable
-    Filtered = True
-    IndexFieldNames = 'CODE'
-    Connection = FDConnection1
-    UpdateOptions.UpdateTableName = 'DEPT'
-    TableName = 'DEPT'
-    Left = 40
-    Top = 120
-  end
   object InsaQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select * from insa'
       'where dept_code = :code')
-    Left = 232
+    Left = 288
     Top = 120
     ParamData = <
       item
@@ -140,40 +150,26 @@ object ServerMethods1: TServerMethods1
         Size = 4
       end>
   end
-  object DeptProvider: TDataSetProvider
+  object deptProvider: TDataSetProvider
     DataSet = Dept
-    Left = 120
+    Left = 104
     Top = 120
   end
   object InsaProvider: TDataSetProvider
     DataSet = Insa
-    Left = 120
-    Top = 192
+    Left = 104
+    Top = 184
   end
   object InsaQueryProvider: TDataSetProvider
     DataSet = InsaQuery
-    Left = 296
+    Left = 352
     Top = 120
-  end
-  object Tot_Query: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      'select count(id) as total'
-      'from insa'
-      'where dept_code like :code')
-    Left = 124
-    Top = 312
-    ParamData = <
-      item
-        Name = 'CODE'
-        ParamType = ptInput
-      end>
   end
   object FDStoredProc1: TFDStoredProc
     Connection = FDConnection1
     StoredProcName = 'INSERT_DEPT'
-    Left = 48
-    Top = 312
+    Left = 288
+    Top = 200
     ParamData = <
       item
         Position = 1
@@ -197,22 +193,36 @@ object ServerMethods1: TServerMethods1
         Size = 8
       end>
   end
-  object FDQuery1: TFDQuery
+  object Tot_Query: TFDQuery
     Connection = FDConnection1
-    Left = 184
-    Top = 312
+    SQL.Strings = (
+      'select count(id) as total'
+      'from insa'
+      'where dept_code like :code')
+    Left = 220
+    Top = 200
+    ParamData = <
+      item
+        Name = 'CODE'
+        ParamType = ptInput
+      end>
   end
   object DeptQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select * from dept'
       'order by dept,section')
-    Left = 232
+    Left = 392
     Top = 200
   end
-  object DeptQueryProvider: TDataSetProvider
+  object DeptqueryProvider: TDataSetProvider
     DataSet = DeptQuery
-    Left = 304
+    Left = 472
     Top = 200
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 448
+    Top = 40
   end
 end

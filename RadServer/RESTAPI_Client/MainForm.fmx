@@ -24,7 +24,7 @@ object Form1: TForm1
     Size.Height = 353.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    RowCount = 9
+    RowCount = 0
     OnSelChanged = Grid1SelChanged
     Viewport.Width = 365.000000000000000000
     Viewport.Height = 328.000000000000000000
@@ -38,7 +38,6 @@ object Form1: TForm1
   object edtTitle: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 12
-    Text = #45944#54028#51060' Begin...End'
     Position.X = 408.000000000000000000
     Position.Y = 65.000000000000000000
     Size.Width = 257.000000000000000000
@@ -54,7 +53,6 @@ object Form1: TForm1
   object edtAuthor: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 7
-    Text = #44608#50896#44221
     Position.X = 408.000000000000000000
     Position.Y = 113.000000000000000000
     Size.Width = 121.000000000000000000
@@ -70,7 +68,6 @@ object Form1: TForm1
   object edtISBN: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 5
-    Text = '9788996251613'
     Position.X = 408.000000000000000000
     Position.Y = 161.000000000000000000
     Size.Width = 121.000000000000000000
@@ -86,7 +83,6 @@ object Form1: TForm1
   object edtPrice: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 3
-    Text = '28,000'
     Position.X = 408.000000000000000000
     Position.Y = 209.000000000000000000
     Size.Width = 121.000000000000000000
@@ -102,9 +98,6 @@ object Form1: TForm1
   object edtLink: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 10
-    Text = 
-      'http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&m' +
-      'allGb=KOR&barcode=9788996251613&orderClick=LAG&Kc=SETLBkserp1_5'
     Position.X = 408.000000000000000000
     Position.Y = 257.000000000000000000
     Size.Width = 257.000000000000000000
@@ -120,25 +113,14 @@ object Form1: TForm1
   object mmoDescription: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
-    Lines.Strings = (
-      #45944#54028#51060#51032' '#49884#51089#48512#53552' '#45149#44620#51648' '#54028#54756#52824#45796'!'
-      ''
-      
-        #39#45944#54028#51060' Begin...End'#39#45716' '#45944#54028#51060#47484' '#52376#51020' '#49324#50857#54616#45716' '#52488#44553' '#44060#48156#51088#46308#51060' '#50508#44256#49910#50612#54616#45716' '#45944#54028#51060#50640' '#45824#54620' '#47784#46304' '#45236#50857#50640' '#45824 +
-        #54644' '#49884#51089#48512#53552' '#51473#44553' '#49688#51456#51032' '#54876#50857#44620#51648#47484' '#45812#51008' '#52293#51077#45768#45796'. '#45944#54028#51060#47484' "'#52376#51020'"'#53020#45716' '#44536' '#49692#44036#48512#53552' '#48373#54633#51201#51064' '#54532#47196#51229#53944#47484' "'#50756#49457'"'#54616 +
-        #44592#44620#51648#51032' '#47784#46304' '#45236#50857#51012' '#51060' '#54620' '#44428#51032' '#52293#51012' '#53685#54644' '#48176#50872' '#49688' '#51080#49845#45768#45796'.'
-      ''
-      
-        #51060' '#52293#51008' DataSnap, '#53364#46972#50864#46300' '#46321' '#51648#49549#51201#51004#47196' '#48156#51204#54644#50724#45716' '#45944#54028#51060#51032' '#52572#49888' '#44592#49696#44620#51648' '#47784#46160' '#52964#48260#54616#44256' '#51080#49845#45768#45796'. '#46608#54620' ' +
-        #45944)
     Position.X = 408.000000000000000000
     Position.Y = 304.000000000000000000
     Size.Width = 257.000000000000000000
     Size.Height = 97.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 13
-    Viewport.Width = 237.000000000000000000
-    Viewport.Height = 77.000000000000000000
+    Viewport.Width = 253.000000000000000000
+    Viewport.Height = 93.000000000000000000
   end
   object btnNewData: TButton
     Position.X = 408.000000000000000000
@@ -168,6 +150,16 @@ object Form1: TForm1
     TabOrder = 15
     Text = #49325#51228
     OnClick = btnDeleteDataClick
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 22
+    Text = '192.168.219.127'
+    Position.X = 200.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
   end
   object BindSourceDB2: TBindSourceDB
     DataSet = dmDataAccess.memBookDetail

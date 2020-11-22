@@ -101,9 +101,9 @@ object MainForm: TMainForm
         Caption = #54256#53944
         GroupIndex = 3
         object RibbonSpinEdit1: TRibbonSpinEdit
-          Left = 176
+          Left = 172
           Top = 2
-          Width = 73
+          Width = 77
           Height = 22
           MaxValue = 0
           MinValue = 0
@@ -141,11 +141,29 @@ object MainForm: TMainForm
       object RibbonGroup7: TRibbonGroup
         Left = 207
         Top = 3
-        Width = 286
+        Width = 275
         Height = 86
         ActionManager = ActionManager1
         Caption = #54868#47732#52968#53944#47204
         GroupIndex = 2
+      end
+      object RibbonGroup12: TRibbonGroup
+        Left = 484
+        Top = 3
+        Width = 158
+        Height = 86
+        ActionManager = ActionManager1
+        Caption = #49828#53440#51068
+        GroupIndex = 3
+        object ComboBox1: TComboBox
+          Left = 66
+          Top = 2
+          Width = 88
+          Height = 21
+          TabOrder = 0
+          Text = 'ComboBox1'
+          OnChange = ComboBox1Change
+        end
       end
     end
     object RibbonPage3: TRibbonPage
@@ -158,29 +176,38 @@ object MainForm: TMainForm
       object RibbonGroup8: TRibbonGroup
         Left = 4
         Top = 3
-        Width = 99
+        Width = 128
         Height = 86
         ActionManager = ActionManager1
         Caption = #44288#47532
         GroupIndex = 0
       end
       object RibbonGroup9: TRibbonGroup
-        Left = 105
+        Left = 134
         Top = 3
-        Width = 87
+        Width = 84
         Height = 86
         ActionManager = ActionManager1
         Caption = #51312#54924
         GroupIndex = 1
       end
       object RibbonGroup10: TRibbonGroup
-        Left = 194
+        Left = 220
         Top = 3
-        Width = 123
+        Width = 150
         Height = 86
         ActionManager = ActionManager1
         Caption = #49444#51221
         GroupIndex = 2
+      end
+      object RibbonGroup11: TRibbonGroup
+        Left = 372
+        Top = 3
+        Width = 95
+        Height = 86
+        ActionManager = ActionManager1
+        Caption = #48176#52824
+        GroupIndex = 3
       end
     end
   end
@@ -209,13 +236,13 @@ object MainForm: TMainForm
     Caption = 'GridPanel1'
     ColumnCollection = <
       item
-        Value = 24.650047992715690000
+        Value = 24.599278440501550000
       end
       item
-        Value = 72.310856853283160000
+        Value = 72.161924493242850000
       end
       item
-        Value = 3.039095154001155000
+        Value = 3.238797066255607000
       end>
     ControlCollection = <
       item
@@ -230,20 +257,20 @@ object MainForm: TMainForm
       end>
     RowCollection = <
       item
-        Value = 3.160967069807541000
+        Value = 3.133190801306780000
       end
       item
-        Value = 93.808376952977840000
+        Value = 92.984057493672220000
       end
       item
-        Value = 3.030655977214621000
+        Value = 3.882751705020994000
       end>
     TabOrder = 2
     object CategoryPanelGroup1: TCategoryPanelGroup
       Left = 1
-      Top = 10
+      Top = 11
       Width = 182
-      Height = 288
+      Height = 286
       VertScrollBar.Tracking = True
       Align = alClient
       HeaderFont.Charset = DEFAULT_CHARSET
@@ -256,10 +283,11 @@ object MainForm: TMainForm
         Top = 600
         Caption = #47532#49828#53944#48624
         TabOrder = 0
+        ExplicitWidth = 185
         object ListView1: TListView
           Left = 0
           Top = 0
-          Width = 161
+          Width = 158
           Height = 174
           Align = alClient
           Columns = <
@@ -286,10 +314,11 @@ object MainForm: TMainForm
         Top = 400
         Caption = #51312#51649#46020'(treeview'#52980#54252#45324#53944')'
         TabOrder = 1
+        ExplicitWidth = 185
         object TreeView1: TTreeView
           Left = 0
           Top = 0
-          Width = 161
+          Width = 158
           Height = 174
           Align = alClient
           Indent = 19
@@ -308,10 +337,11 @@ object MainForm: TMainForm
         Top = 200
         Caption = #44368#50977#47785#47197'(ButtonGrroup'#52980#54252#45324#53944#49324#50836
         TabOrder = 2
+        ExplicitWidth = 185
         object ButtonGroup1: TButtonGroup
           Left = 0
           Top = 0
-          Width = 161
+          Width = 158
           Height = 174
           Align = alClient
           ButtonOptions = [gboFullSize, gboShowCaptions]
@@ -341,10 +371,11 @@ object MainForm: TMainForm
         Top = 0
         Caption = #49660#54609#47785#47197'(categorybutton zj'#52980#54252#45324#53944' '#49324#50857')'
         TabOrder = 3
+        ExplicitWidth = 178
         object CategoryButtons1: TCategoryButtons
           Left = 0
           Top = 0
-          Width = 161
+          Width = 158
           Height = 174
           Align = alClient
           ButtonFlow = cbfVertical
@@ -441,9 +472,9 @@ object MainForm: TMainForm
     end
     object RichEdit1: TRichEdit
       Left = 183
-      Top = 10
-      Width = 535
-      Height = 288
+      Top = 11
+      Width = 534
+      Height = 286
       Align = alClient
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
@@ -1658,6 +1689,11 @@ object MainForm: TMainForm
             Action = Dept_Action
             Caption = #48512#49436#44288#47532'(&Z)'
             ImageIndex = 20
+          end
+          item
+            Action = DeptNEW_Action
+            Caption = #49352#47196#50868#48512#49436#44288#47532'(&X)'
+            ImageIndex = 20
           end>
         ActionBar = RibbonGroup8
       end
@@ -1673,6 +1709,11 @@ object MainForm: TMainForm
       item
         Items = <
           item
+            Action = Update_Action
+            Caption = #51312#51064#46108#53244#47532#50629#45936#51060#53944'(&Y)'
+            ImageIndex = 24
+          end
+          item
             Action = Transaction_Action
             Caption = #53944#47004#51117#49496#52376#47532'(&Z)'
             ImageIndex = 23
@@ -1680,6 +1721,23 @@ object MainForm: TMainForm
         ActionBar = RibbonGroup10
       end
       item
+        Items = <
+          item
+            Action = Batch_Action
+            Caption = #48176#52824#52376#47532'(&Z)'
+            ImageIndex = 25
+          end>
+        ActionBar = RibbonGroup11
+      end
+      item
+        Items = <
+          item
+            Caption = #49828#53440#51068'(&Z)'
+            CommandStyle = csControl
+            CommandProperties.Width = 150
+            CommandProperties.ContainedControl = ComboBox1
+          end>
+        ActionBar = RibbonGroup12
       end>
     Images = ImageList1
     Left = 192
@@ -1906,12 +1964,21 @@ object MainForm: TMainForm
       Caption = #51312#51064#46108#53244#47532#50629#45936#51060#53944
       Hint = #51312#51064#46108#53244#47532#50629#45936#51060#53944#48169#48277
       ImageIndex = 24
+      OnExecute = Update_ActionExecute
     end
     object Batch_Action: TAction
       Category = #48176#52824
       Caption = #48176#52824#52376#47532
       Hint = #45936#51060#53552' '#51060#46041
       ImageIndex = 25
+      OnExecute = Batch_ActionExecute
+    end
+    object DeptNEW_Action: TAction
+      Category = #44288#47532
+      Caption = #49352#47196#50868#48512#49436#44288#47532
+      Hint = #49352#47196#50868' '#52980#54252#45324#53944#47484' '#49324#50857#54620' '#48512#49436#44288#47532
+      ImageIndex = 20
+      OnExecute = DeptNEW_ActionExecute
     end
   end
   object PopupMenu1: TPopupMenu
@@ -1962,7 +2029,7 @@ object MainForm: TMainForm
         Icon = 
           'C:\Program Files (x86)\Embarcadero\Studio\20.0\Images\Icons\FACT' +
           'ORY.ICO'
-        Path = 'D:\201904'#50900'_'#44592#48376#44284#51221'\Win32\Release\test.exe'
+        Path = 'E:\'#50728#46972#51064#44368#50977'\202010'#50900'_'#50952#46020#50864#44284#51221'\202010'#50900'_'#44592#52488#45796#51648#44592'\Win32\Debug\Test.exe'
         FriendlyName = #53580#49828#53944#54532#47196#44536#47016
       end>
     Left = 304

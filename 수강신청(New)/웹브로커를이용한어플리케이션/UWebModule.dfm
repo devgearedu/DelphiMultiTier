@@ -31,8 +31,8 @@ object WebModule8: TWebModule8
   Width = 546
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=D:\Book_SampleDB\PROJECTDB.IB'
-      'User_Name=SYSDBA'
+      'Database=E:\'#45944#54028#51060#44368#50977#49548#49828'_'#50756#49457#48376'\'#48516#49328#52376#47532'\'#49688#44053#49888#52397'(New)\PROJECTDB.IB'
+      'User_Name=sysdba'
       'Password=masterkey'
       'DriverID=IB')
     Connected = True
@@ -398,7 +398,6 @@ object WebModule8: TWebModule8
       end>
   end
   object Query_curridate: TFDQuery
-    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'select * from curritb'
@@ -415,7 +414,6 @@ object WebModule8: TWebModule8
       end>
   end
   object CustTemp: TFDTable
-    Active = True
     IndexFieldNames = 'CTCODE;PNO'
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'CUSTTEMP'

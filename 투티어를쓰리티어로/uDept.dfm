@@ -90,21 +90,21 @@ object DeptForm: TDeptForm
       object Label1: TLabel
         Left = 64
         Top = 32
-        Width = 48
+        Width = 44
         Height = 13
         Caption = #48512#49436#53076#46300
       end
       object Label2: TLabel
         Left = 64
         Top = 64
-        Width = 36
+        Width = 33
         Height = 13
         Caption = #48512#49436#47749
       end
       object Label3: TLabel
         Left = 64
         Top = 104
-        Width = 24
+        Width = 22
         Height = 13
         Caption = #54016#47749
       end

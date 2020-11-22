@@ -715,7 +715,7 @@ object SplashForm: TSplashForm
     object Label1: TLabel
       Left = 88
       Top = 246
-      Width = 183
+      Width = 156
       Height = 19
       Caption = #49368#54540#54532#47196#44536#47016#44592#46041#51473'......'
       Font.Charset = DEFAULT_CHARSET

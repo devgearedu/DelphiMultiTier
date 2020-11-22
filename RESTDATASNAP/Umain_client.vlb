@@ -1,32 +1,34 @@
-﻿[StringGrid1]
-Coordinates=345,10,70,51
+﻿[]
+Coordinates=115,247,70,51
 Visible=True
 
-[]
-Coordinates=14,304,53,51
-
-[RESTRequest1]
-Coordinates=132,100,88,87
-
-[RESTClient1]
-Coordinates=132,1,76,69
+[Button2]
+Coordinates=120,310,53,51
 
 [RESTResponse1]
-Coordinates=0,0,96,285
+Coordinates=0,0,96,303
 
 [RESTResponseDataSetAdapter1]
-Coordinates=240,87,174,33
+Coordinates=210,125,174,33
 
 [FDMemTable1]
-Coordinates=132,221,84,33
-Visible=False
+Coordinates=350,11,84,33
 
-[BindSourceDB1]
-Coordinates=132,221,92,123
+[RESTClient1]
+Coordinates=115,1,76,69
 
-[BindingsList1]
-Coordinates=33,363,82,33
+[RESTRequest1]
+Coordinates=115,89,88,87
 
-[Button2]
-Coordinates=73,304,53,51
+[RESTResponse2]
+Coordinates=420,10,96,303
+
+[RESTRequest2]
+Coordinates=241,177,88,87
+
+[RESTResponseDataSetAdapter2]
+Coordinates=210,89,174,33
+
+[InsaQuery]
+Coordinates=315,293,64,33
 

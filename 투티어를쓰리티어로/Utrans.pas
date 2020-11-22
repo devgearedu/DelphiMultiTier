@@ -36,18 +36,17 @@ uses Udm;
 procedure TTransForm.Button1Click(Sender: TObject);
 begin
 
-  Case Demo.delete_Dept(Dm.Dept.fieldByName('Code').asString) of
-    0:showmessage('성공');
-    1:showmessage('사원삭제오류');
-    2:showmessage('부서삭제오류');
-  end;
-
-  DM.Dept.Refresh;
-  DM.Insa.Refresh;
+ case demo_client.delete_dept(dm.dept.fields[0].asstring) of
+ 1:  showmessage('사원 삭제 오류');
+ 2:  showmessage('부서 삭제 오류');
+ end;
+ DM.Dept.Refresh;
+ DM.Insa.Refresh;
 end;
 
 procedure TTransForm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+ 
   Action := caFree;
 end;
 

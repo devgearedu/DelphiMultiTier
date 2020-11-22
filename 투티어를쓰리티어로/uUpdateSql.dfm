@@ -33,8 +33,8 @@ object UpdateForm: TUpdateForm
     OnClick = Button1Click
   end
   object CheckBox1: TCheckBox
-    Left = 16
-    Top = 280
+    Left = 8
+    Top = 281
     Width = 57
     Height = 25
     Caption = #52992#49772
@@ -151,9 +151,7 @@ object UpdateForm: TUpdateForm
     OnClick = Button6Click
   end
   object FDQuery1: TFDQuery
-    Active = True
     CachedUpdates = True
-    Connection = DM.FDConnection1
     UpdateObject = FDUpdateSQL1
     SQL.Strings = (
       'select * from dept, insa'

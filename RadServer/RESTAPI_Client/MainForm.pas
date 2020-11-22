@@ -12,7 +12,8 @@ uses
   Data.Bind.Grid, Data.Bind.DBScope, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, REST.Response.Adapter, REST.Client,
   Data.Bind.ObjectScope, FMX.ScrollBox, FMX.Grid, FMX.Controls.Presentation,
-  FMX.StdCtrls, FMX.Memo, FMX.Edit, FMX.Layouts, FMX.ExtCtrls, DataAccessModule;
+  FMX.StdCtrls, FMX.Memo, FMX.Edit, FMX.Layouts, FMX.ExtCtrls, DataAccessModule,
+  FMX.Memo.Types;
 
 type
   TForm1 = class(TForm)
@@ -44,6 +45,7 @@ type
     LinkControlToField4: TLinkControlToField;
     LinkControlToField5: TLinkControlToField;
     LinkControlToField6: TLinkControlToField;
+    Edit1: TEdit;
     procedure btnLoadDataClick(Sender: TObject);
     procedure Grid1SelChanged(Sender: TObject);
     procedure btnNewDataClick(Sender: TObject);
@@ -70,7 +72,13 @@ uses
 {$R *.fmx}
 
 procedure TForm1.btnLoadDataClick(Sender: TObject);
+var
+  path:string;
 begin
+   path := 'http://' + Edit1.Text + ':8080';
+   dmDataAccess.RestClient1.BaseURL := path;
+   dmDataAccess.RestClient1.ProxyPort := 8080;
+   dmDataAccess.RestClient1.ProxyServer := Edit1.Text;
    dmDataAccess.reqList.Execute;
 end;
 

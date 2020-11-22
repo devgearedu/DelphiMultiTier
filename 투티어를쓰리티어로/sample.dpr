@@ -2,17 +2,18 @@ program sample;
 
 uses
   Vcl.Forms,
+  uTree in 'uTree.pas' {TreeForm},
+  Utrans in 'Utrans.pas' {TransForm},
+  uSplash in 'uSplash.pas' {SplashForm},
   uMain in 'uMain.pas' {MainForm},
-  Vcl.Themes,
-  Vcl.Styles,
-  USplash in 'USplash.pas' {SplashForm},
-  uInsa in 'uInsa.pas' {InsaForm},
   uDM in 'uDM.pas' {DM: TDataModule},
   uDept in 'uDept.pas' {DeptForm},
-  Utrans in 'Utrans.pas' {TransForm},
-  uTree in 'uTree.pas' {TreeForm},
-  uUpdateSql in 'uUpdateSql.pas' {UpdateForm},
-  UbatchMove in 'UbatchMove.pas' {BatchForm};
+  Vcl.Themes,
+  Vcl.Styles,
+  UmyFrame in 'UmyFrame.pas' {Frame1: TFrame},
+  uInsa in 'uInsa.pas' {InsaForm},
+  UClientClass in 'UClientClass.pas',
+  Vcl.RecError in 'Vcl.RecError.pas' {ReconcileErrorForm};
 
 {$R *.res}
 

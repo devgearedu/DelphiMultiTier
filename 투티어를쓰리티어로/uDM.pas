@@ -3,51 +3,43 @@ unit Udm;
 interface
 
 uses
-  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  vcl.dialogs, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
-  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.IB,
-  FireDAC.Phys.IBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
-  FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, FireDAC.Comp.UI, FireDAC.Phys.IBBase,
-  FireDAC.Moni.Base, FireDAC.Moni.FlatFile, FireDAC.VCLUI.Error,
-  Datasnap.DBClient, Datasnap.DSConnect, Data.SqlExpr, Data.DBXDataSnap,
-  Data.DBXCommon, IPPeerClient, uClientClass;
+  System.SysUtils, System.Classes,System.DateUtils,
+  Datasnap.DBClient, Datasnap.DSConnect, Data.DbxDatasnap, Data.DBXCommon,
+  IPPeerClient, Data.SqlExpr, UClientClass, Data.DB;
 
 type
   TDM = class(TDataModule)
     InsaQuerySource: TDataSource;
     DeptSource: TDataSource;
     InsaSource: TDataSource;
-    SQLConnection1: TSQLConnection;
     DSProviderConnection1: TDSProviderConnection;
     Dept: TClientDataSet;
-    Insa: TClientDataSet;
-    InsaQuery: TClientDataSet;
-    InsaID: TIntegerField;
-    InsaNAME: TStringField;
-    InsaAGE: TSmallintField;
-    InsaDEPT_CODE: TStringField;
-    InsaSection: TStringField;
-    InsaIPSA_DATE: TDateField;
-    InsaDuring: TIntegerField;
-    InsaCLASS: TStringField;
-    InsaSALARY: TIntegerField;
-    InsaTax: TFloatField;
-    InsaPHOTO: TBlobField;
-    InsaGRADE: TStringField;
+    insa: TClientDataSet;
+    insaquery: TClientDataSet;
+    fdConnection1: TSQLConnection;
+    insaID: TIntegerField;
+    insaNAME: TStringField;
+    insaAGE: TSmallintField;
+    insaDEPT_CODE: TStringField;
+    insaIPSA_DATE: TDateField;
+    insaCLASS: TStringField;
+    insaSALARY: TIntegerField;
+    insaPHOTO: TBlobField;
+    insaGRADE: TStringField;
+    insaduring: TIntegerField;
+    insatax: TFloatField;
+    insasection: TStringField;
     procedure insaCalcFields(DataSet: TDataSet);
     procedure insaBeforeInsert(DataSet: TDataSet);
     procedure insaNewRecord(DataSet: TDataSet);
-    procedure insaAfterPost(DataSet: TDataSet);
     procedure InsaSourceStateChange(Sender: TObject);
     procedure InsaSourceDataChange(Sender: TObject; Field: TField);
     procedure DeptSourceDataChange(Sender: TObject; Field: TField);
-    procedure InsaAfterApplyUpdates(Sender: TObject; var OwnerData: OleVariant);
-    procedure InsaReconcileError(DataSet: TCustomClientDataSet;
-      E: EReconcileError; UpdateKind: TUpdateKind;
-      var Action: TReconcileAction);
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
+    procedure insaReconcileError(DataSet: TCustomClientDataSet;
+      E: EReconcileError; UpdateKind: TUpdateKind;
+      var Action: TReconcileAction);
   private
     { Private declarations }
   public
@@ -56,7 +48,7 @@ type
 
 var
   DM: TDM;
-  Demo:TServerMethods1Client;
+  demo_Client : TServerMethods1Client;
 
 implementation
 
@@ -68,12 +60,12 @@ uses UInsa, Vcl.RecError;
 
 procedure TDM.DataModuleCreate(Sender: TObject);
 begin
- demo := TServerMethods1Client.create(SqlConnection1.dbxconnection);
+   demo_client := TServerMethods1Client.Create(fdconnection1.DBXConnection);
 end;
 
 procedure TDM.DataModuleDestroy(Sender: TObject);
 begin
-  demo.free;
+  demo_client.Free;
 end;
 
 procedure TDM.DeptSourceDataChange(Sender: TObject; Field: TField);
@@ -82,16 +74,6 @@ begin
   InsaQuery.ParamByName('code').AsString :=
   DM.Dept.Fields[0].AsString;
   InsaQuery.Open;
-end;
-
-procedure TDM.InsaAfterApplyUpdates(Sender: TObject; var OwnerData: OleVariant);
-begin
-  ShowMessage('등록/수정 완료');
-end;
-
-procedure TDM.insaAfterPost(DataSet: TDataSet);
-begin
-  ShowMessage('등록/수정 완료');
 end;
 
 procedure TDM.insaBeforeInsert(DataSet: TDataSet);
@@ -107,28 +89,27 @@ begin
   DecodeDate(Now, yy1,mm1,dd1);
   DecodeDate(DM.InsaIpsa_Date.Value, yy2,mm2,dd2 );
 
-  if (yy1 = yy2) and (mm1 = mm2) then
-     InsaDuring.value := 0
-  else
-     InsaDuring.Value := yy1 - yy2;
+//  if (yy1 = yy2) and (mm1 = mm2) then
+//     InsaDuring.value := 0
+//  else
+//     InsaDuring.Value := yy1 - yy2;
 
+  InsaDuring.value := trunc(MonthsBetween(insaIpsa_Date.value, Now)/12 );
 
   InsaTax.Value := InsaSalary.Value * 0.1;
 end;
 
 procedure TDM.insaNewRecord(DataSet: TDataSet);
 begin
-  InsaId.value := -1;
   InsaSalary.Value := 5000000;
   InsaGrade.Value := '1';
   InsaIpsa_Date.Value := Date;
 end;
 
-procedure TDM.InsaReconcileError(DataSet: TCustomClientDataSet;
+procedure TDM.insaReconcileError(DataSet: TCustomClientDataSet;
   E: EReconcileError; UpdateKind: TUpdateKind; var Action: TReconcileAction);
 begin
-  action := HandleReconcileError(DataSet,UpdateKind,e);
-
+ action := HandleReconcileError(Dataset, updatekind, e);
 end;
 
 procedure TDM.InsaSourceDataChange(Sender: TObject; Field: TField);

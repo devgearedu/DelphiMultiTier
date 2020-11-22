@@ -5,7 +5,7 @@ object Dm: TDm
   object CustTemp_Source: TDataSource
     DataSet = CustTemp
     Left = 224
-    Top = 8
+    Top = 16
   end
   object curritb_Source: TDataSource
     DataSet = curritb
@@ -24,12 +24,12 @@ object Dm: TDm
   end
   object currilist_Source: TDataSource
     DataSet = query_CurriList
-    Left = 368
-    Top = 8
+    Left = 392
+    Top = 16
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=D:\Book_SampleDB\PROJECTDB.IB'
+      'Database=E:\'#45944#54028#51060#44368#50977#49548#49828'_'#50756#49457#48376'\'#48516#49328#52376#47532'\'#49688#44053#49888#52397'(New)\PROJECTDB.IB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'DriverID=IB')
@@ -40,12 +40,12 @@ object Dm: TDm
   end
   object FDPhysIBDriverLink1: TFDPhysIBDriverLink
     Left = 32
-    Top = 72
+    Top = 80
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
     Left = 32
-    Top = 128
+    Top = 144
   end
   object CustTemp: TFDTable
     Active = True
@@ -186,14 +186,13 @@ object Dm: TDm
     end
   end
   object query_CurriList: TFDQuery
-    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'Select * From curritb'
       'where (ctcode like :p_code) and'
       '(start >= :p_date1) and (start <= :p_date2)')
     Left = 304
-    Top = 8
+    Top = 16
     ParamData = <
       item
         Name = 'P_CODE'
@@ -219,11 +218,11 @@ object Dm: TDm
     UpdateOptions.UpdateTableName = 'ORDERS'
     TableName = 'ORDERS'
     Left = 304
-    Top = 72
+    Top = 80
   end
   object FDGUIxErrorDialog1: TFDGUIxErrorDialog
     Provider = 'Forms'
     Left = 32
-    Top = 200
+    Top = 216
   end
 end

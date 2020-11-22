@@ -1,7 +1,7 @@
 object ServerMethods1: TServerMethods1
   OldCreateOrder = False
-  Height = 239
-  Width = 414
+  Height = 282
+  Width = 512
   object FDConnection1: TFDConnection
     Params.Strings = (
       'ConnectionDef=Sample')
@@ -16,38 +16,41 @@ object ServerMethods1: TServerMethods1
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 288
+    Left = 296
     Top = 32
   end
   object Dept: TFDTable
     IndexFieldNames = 'CODE'
     Connection = FDConnection1
+    SchemaAdapter = FDSchemaAdapter1
     UpdateOptions.UpdateTableName = 'DEPT'
     TableName = 'DEPT'
     Left = 64
-    Top = 104
-  end
-  object FDBatchMove1: TFDBatchMove
-    Reader = FDBatchMoveDataSetReader1
-    Writer = FDBatchMoveJSONWriter1
-    Mappings = <>
-    LogFileName = 'Data.log'
-    Left = 288
-    Top = 104
-  end
-  object FDBatchMoveDataSetReader1: TFDBatchMoveDataSetReader
-    DataSet = Dept
-    Left = 168
-    Top = 112
-  end
-  object FDBatchMoveJSONWriter1: TFDBatchMoveJSONWriter
-    FileName = 'D:\201906_'#44592#48376#44284#51221'\'#48516#49328#52376#47532#44284#51221'\RESTDATASNAP\Dept.json'
-    DataDef.Fields = <>
-    Left = 304
-    Top = 176
+    Top = 96
   end
   object FDStanStorageJSONLink1: TFDStanStorageJSONLink
+    Left = 416
+    Top = 96
+  end
+  object FDStanStorageBinLink1: TFDStanStorageBinLink
+    Left = 416
+    Top = 32
+  end
+  object InsaQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from insa'
+      'where dept_code =:code')
     Left = 64
-    Top = 168
+    Top = 176
+    ParamData = <
+      item
+        Name = 'CODE'
+        ParamType = ptInput
+      end>
+  end
+  object FDSchemaAdapter1: TFDSchemaAdapter
+    Left = 168
+    Top = 96
   end
 end

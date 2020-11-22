@@ -1,9 +1,9 @@
-object Form195: TForm195
+object Form18: TForm18
   Left = 0
   Top = 0
-  Caption = 'Form195'
-  ClientHeight = 202
-  ClientWidth = 331
+  Caption = 'Form18'
+  ClientHeight = 229
+  ClientWidth = 503
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

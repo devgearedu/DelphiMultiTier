@@ -25,6 +25,10 @@ object BatchForm: TBatchForm
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #53580#51060#53552#49483#51012#53581#49828#53944#47196
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         697
         300)
@@ -93,6 +97,10 @@ object BatchForm: TBatchForm
     object TabSheet2: TTabSheet
       Caption = #53581#49828#53944#47484#45936#51060#53552#49483#51004#47196
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Button4: TButton
         Left = 3
         Top = 8
@@ -161,8 +169,14 @@ object BatchForm: TBatchForm
           64
           64
           64
-          64
+          124
           64)
+        ColAligments = (
+          0
+          1
+          1
+          0
+          0)
       end
       object DBGrid3: TDBGrid
         Left = 203
@@ -183,6 +197,10 @@ object BatchForm: TBatchForm
     object TabSheet4: TTabSheet
       Caption = #45936#51060#53552#49483#51012'JSON'#51004#47196
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         697
         300)
@@ -197,11 +215,17 @@ object BatchForm: TBatchForm
         RowCount = 19
         TabOrder = 0
         ColWidths = (
-          64
-          64
-          64
+          148
+          148
+          148
           64
           64)
+        ColAligments = (
+          0
+          0
+          0
+          1
+          1)
       end
       object Button7: TButton
         Left = 3
@@ -263,8 +287,8 @@ object BatchForm: TBatchForm
     Top = 80
   end
   object FDBatchMoveDataSetReader1: TFDBatchMoveDataSetReader
-    Left = 92
-    Top = 80
+    Left = 84
+    Top = 88
   end
   object FDBatchMoveTextWriter1: TFDBatchMoveTextWriter
     FileName = 'firedac_sample.txt'

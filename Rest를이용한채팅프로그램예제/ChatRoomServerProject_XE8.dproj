@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{B1CB3096-AE9D-4C80-850E-1D77F3753E0E}</ProjectGuid>
         <MainSource>ChatRoomServerProject_XE8.dpr</MainSource>
-        <ProjectVersion>18.6</ProjectVersion>
+        <ProjectVersion>19.1</ProjectVersion>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>

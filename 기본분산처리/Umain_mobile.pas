@@ -100,8 +100,8 @@ end;
 procedure TForm1.SQLConnection1BeforeConnect(Sender: TObject);
 begin
  SQLConnection1.Params.Values['HOSTNAME'] := Edit1.Text;
- SQLConnection1.Params.Values[TDBXPropertyNames.DSAuthenticationUser] := Edit2.Text;
- SQLConnection1.Params.Values[TDBXPropertyNames.DSAuthenticationPassword] := Edit3.text;
+// SQLConnection1.Params.Values[TDBXPropertyNames.DSAuthenticationUser] := Edit2.Text;
+// SQLConnection1.Params.Values[TDBXPropertyNames.DSAuthenticationPassword] := Edit3.text;
 
 end;
 

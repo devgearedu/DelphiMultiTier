@@ -92,7 +92,7 @@ object Form1: TForm1
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
         TabOrder = 0
-        Text = '192.168.0.28'
+        Text = '192.168.1.67'
         Size.Width = 65.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
@@ -13615,12 +13615,14 @@ object Form1: TForm1
       'User_Name=delphi'
       'Password=delphi')
     BeforeConnect = SQLConnection1BeforeConnect
+    Connected = True
     Left = 72
     Top = 416
     UniqueId = '{AC194A82-1C4F-4FE7-ADC5-98BFF3D3B6CF}'
   end
   object DSProviderConnection1: TDSProviderConnection
     ServerClassName = 'TServerMethods1'
+    Connected = True
     SQLConnection = SQLConnection1
     Left = 176
     Top = 416

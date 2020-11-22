@@ -14,18 +14,24 @@ uses
 
 type
   TForm212 = class(TForm)
-    StringGrid1: TStringGrid;
+    Button2: TButton;
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
     RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter;
     FDMemTable1: TFDMemTable;
-    BindSourceDB1: TBindSourceDB;
-    BindingsList1: TBindingsList;
-    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
-    Button2: TButton;
+    RESTRequest2: TRESTRequest;
+    RESTResponse2: TRESTResponse;
+    RESTResponseDataSetAdapter2: TRESTResponseDataSetAdapter;
+    InsaQuery: TFDMemTable;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DataSource2: TDataSource;
+    DBGrid2: TDBGrid;
     procedure Button2Click(Sender: TObject);
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
   private
+    procedure RequestDetail(code:String);
     { Private declarations }
   public
     { Public declarations }
@@ -42,13 +48,28 @@ implementation
 procedure TForm212.Button2Click(Sender: TObject);
 begin
 //  RestClient1.BaseURL := 'http://localhost:8080/datasnap/rest/TServerMethods1/getDept';
-//  RESTRequest1.Method := TRESTRequestMethod.rmGET;
-  BindSourceDB1.DataSource.Enabled := False;
+ // RESTRequest1.Method := TRESTRequestMethod.rmGET;
+//  BindSourceDB1.DataSource.Enabled := False;
   RESTRequest1.Execute;
-//  executeAsync(procedure
-//  begin
-    BindSourceDB1.DataSource.Enabled := True;
-//  end);
+  RESTResponseDataSetAdapter1.ACTIVE:= true;
+  RESTResponseDataSetAdapter1.Dataset := FDMemTable1;
+  FDMemTable1.Open;
+
+end;
+
+procedure TForm212.DataSource1DataChange(Sender: TObject; Field: TField);
+begin
+   if FDMemTable1.RecordCount = 0 then
+    Exit;
+    RequestDetail(FDMemTable1.FieldByName('CODE').AsString);
+
+end;
+
+procedure TForm212.RequestDetail(code:string);
+begin
+  RESTRequest2.Params.ParameterByName('item').Value := code;
+  RESTRequest2.Execute;
+
 end;
 
 end.

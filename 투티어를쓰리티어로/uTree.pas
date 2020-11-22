@@ -13,7 +13,7 @@ type
   TTreeForm = class(TForm)
     TreeView1: TTreeView;
     ListView1: TListView;
-    FDQuery1: TClientDataSet;
+    fdquery1: TClientDataSet;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TreeView1Click(Sender: TObject);

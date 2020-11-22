@@ -1,5 +1,6 @@
-// 
+﻿// 
 // Created by the DataSnap proxy generator.
+// 2020-11-20 오후 8:36:33
 // 
 
 function DSAdmin(connectionInfo)
@@ -624,7 +625,7 @@ function TServerMethods1(connectionInfo)
    * @return result - Type on server: string
    */
   this.EchoString = function(Value) {
-    var returnObject = this.executor.executeMethod("EchoString", "GET", [Value], arguments[1], true, arguments[2], arguments[3]);
+    var returnObject = this.executor.executeMethod('EchoString', "GET", [Value], arguments[1], true, arguments[2], arguments[3]);
     if (arguments[1] == null) {
       if (returnObject != null && returnObject.result != null && isArray(returnObject.result)) {
         var resultArray = returnObject.result;
@@ -642,11 +643,109 @@ function TServerMethods1(connectionInfo)
   };
 
   /*
+   * @return result - Type on server: TJSONValue
+   */
+  this.GetDept = function() {
+    var returnObject = this.executor.executeMethod('GetDept', "GET", [], arguments[0], true, arguments[1], arguments[2]);
+    if (arguments[0] == null) {
+      if (returnObject != null && returnObject.result != null && isArray(returnObject.result)) {
+        var resultArray = returnObject.result;
+        var resultObject = new Object();
+        resultObject.result = resultArray[0];
+        if (returnObject.cacheId != null && returnObject.cmdIndex != null) {
+          resultObject._cacheId = returnObject.cacheId;
+          resultObject._cmdIndex = returnObject.cmdIndex;
+        }
+        return resultObject;
+      }
+      return returnObject;
+    }
+  };
+
+  this.GetDept_URL = function() {
+    return this.executor.getMethodURL("GetDept", "GET", [], arguments[0])[0];
+  };
+
+  /*
+   * @return result - Type on server: TJSONArray
+   */
+  this.GetDept1 = function() {
+    var returnObject = this.executor.executeMethod('GetDept1', "GET", [], arguments[0], true, arguments[1], arguments[2]);
+    if (arguments[0] == null) {
+      if (returnObject != null && returnObject.result != null && isArray(returnObject.result)) {
+        var resultArray = returnObject.result;
+        var resultObject = new Object();
+        resultObject.result = resultArray[0];
+        if (returnObject.cacheId != null && returnObject.cmdIndex != null) {
+          resultObject._cacheId = returnObject.cacheId;
+          resultObject._cmdIndex = returnObject.cmdIndex;
+        }
+        return resultObject;
+      }
+      return returnObject;
+    }
+  };
+
+  this.GetDept1_URL = function() {
+    return this.executor.getMethodURL("GetDept1", "GET", [], arguments[0])[0];
+  };
+
+  /*
+   * @return result - Type on server: TStream
+   */
+  this.GetDept2 = function() {
+    var returnObject = this.executor.executeMethod('GetDept2', "GET", [], arguments[0], true, arguments[1], arguments[2]);
+    if (arguments[0] == null) {
+      if (returnObject != null && returnObject.result != null && isArray(returnObject.result)) {
+        var resultArray = returnObject.result;
+        var resultObject = new Object();
+        resultObject.result = resultArray[0];
+        if (returnObject.cacheId != null && returnObject.cmdIndex != null) {
+          resultObject._cacheId = returnObject.cacheId;
+          resultObject._cmdIndex = returnObject.cmdIndex;
+        }
+        return resultObject;
+      }
+      return returnObject;
+    }
+  };
+
+  this.GetDept2_URL = function() {
+    return this.executor.getMethodURL("GetDept2", "GET", [], arguments[0])[0];
+  };
+
+  /*
+   * @param value [in] - Type on server: string
+   * @return result - Type on server: TJSONValue
+   */
+  this.GetInsa = function(value) {
+    var returnObject = this.executor.executeMethod('GetInsa', "GET", [value], arguments[1], true, arguments[2], arguments[3]);
+    if (arguments[1] == null) {
+      if (returnObject != null && returnObject.result != null && isArray(returnObject.result)) {
+        var resultArray = returnObject.result;
+        var resultObject = new Object();
+        resultObject.value = value;
+        resultObject.result = resultArray[0];
+        if (returnObject.cacheId != null && returnObject.cmdIndex != null) {
+          resultObject._cacheId = returnObject.cacheId;
+          resultObject._cmdIndex = returnObject.cmdIndex;
+        }
+        return resultObject;
+      }
+      return returnObject;
+    }
+  };
+
+  this.GetInsa_URL = function(value) {
+    return this.executor.getMethodURL("GetInsa", "GET", [value], arguments[1])[0];
+  };
+
+  /*
    * @param Value [in] - Type on server: string
    * @return result - Type on server: string
    */
   this.ReverseString = function(Value) {
-    var returnObject = this.executor.executeMethod("ReverseString", "GET", [Value], arguments[1], true, arguments[2], arguments[3]);
+    var returnObject = this.executor.executeMethod('ReverseString', "GET", [Value], arguments[1], true, arguments[2], arguments[3]);
     if (arguments[1] == null) {
       if (returnObject != null && returnObject.result != null && isArray(returnObject.result)) {
         var resultArray = returnObject.result;
@@ -666,6 +765,6 @@ function TServerMethods1(connectionInfo)
 
 var JSProxyClassList = {
   "DSAdmin": ["GetPlatformName","ClearResources","FindPackages","FindClasses","FindMethods","CreateServerClasses","DropServerClasses","CreateServerMethods","DropServerMethods","GetServerClasses","ListClasses","DescribeClass","ListMethods","DescribeMethod","GetServerMethods","GetServerMethodParameters","GetDatabaseConnectionProperties","GetDSServerName","ConsumeClientChannel","ConsumeClientChannelTimeout","CloseClientChannel","RegisterClientCallbackServer","UnregisterClientCallback","BroadcastToChannel","BroadcastObjectToChannel","NotifyCallback","NotifyObject"],
-  "TServerMethods1": ["EchoString","ReverseString"]
+  "TServerMethods1": ["EchoString","GetDept","GetDept1","GetDept2","GetInsa","ReverseString"]
 };
 

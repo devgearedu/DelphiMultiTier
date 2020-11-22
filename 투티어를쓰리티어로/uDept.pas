@@ -59,6 +59,7 @@ var
   Excel: OleVariant;
   WorkBook: OleVariant;
   WorkSheet: OleVariant;
+  mycolor: array [0..2] of tcolor = (clyellow, clsilver, claqua);
 
 procedure TDeptForm.Button1Click(Sender: TObject);
 begin
@@ -75,8 +76,8 @@ begin
       raise Exception.Create('이미 등록된 부서코드입니다');
 
 
-   if Demo.Insert_Dept(edit1.text, edit2.text, Edit3.text) = 1 Then
-      ShowMessage('등록 실패');
+   if demo_client.insert_dept(edit1.text,edit2.text,edit3.text) = 1 then
+      showmessage('부서 등록 오류');
 
    DM.Dept.Refresh;
 
@@ -105,7 +106,7 @@ begin
        WorkSheet.Cells[i+1,2].value := StringGrid1.Cells[1,i];
        WorkSheet.Cells[i+1,3].value := StringGrid1.Cells[2,i];
      end;
-//     WorkBook.SaveAs('d:\ExcelOutputTest.xls');
+     WorkBook.SaveAs('d:\sample.xlsx');
 
   finally
     // 워크북 닫기
@@ -183,12 +184,15 @@ begin
     StringGrid1.Cells[0,i] := DM.Dept.FieldByName('dept').AsString;
     StringGrid1.Cells[1,i] := DM.Dept.FieldByName('section').AsString;
 
-    StringGrid1.Cells[2,i] :=  IntToStr(demo.GetCount(dm.dept.fields[0].asstring));
+   stringgrid1.cells[2,i] :=
+   IntTostr(demo_client.get_count(dM.Dept.FieldByName('code').AsString));
+
     DM.Dept.Next;
   end;
   StringGrid1.Cells[0,i] := '총인원수';
 
-  StringGrid1.Cells[2,i] :=   IntTostr(demo.GetCount('%'));
+  stringgrid1.cells[2,i] :=  IntTostr(demo_client.get_count('%'));
+
 end;
 
 procedure TDeptForm.StringGrid1DrawCell(Sender: TObject; ACol, ARow: Integer;
@@ -198,31 +202,36 @@ var
   pos:integer;
   OldAlign:integer;
 begin
-  s := StringGrid1.Cells[ACol,ARow];
+  s := StringGrid1.Cells[acol, arow];
   with StringGrid1.Canvas do
   begin
     FillRect(Rect);
-    if ARow = 0 then
-    begin
-      Font.Color := clBlue;
-      Font.Size := Font.Size + 4;
-    end;
-    if (ACol = 2) and (ARow <> 0) then
-    begin
-      if (ARow = StringGrid1.RowCount - 1) then
-         Brush.color := clyellow;
 
-      Font.Color := clred;
-      Font.Size := Font.Size + 4;
-      s := s + '명';
-      OldAlign := SetTextAlign(Handle,ta_Right);
-      TextRect(Rect, Rect.Right, Rect.Top+3, s);
-      SetTextAlign(Handle,OldAlign);
+    if Arow = 0 then
+    begin
+       Font.Color := clBlue;
+       Font.Size := Font.Size + 4;
+    end
+    else
+       Brush.Color :=  Mycolor[ Arow mod 3];
+
+    if (Acol = 2) and (Arow <> 0) then
+    begin
+//       if strtoint(s) = 0  then
+//       begin
+//       brush.Color := clsilver;
+//       end;
+       Font.Color := clRed;
+       Font.Size := Font.Size + 4;
+       s := s + '명';
+       OldAlign := SetTextAlign(handle, ta_right);
+       TextRect(Rect, Rect.right, rect.Top+3, s);
+       SetTextAlign(handle,oldalign);
     end
     else
     begin
-      pos := ((Rect.Right - Rect.Left) - TextWidth(s)) div 2;
-      TextRect(Rect, Rect.Left+pos, Rect.Top+3, s);
+      pos := ((rect.Right - rect.Left) - textwidth(s))  div 2;
+      TextRect(Rect, Rect.Left+pos, rect.Top+3, s);
     end;
   end;
 end;

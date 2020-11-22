@@ -48,14 +48,14 @@ object WebModule1: TWebModule1
   object ServerFunctionInvoker: TPageProducer
     HTMLFile = 'templates/serverfunctioninvoker.html'
     OnHTMLTag = ServerFunctionInvokerHTMLTag
-    Left = 56
-    Top = 184
+    Left = 80
+    Top = 200
   end
   object ReverseString: TPageProducer
     HTMLFile = 'templates/reversestring.html'
     OnHTMLTag = ServerFunctionInvokerHTMLTag
-    Left = 168
-    Top = 184
+    Left = 224
+    Top = 176
   end
   object WebFileDispatcher1: TWebFileDispatcher
     WebFileExtensions = <
@@ -95,19 +95,19 @@ object WebModule1: TWebModule1
       end>
     RootDirectory = '.'
     VirtualPath = '/'
-    Left = 56
+    Left = 88
     Top = 136
   end
   object DSProxyGenerator1: TDSProxyGenerator
     ExcludeClasses = 'DSMetadata'
     MetaDataProvider = DSServerMetaDataProvider1
     Writer = 'Java Script REST'
-    Left = 48
-    Top = 248
+    Left = 88
+    Top = 272
   end
   object DSServerMetaDataProvider1: TDSServerMetaDataProvider
     Server = DSServer1
-    Left = 208
-    Top = 248
+    Left = 216
+    Top = 272
   end
 end

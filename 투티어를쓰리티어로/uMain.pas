@@ -92,12 +92,16 @@ type
     RibbonGroup8: TRibbonGroup;
     RibbonGroup9: TRibbonGroup;
     RibbonGroup10: TRibbonGroup;
+    RibbonGroup11: TRibbonGroup;
     Dept_Action: TAction;
     Insa_Action: TAction;
     TreeView_Action: TAction;
     Transaction_Action: TAction;
     Update_Action: TAction;
     Batch_Action: TAction;
+    DeptNEW_Action: TAction;
+    RibbonGroup12: TRibbonGroup;
+    ComboBox1: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure RibbonSpinEdit1Change(Sender: TObject);
@@ -125,11 +129,16 @@ type
     procedure Dept_ActionExecute(Sender: TObject);
     procedure Transaction_ActionExecute(Sender: TObject);
     procedure TreeView_ActionExecute(Sender: TObject);
+    procedure Update_ActionExecute(Sender: TObject);
+    procedure Batch_ActionExecute(Sender: TObject);
+    procedure DeptNEW_ActionExecute(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
   private
     function GetCurrPos(RichEdit:TRichEdit):integer;
     function GetCurrLine(RichEdit:TRichEdit):integer;
     { Private declarations }
   public
+    function ShowOnce( AFormClass:TFormClass;AShowing:Boolean=True):TForm;
     { Public decfunctiolarations }
   end;
 
@@ -155,6 +164,7 @@ var
   AboutProc:TAboutProc;
   AddFunc:TcalcFunc<integer>;
   DivFunc:TcalcFunc<real>;
+  FilePath : string;
 
 procedure Display_About; stdcall;
 external 'PAboutBox.dll' delayed;
@@ -210,11 +220,29 @@ begin
   end;
 end;
 
+procedure TMainForm.DeptNEW_ActionExecute(Sender: TObject);
+begin
+// Cdata excel 이 설치되어 있는 경우만 실행하십시오
+//  DeptForm_new := TDeptForm_new.Create(Application);
+//  DeptForm_new.Show;
+end;
+
 procedure TMainForm.Auric_ActionExecute(Sender: TObject);
 begin
   TStyleManager.TrySetStyle('Auric');
 end;
 
+procedure TMainForm.Batch_ActionExecute(Sender: TObject);
+begin
+//  BatchForm := TBatchForm.create(Application);
+//  BatchForm.Show;
+end;
+
+procedure TMainForm.ComboBox1Change(Sender: TObject);
+begin
+  TStyleManager.SetStyle(Combobox1.Text);
+
+end;
 
 procedure TMainForm.Dept_ActionExecute(Sender: TObject);
 begin
@@ -272,9 +300,9 @@ end;
 
 procedure TMainForm.FileOpen1BeforeExecute(Sender: TObject);
 begin
-   FileOpen1.Dialog.InitialDir := 'd:\';
-   FileOpen1.Dialog.Filter :=
-   '프로젝트파일|*.dpr|유니트파일|*.pas|텍스트파일|*.txt';
+    FileOpen1.Dialog.InitialDir := FilePath;
+    FileOpen1.Dialog.Filter :=
+    '유니트파일|*.pas|프로젝트파일|*.dpr|텍스트파일|*.txt|모든파일|*.*'
 end;
 
 procedure TMainForm.FileSaveAs1Accept(Sender: TObject);
@@ -282,14 +310,14 @@ begin
    try
      RichEdit1.Lines.SaveToFile(FileSaveAs1.Dialog.FileName);
    except
-     on e:Exception do
+     on e:eWriteError do
         ShowMessage(e.Message);
    end;
 end;
 
 procedure TMainForm.FileSaveAs1BeforeExecute(Sender: TObject);
 begin
-  FileSaveAs1.Dialog.InitialDir := 'd:\';
+   FileSaveAs1.Dialog.InitialDir := filepath;
 end;
 
 procedure TMainForm.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -304,19 +332,33 @@ end;
 
 procedure TMainForm.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
-  if RichEdit1.Lines.Text <> '' then
-  begin
-    Showmessage('메모장 지우시고 종료하십시오');
-    CanClose := false;
-  end;
+ if RichEdit1.Lines.Text <> '' then
+     if MessageDlg('메모장에 데이터가 있습니다. 저장할래 ?', mtConfirmation,[mbYes, mbNo],0) = mrYes then
+        RichEdit1.Lines.SaveToFile(filePath + 'sample.txt');
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
+type
+  PListColumnClass = ^TCollectionItemClass;
+var
+  ItemClass: PListColumnClass;
+  ListColumn: TListColumn;
+  StyleName: string;
+  Filename: string;
+  jumpItem: TJumpListItem;
+  CategoryIndex:integer;
+
 begin
+  for StyleName in TStyleManager.StyleNames do
+   Combobox1.Items.Add(StyleName);
+
+   Combobox1.ItemIndex := Combobox1.Items.IndexOf(TStyleManager.ActiveStyle.Name);
+
+   FilePath := ExtractFilePath(Application.ExeName);
    RibbonSpinEdit1.Value := RichEdit1.Font.Size;
    Application.OnHint := ShowHint;
-   Application.OnException := ExceptionHandler;
-     t := ttreeNode.Create(TreeView1.Items);
+//   Application.OnException := ExceptionHandler;
+   t := ttreeNode.Create(TreeView1.Items);
    TreeView1.Selected := TreeView1.Items.Add(t,'교육부');
    TreeView1.Items.AddChild(treeview1.Selected, '자바');
    new(p);
@@ -325,6 +367,18 @@ begin
    p^.Cnt := 6;
 
    TreeView1.Items.AddChildObject(TreeView1.Selected,'델파이', p);
+   FileName := 'E:\온라인교육\기초다지기\Win32\Debug\test.exe';
+
+  //Jump list 동적생성 경로는 수정해서 사용하십시오 !!!!
+  CategoryIndex := JumpList1.AddCategory('MyCategory');
+  JumpList1.AddItemToCategory(CategoryIndex,
+  'MyItem',FileName, '','');
+
+  jumpItem := JumpList1.TaskList.add as TJumpListItem;
+  jumpItem.FriendlyName := '테스트프로그램(동적)';
+  jumpItem.path := 'E:\온라인교육\기초다지기\Win32\Debug\test.exe';
+
+  JumpList1.UpdateList;
 end;
 
 function TMainForm.GetCurrLine(RichEdit: TRichEdit): integer;
@@ -340,8 +394,8 @@ end;
 
 procedure TMainForm.Insa_ActionExecute(Sender: TObject);
 begin
-  InsaForm := TInsaForm.Create(Application);
-  InsaForm.Show;
+ InsaForm := TInsaForm.Create(Application);
+ InsaForm.Show;
 end;
 
 procedure TMainForm.New_ActionExecute(Sender: TObject);
@@ -377,6 +431,23 @@ begin
 //Application.hintpause
 end;
 
+function TMainForm.ShowOnce(AFormClass: TFormClass; AShowing: Boolean): TForm;
+var
+   i : integer;
+begin
+   Result := nil;
+
+   for i := 0 to Application.ComponentCount -1 do
+     if Application.components[i] is AFormClass then
+        Result := Application.components[i] as TForm;
+
+   if not assigned(Result) then
+      Result := AFormClass.Create(Application);
+
+   if aShowing then
+      Result.Show;
+end;
+
 procedure TMainForm.Silver_ActionExecute(Sender: TObject);
 begin
   TStyleManager.TrySetStyle('silver');
@@ -399,11 +470,12 @@ begin
       FormStyle := fsNormal;
 end;
 
-
 procedure TMainForm.Transaction_ActionExecute(Sender: TObject);
 begin
-  TransForm := TTransForm.Create(Application);
-  TransForm.Show;
+    Tform(TransForm) := (ShowOnce(tTransForm));
+
+//  TransForm := TTransForm.Create(Application);
+//  TransForm.Show;
 end;
 
 procedure TMainForm.TreeView1Click(Sender: TObject);
@@ -421,6 +493,12 @@ procedure TMainForm.TreeView_ActionExecute(Sender: TObject);
 begin
   TreeForm := TTreeForm.Create(Application);
   TreeForm.Show;
+end;
+
+procedure TMainForm.Update_ActionExecute(Sender: TObject);
+begin
+//  UpdateForm := TUpdateForm.Create(Application);
+//  UpdateForm.Show;
 end;
 
 procedure TMainForm.Window_ActionExecute(Sender: TObject);

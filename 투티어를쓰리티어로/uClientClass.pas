@@ -1,9 +1,9 @@
 // 
 // Created by the DataSnap proxy generator.
-// 2019-04-17 오후 2:05:19
+// 2020-11-17 오전 11:55:47
 // 
 
-unit uClientClass;
+unit UClientClass;
 
 interface
 
@@ -14,8 +14,8 @@ type
   private
     FEchoStringCommand: TDBXCommand;
     FReverseStringCommand: TDBXCommand;
-    FGetCountCommand: TDBXCommand;
     FInsert_DeptCommand: TDBXCommand;
+    FGet_CountCommand: TDBXCommand;
     FDelete_DeptCommand: TDBXCommand;
   public
     constructor Create(ADBXConnection: TDBXConnection); overload;
@@ -23,8 +23,8 @@ type
     destructor Destroy; override;
     function EchoString(Value: string): string;
     function ReverseString(Value: string): string;
-    function GetCount(value: string): Integer;
     function Insert_Dept(code: string; dept: string; section: string): Integer;
+    function Get_Count(code: string): Integer;
     function Delete_Dept(code: string): Integer;
   end;
 
@@ -58,20 +58,6 @@ begin
   Result := FReverseStringCommand.Parameters[1].Value.GetWideString;
 end;
 
-function TServerMethods1Client.GetCount(value: string): Integer;
-begin
-  if FGetCountCommand = nil then
-  begin
-    FGetCountCommand := FDBXConnection.CreateCommand;
-    FGetCountCommand.CommandType := TDBXCommandTypes.DSServerMethod;
-    FGetCountCommand.Text := 'TServerMethods1.GetCount';
-    FGetCountCommand.Prepare;
-  end;
-  FGetCountCommand.Parameters[0].Value.SetWideString(value);
-  FGetCountCommand.ExecuteUpdate;
-  Result := FGetCountCommand.Parameters[1].Value.GetInt32;
-end;
-
 function TServerMethods1Client.Insert_Dept(code: string; dept: string; section: string): Integer;
 begin
   if FInsert_DeptCommand = nil then
@@ -86,6 +72,20 @@ begin
   FInsert_DeptCommand.Parameters[2].Value.SetWideString(section);
   FInsert_DeptCommand.ExecuteUpdate;
   Result := FInsert_DeptCommand.Parameters[3].Value.GetInt32;
+end;
+
+function TServerMethods1Client.Get_Count(code: string): Integer;
+begin
+  if FGet_CountCommand = nil then
+  begin
+    FGet_CountCommand := FDBXConnection.CreateCommand;
+    FGet_CountCommand.CommandType := TDBXCommandTypes.DSServerMethod;
+    FGet_CountCommand.Text := 'TServerMethods1.Get_Count';
+    FGet_CountCommand.Prepare;
+  end;
+  FGet_CountCommand.Parameters[0].Value.SetWideString(code);
+  FGet_CountCommand.ExecuteUpdate;
+  Result := FGet_CountCommand.Parameters[1].Value.GetInt32;
 end;
 
 function TServerMethods1Client.Delete_Dept(code: string): Integer;
@@ -116,8 +116,8 @@ destructor TServerMethods1Client.Destroy;
 begin
   FEchoStringCommand.DisposeOf;
   FReverseStringCommand.DisposeOf;
-  FGetCountCommand.DisposeOf;
   FInsert_DeptCommand.DisposeOf;
+  FGet_CountCommand.DisposeOf;
   FDelete_DeptCommand.DisposeOf;
   inherited;
 end;

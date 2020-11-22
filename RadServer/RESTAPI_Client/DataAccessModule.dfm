@@ -5,8 +5,10 @@ object dmDataAccess: TdmDataAccess
   object RESTClient1: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'utf-8, *;q=0.8'
-    BaseURL = 'http://localhost:8080/'
+    BaseURL = 'http://192.168.219.128:8080'
     Params = <>
+    ProxyPort = 8080
+    ProxyServer = '192.168.219.127'
     Left = 32
     Top = 24
   end

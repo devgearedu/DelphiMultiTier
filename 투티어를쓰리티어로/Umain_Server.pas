@@ -1,4 +1,4 @@
-unit Umain_Server;
+unit umain_server;
 
 interface
 
@@ -6,7 +6,7 @@ uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  TForm195 = class(TForm)
+  TForm18 = class(TForm)
   private
     { Private declarations }
   public
@@ -14,7 +14,7 @@ type
   end;
 
 var
-  Form195: TForm195;
+  Form18: TForm18;
 
 implementation
 

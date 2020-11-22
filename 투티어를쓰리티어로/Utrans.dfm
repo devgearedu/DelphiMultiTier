@@ -42,7 +42,7 @@ object TransForm: TTransForm
   end
   object Button1: TButton
     Left = 328
-    Top = 9
+    Top = 8
     Width = 121
     Height = 25
     Caption = #49325#51228
