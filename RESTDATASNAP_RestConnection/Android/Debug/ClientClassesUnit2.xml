@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="ClientClassesUnit2" platform="Android">
+  <class name="TServerMethods1Client" file="ClientClassesUnit2.pas" line="16">
+    <ancestor name="TDSAdminRestClient" namespace="Datasnap.DSProxyRest">
+      <methodref name="Create" visibility="public" procflags="constructor overload">
+      </methodref>
+      <methodref name="Create" visibility="public" procflags="constructor overload">
+      </methodref>
+      <methodref name="Destroy" visibility="public" procflags="destructor override">
+      </methodref>
+      <methodref name="GetPlatformName" visibility="public">
+      </methodref>
+      <methodref name="ClearResources" visibility="public">
+      </methodref>
+      <methodref name="FindPackages" visibility="public">
+      </methodref>
+      <methodref name="FindClasses" visibility="public">
+      </methodref>
+      <methodref name="FindMethods" visibility="public">
+      </methodref>
+      <methodref name="ListClasses" visibility="public">
+      </methodref>
+      <methodref name="DescribeClass" visibility="public">
+      </methodref>
+      <methodref name="ListMethods" visibility="public">
+      </methodref>
+      <methodref name="DescribeMethod" visibility="public">
+      </methodref>
+      <methodref name="GetServerMethods" visibility="public">
+      </methodref>
+      <methodref name="GetServerMethodParameters" visibility="public">
+      </methodref>
+      <methodref name="GetDatabaseConnectionProperties" visibility="public">
+      </methodref>
+      <methodref name="ConsumeClientChannel" visibility="public">
+      </methodref>
+      <methodref name="ConsumeClientChannelTimeout" visibility="public">
+      </methodref>
+      <methodref name="CloseClientChannel" visibility="public">
+      </methodref>
+      <methodref name="RegisterClientCallbackServer" visibility="public">
+      </methodref>
+      <methodref name="UnregisterClientCallback" visibility="public">
+      </methodref>
+      <methodref name="BroadcastToChannel" visibility="public">
+      </methodref>
+      <methodref name="BroadcastObjectToChannel" visibility="public">
+      </methodref>
+      <methodref name="NotifyCallback" visibility="public">
+      </methodref>
+      <methodref name="NotifyObject" visibility="public">
+      </methodref>
+      <methodref name="ClearSession" visibility="public">
+      </methodref>
+      <ancestor name="TDSRestClient" namespace="Datasnap.DSProxyRest">
+        <methodref name="Create" visibility="public" procflags="constructor overload">
+        </methodref>
+        <methodref name="Create" visibility="public" procflags="constructor overload">
+        </methodref>
+        <propertyref name="InstanceOwner" visibility="public">
+        </propertyref>
+        <ancestor name="TObject" namespace="System">
+          <methodref name="Create" visibility="public" procflags="constructor">
+          </methodref>
+          <methodref name="Free" visibility="public">
+          </methodref>
+          <methodref name="DisposeOf" visibility="public" procflags="inline">
+          </methodref>
+          <methodref name="InitInstance" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="CleanupInstance" visibility="public">
+          </methodref>
+          <methodref name="ClassType" visibility="public" procflags="inline">
+          </methodref>
+          <methodref name="ClassName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="ClassNameIs" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="ClassParent" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="ClassInfo" visibility="public" procflags="class inline">
+          </methodref>
+          <methodref name="InstanceSize" visibility="public" procflags="class inline">
+          </methodref>
+          <methodref name="InheritsFrom" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="MethodAddress" visibility="public" procflags="class overload">
+          </methodref>
+          <methodref name="MethodAddress" visibility="public" procflags="class overload">
+          </methodref>
+          <methodref name="MethodName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="QualifiedClassName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="FieldAddress" visibility="public" procflags="overload">
+          </methodref>
+          <methodref name="FieldAddress" visibility="public" procflags="overload">
+          </methodref>
+          <methodref name="GetInterface" visibility="public">
+          </methodref>
+          <methodref name="GetInterfaceEntry" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="GetInterfaceTable" visibility="public" procflags="class inline">
+          </methodref>
+          <methodref name="UnitName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="UnitScope" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="Equals" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="GetHashCode" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="ToString" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="SafeCallException" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="AfterConstruction" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="BeforeDestruction" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="Dispatch" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="DefaultHandler" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="NewInstance" visibility="public" procflags="class virtual">
+          </methodref>
+          <methodref name="FreeInstance" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="Destroy" visibility="public" procflags="destructor virtual">
+          </methodref>
+          <methodref name="CPP_ABI_1" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="CPP_ABI_2" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="CPP_ABI_3" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="GetDisposed" visibility="protected" procflags="inline">
+          </methodref>
+          <methodref name="CheckDisposed" visibility="protected" procflags="inline">
+          </methodref>
+          <propertyref name="Disposed" visibility="protected">
+          </propertyref>
+        </ancestor>
+      </ancestor>
+    </ancestor>
+    <members>
+      <field name="FEchoStringCommand" type="TDSRestCommand" visibility="private" size="4" offset="112" file="ClientClassesUnit2.pas" line="18" />
+      <field name="FReverseStringCommand" type="TDSRestCommand" visibility="private" size="4" offset="116" file="ClientClassesUnit2.pas" line="19" />
+      <field name="FGetDeptsCommand" type="TDSRestCommand" visibility="private" size="4" offset="120" file="ClientClassesUnit2.pas" line="20" />
+      <field name="FGetDeptsCommand_Cache" type="TDSRestCommand" visibility="private" size="4" offset="124" file="ClientClassesUnit2.pas" line="21" />
+      <field name="FGetInsasCommand" type="TDSRestCommand" visibility="private" size="4" offset="128" file="ClientClassesUnit2.pas" line="22" />
+      <field name="FGetInsasCommand_Cache" type="TDSRestCommand" visibility="private" size="4" offset="132" file="ClientClassesUnit2.pas" line="23" />
+      <field name="FGetDeptJSONCommand" type="TDSRestCommand" visibility="private" size="4" offset="136" file="ClientClassesUnit2.pas" line="24" />
+      <field name="FGetDeptJSONCommand_Cache" type="TDSRestCommand" visibility="private" size="4" offset="140" file="ClientClassesUnit2.pas" line="25" />
+      <field name="FGetInsaJSONCommand" type="TDSRestCommand" visibility="private" size="4" offset="144" file="ClientClassesUnit2.pas" line="26" />
+      <field name="FGetInsaJSONCommand_Cache" type="TDSRestCommand" visibility="private" size="4" offset="148" file="ClientClassesUnit2.pas" line="27" />
+      <field name="FApplyChangesDeptInsaCommand" type="TDSRestCommand" visibility="private" size="4" offset="152" file="ClientClassesUnit2.pas" line="28" />
+      <field name="FApplyChangesDeptInsaJSONCommand" type="TDSRestCommand" visibility="private" size="4" offset="156" file="ClientClassesUnit2.pas" line="29" />
+      <constructor name="Create" visibility="public" file="ClientClassesUnit2.pas" line="31">
+        <parameters>
+          <parameter name="ARestConnection" type="TDSRestConnection" />
+        </parameters>
+      </constructor>
+      <constructor name="Create" visibility="public" file="ClientClassesUnit2.pas" line="32">
+        <parameters>
+          <parameter name="ARestConnection" type="TDSRestConnection" />
+          <parameter name="AInstanceOwner" type="Boolean" />
+        </parameters>
+      </constructor>
+      <destructor name="Destroy" visibility="public" file="ClientClassesUnit2.pas" line="33">
+        <parameters>
+        </parameters>
+      </destructor>
+      <function name="EchoString" visibility="public" file="ClientClassesUnit2.pas" line="34">
+        <parameters>
+          <parameter name="Value" type="string" />
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="string" />
+        </parameters>
+      </function>
+      <function name="ReverseString" visibility="public" file="ClientClassesUnit2.pas" line="35">
+        <parameters>
+          <parameter name="Value" type="string" />
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="string" />
+        </parameters>
+      </function>
+      <function name="GetDepts" visibility="public" file="ClientClassesUnit2.pas" line="36">
+        <parameters>
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="TFDJSONDataSets" />
+        </parameters>
+      </function>
+      <function name="GetDepts_Cache" visibility="public" file="ClientClassesUnit2.pas" line="37">
+        <parameters>
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="IDSRestCachedTFDJSONDataSets" />
+        </parameters>
+      </function>
+      <function name="GetInsas" visibility="public" file="ClientClassesUnit2.pas" line="38">
+        <parameters>
+          <parameter name="code" type="string" />
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="TFDJSONDataSets" />
+        </parameters>
+      </function>
+      <function name="GetInsas_Cache" visibility="public" file="ClientClassesUnit2.pas" line="39">
+        <parameters>
+          <parameter name="code" type="string" />
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="IDSRestCachedTFDJSONDataSets" />
+        </parameters>
+      </function>
+      <function name="GetDeptJSON" visibility="public" file="ClientClassesUnit2.pas" line="40">
+        <parameters>
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="TJSONObject" />
+        </parameters>
+      </function>
+      <function name="GetDeptJSON_Cache" visibility="public" file="ClientClassesUnit2.pas" line="41">
+        <parameters>
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="IDSRestCachedJSONObject" />
+        </parameters>
+      </function>
+      <function name="GetInsaJSON" visibility="public" file="ClientClassesUnit2.pas" line="42">
+        <parameters>
+          <parameter name="code" type="string" />
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="TJSONObject" />
+        </parameters>
+      </function>
+      <function name="GetInsaJSON_Cache" visibility="public" file="ClientClassesUnit2.pas" line="43">
+        <parameters>
+          <parameter name="code" type="string" />
+          <parameter name="ARequestFilter" type="string" paramflags="const">
+            <value>
+              
+            </value>
+          </parameter>
+          <retval type="IDSRestCachedJSONObject" />
+        </parameters>
+      </function>
+      <procedure name="ApplyChangesDeptInsa" visibility="public" file="ClientClassesUnit2.pas" line="44">
+        <parameters>
+          <parameter name="ADeltaList" type="TFDJSONDeltas" />
+        </parameters>
+      </procedure>
+      <procedure name="ApplyChangesDeptInsaJSON" visibility="public" file="ClientClassesUnit2.pas" line="45">
+        <parameters>
+          <parameter name="AJSONObject" type="TJSONObject" />
+        </parameters>
+      </procedure>
+    </members>
+  </class>
+  <interface name="IDSRestCachedTFDJSONDataSets" ancestor="{Datasnap.DSClientRest}IDSRestCachedObject&lt;Data.FireDACJSONReflect.TFDJSONDataSets&gt;" file="ClientClassesUnit2.pas" line="48">
+  </interface>
+  <class name="TDSRestCachedTFDJSONDataSets" file="ClientClassesUnit2.pas" line="51">
+    <ancestor name="{Datasnap.DSClientRest}TDSRestCachedObject&lt;Data.FireDACJSONReflect.TFDJSONDataSets&gt;" namespace="ClientClassesUnit2">
+      <methodref name="GetValue" visibility="public">
+      </methodref>
+      <ancestor name="TDSRestCachedItem" namespace="Datasnap.DSClientRest">
+        <interfaces>
+          <implements name="IDSRestCachedCommand" />
+          <implements name="IDSRestCachedItem" />
+        </interfaces>
+        <methodref name="GetItemPath" visibility="protected">
+        </methodref>
+        <methodref name="GetJSONValue" visibility="protected">
+        </methodref>
+        <methodref name="GetJSONValueCallback" visibility="protected">
+        </methodref>
+        <methodref name="UnmarshalValue" visibility="protected">
+        </methodref>
+        <propertyref name="OwnedObjects" visibility="protected">
+        </propertyref>
+        <methodref name="Create" visibility="public" procflags="constructor">
+        </methodref>
+        <methodref name="Destroy" visibility="public" procflags="destructor override">
+        </methodref>
+        <methodref name="DeleteCommand" visibility="public">
+        </methodref>
+        <methodref name="GetCommand" visibility="public">
+        </methodref>
+        <propertyref name="ItemPath" visibility="public">
+        </propertyref>
+        <ancestor name="TInterfacedObject" namespace="System">
+          <interfaces>
+            <implements name="IInterface" />
+          </interfaces>
+          <methodref name="GetRefCount" visibility="private" procflags="inline">
+          </methodref>
+          <methodref name="__MarkDestroying" visibility="protected" procflags="static inline">
+          </methodref>
+          <methodref name="QueryInterface" visibility="protected">
+          </methodref>
+          <methodref name="_AddRef" visibility="protected">
+          </methodref>
+          <methodref name="_Release" visibility="protected">
+          </methodref>
+          <methodref name="AfterConstruction" visibility="public" procflags="override">
+          </methodref>
+          <methodref name="BeforeDestruction" visibility="public" procflags="override">
+          </methodref>
+          <methodref name="NewInstance" visibility="public" procflags="class override">
+          </methodref>
+          <propertyref name="RefCount" visibility="public">
+          </propertyref>
+          <ancestor name="TObject" namespace="System">
+            <methodref name="Create" visibility="public" procflags="constructor">
+            </methodref>
+            <methodref name="Free" visibility="public">
+            </methodref>
+            <methodref name="DisposeOf" visibility="public" procflags="inline">
+            </methodref>
+            <methodref name="InitInstance" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="CleanupInstance" visibility="public">
+            </methodref>
+            <methodref name="ClassType" visibility="public" procflags="inline">
+            </methodref>
+            <methodref name="ClassName" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="ClassNameIs" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="ClassParent" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="ClassInfo" visibility="public" procflags="class inline">
+            </methodref>
+            <methodref name="InstanceSize" visibility="public" procflags="class inline">
+            </methodref>
+            <methodref name="InheritsFrom" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="MethodAddress" visibility="public" procflags="class overload">
+            </methodref>
+            <methodref name="MethodAddress" visibility="public" procflags="class overload">
+            </methodref>
+            <methodref name="MethodName" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="QualifiedClassName" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="FieldAddress" visibility="public" procflags="overload">
+            </methodref>
+            <methodref name="FieldAddress" visibility="public" procflags="overload">
+            </methodref>
+            <methodref name="GetInterface" visibility="public">
+            </methodref>
+            <methodref name="GetInterfaceEntry" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="GetInterfaceTable" visibility="public" procflags="class inline">
+            </methodref>
+            <methodref name="UnitName" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="UnitScope" visibility="public" procflags="class">
+            </methodref>
+            <methodref name="Equals" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="GetHashCode" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="ToString" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="SafeCallException" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="AfterConstruction" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="BeforeDestruction" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="Dispatch" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="DefaultHandler" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="NewInstance" visibility="public" procflags="class virtual">
+            </methodref>
+            <methodref name="FreeInstance" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="Destroy" visibility="public" procflags="destructor virtual">
+            </methodref>
+            <methodref name="CPP_ABI_1" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="CPP_ABI_2" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="CPP_ABI_3" visibility="public" procflags="virtual">
+            </methodref>
+            <methodref name="GetDisposed" visibility="protected" procflags="inline">
+            </methodref>
+            <methodref name="CheckDisposed" visibility="protected" procflags="inline">
+            </methodref>
+            <propertyref name="Disposed" visibility="protected">
+            </propertyref>
+          </ancestor>
+        </ancestor>
+      </ancestor>
+    </ancestor>
+    <interfaces>
+      <implements name="IDSRestCachedCommand" />
+      <implements name="IDSRestCachedTFDJSONDataSets" />
+    </interfaces>
+  </class>
+  <const name="TServerMethods1_EchoString" type=":3" visibility="public" file="ClientClassesUnit2.pas" line="55" />
+  <const name="TServerMethods1_ReverseString" type=":4" visibility="public" file="ClientClassesUnit2.pas" line="61" />
+  <const name="TServerMethods1_GetDepts" type=":5" visibility="public" file="ClientClassesUnit2.pas" line="67" />
+  <const name="TServerMethods1_GetDepts_Cache" type=":6" visibility="public" file="ClientClassesUnit2.pas" line="72" />
+  <const name="TServerMethods1_GetInsas" type=":7" visibility="public" file="ClientClassesUnit2.pas" line="77" />
+  <const name="TServerMethods1_GetInsas_Cache" type=":8" visibility="public" file="ClientClassesUnit2.pas" line="83" />
+  <const name="TServerMethods1_GetDeptJSON" type=":9" visibility="public" file="ClientClassesUnit2.pas" line="89" />
+  <const name="TServerMethods1_GetDeptJSON_Cache" type=":01" visibility="public" file="ClientClassesUnit2.pas" line="94" />
+  <const name="TServerMethods1_GetInsaJSON" type=":11" visibility="public" file="ClientClassesUnit2.pas" line="99" />
+  <const name="TServerMethods1_GetInsaJSON_Cache" type=":21" visibility="public" file="ClientClassesUnit2.pas" line="105" />
+  <const name="TServerMethods1_ApplyChangesDeptInsa" type=":31" visibility="public" file="ClientClassesUnit2.pas" line="111" />
+  <const name="TServerMethods1_ApplyChangesDeptInsaJSON" type=":41" visibility="public" file="ClientClassesUnit2.pas" line="116" />
+</namespace>

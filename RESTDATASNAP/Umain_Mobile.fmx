@@ -1,0 +1,276 @@
+object Form19: TForm19
+  Left = 0
+  Top = 0
+  Caption = 'Form19'
+  ClientHeight = 404
+  ClientWidth = 446
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 446.000000000000000000
+    Size.Height = 404.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Size.Width = 446.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Text = '192.168.219.127'
+        Position.X = 240.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 148.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Button1: TButton
+        Position.X = 24.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'GetDept'
+        OnClick = Button1Click
+      end
+    end
+    object ListView1: TListView
+      ItemAppearanceClassName = 'TDynamicAppearance'
+      ItemEditAppearanceClassName = 'TDynamicAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      ItemIndex = 0
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 407.000000000000000000
+      Size.Height = 177.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Width = 121.000000000000000000
+          Appearance.Height = 41.000000000000000000
+          Appearance.PlaceOffset.X = 6.000000000000000000
+        end
+        item
+          AppearanceObjectName = 'Text2'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Width = 121.000000000000000000
+          Appearance.Height = -212.000000000000000000
+          Appearance.PlaceOffset.X = 126.000000000000000000
+        end
+        item
+          AppearanceObjectName = 'Text3'
+          AppearanceClassName = 'TTextObjectAppearance'
+          Appearance.Width = 137.000000000000000000
+          Appearance.Height = 44.000000000000000000
+          Appearance.PlaceOffset.X = 246.000000000000000000
+        end>
+      ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+        item
+          AppearanceObjectName = 'Text1'
+          AppearanceClassName = 'TTextObjectAppearance'
+        end>
+      ItemAppearanceObjects.FooterObjects.Text.Width = 381.000000000000000000
+      ItemAppearanceObjects.FooterObjects.Text.Height = 16.000000000000000000
+      OnItemClick = ListView1ItemClick
+    end
+    object StringGrid1: TStringGrid
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      CanFocus = True
+      ClipChildren = True
+      Position.X = 16.000000000000000000
+      Position.Y = 224.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 161.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      RowCount = 4
+      Viewport.Width = 405.000000000000000000
+      Viewport.Height = 120.000000000000000000
+    end
+  end
+  object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'http://localhost:8080/datasnap/rest/tservermethods1'
+    Params = <>
+    ProxyPort = 8080
+    ProxyServer = '192.168.219.127'
+    Left = 56
+    Top = 144
+  end
+  object RESTRequest1: TRESTRequest
+    AssignedValues = [rvConnectTimeout, rvReadTimeout]
+    Client = RESTClient1
+    Params = <>
+    Resource = 'GetDept'
+    Response = RESTResponse1
+    Left = 56
+    Top = 88
+  end
+  object RESTResponse1: TRESTResponse
+    ContentType = 'application/json'
+    RootElement = 'result[0].depts.dept'
+    Left = 176
+    Top = 120
+  end
+  object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = FDMemTable_Dept
+    FieldDefs = <>
+    Response = RESTResponse1
+    Left = 272
+    Top = 168
+  end
+  object FDMemTable_Dept: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'code'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'dept'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'section'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 184
+    Top = 168
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDMemTable_Dept
+    ScopeMappings = <>
+    Left = 184
+    Top = 8
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 180
+    Top = 61
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'code'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'dept'
+          ControlMemberName = 'Text2'
+        end
+        item
+          SourceMemberName = 'section'
+          ControlMemberName = 'Text3'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkGridToDataSourceBindSourceDB2: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      GridControl = StringGrid1
+      Columns = <>
+    end
+  end
+  object RESTRequest2: TRESTRequest
+    AssignedValues = [rvConnectTimeout, rvReadTimeout]
+    Client = RESTClient1
+    Params = <
+      item
+        Kind = pkURLSEGMENT
+        Name = 'Item'
+        Options = [poAutoCreated]
+        Value = 'E001'
+      end>
+    Resource = 'GetInsa/{item}/'
+    Response = RESTResponse2
+    Left = 360
+    Top = 336
+  end
+  object RESTResponse2: TRESTResponse
+    ContentType = 'application/json'
+    RootElement = 'result[0].Insas.Insa'
+    Left = 280
+    Top = 336
+  end
+  object RESTResponseDataSetAdapter2: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = InsaQuery
+    FieldDefs = <>
+    Response = RESTResponse2
+    Left = 184
+    Top = 336
+  end
+  object InsaQuery: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'Name'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'Dept_Code'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'Class'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 56
+    Top = 312
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = InsaQuery
+    ScopeMappings = <>
+    Left = 208
+    Top = 208
+  end
+end

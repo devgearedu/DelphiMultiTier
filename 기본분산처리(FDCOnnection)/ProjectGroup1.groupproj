@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{751AACF5-D16E-4F9F-AEBB-D87E90C53D12}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SampleDataSnapFireDAC_Client.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SampleDataSnapFireDAC_Server.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project_Mobile.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SampleDataSnapFireDAC_Client">
+        <MSBuild Projects="SampleDataSnapFireDAC_Client.dproj"/>
+    </Target>
+    <Target Name="SampleDataSnapFireDAC_Client:Clean">
+        <MSBuild Projects="SampleDataSnapFireDAC_Client.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleDataSnapFireDAC_Client:Make">
+        <MSBuild Projects="SampleDataSnapFireDAC_Client.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SampleDataSnapFireDAC_Server">
+        <MSBuild Projects="SampleDataSnapFireDAC_Server.dproj"/>
+    </Target>
+    <Target Name="SampleDataSnapFireDAC_Server:Clean">
+        <MSBuild Projects="SampleDataSnapFireDAC_Server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleDataSnapFireDAC_Server:Make">
+        <MSBuild Projects="SampleDataSnapFireDAC_Server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project_Mobile">
+        <MSBuild Projects="Project_Mobile.dproj"/>
+    </Target>
+    <Target Name="Project_Mobile:Clean">
+        <MSBuild Projects="Project_Mobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project_Mobile:Make">
+        <MSBuild Projects="Project_Mobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SampleDataSnapFireDAC_Client;SampleDataSnapFireDAC_Server;Project_Mobile"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SampleDataSnapFireDAC_Client:Clean;SampleDataSnapFireDAC_Server:Clean;Project_Mobile:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SampleDataSnapFireDAC_Client:Make;SampleDataSnapFireDAC_Server:Make;Project_Mobile:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

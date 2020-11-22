@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0951C7A8-C004-404E-BB91-410D78245903}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RESTDATASNAP.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="procject_Client_RestConnection.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project_Mobile.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RESTDATASNAP">
+        <MSBuild Projects="RESTDATASNAP.dproj"/>
+    </Target>
+    <Target Name="RESTDATASNAP:Clean">
+        <MSBuild Projects="RESTDATASNAP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RESTDATASNAP:Make">
+        <MSBuild Projects="RESTDATASNAP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="procject_Client_RestConnection">
+        <MSBuild Projects="procject_Client_RestConnection.dproj"/>
+    </Target>
+    <Target Name="procject_Client_RestConnection:Clean">
+        <MSBuild Projects="procject_Client_RestConnection.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="procject_Client_RestConnection:Make">
+        <MSBuild Projects="procject_Client_RestConnection.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project_Mobile">
+        <MSBuild Projects="Project_Mobile.dproj"/>
+    </Target>
+    <Target Name="Project_Mobile:Clean">
+        <MSBuild Projects="Project_Mobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project_Mobile:Make">
+        <MSBuild Projects="Project_Mobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RESTDATASNAP;procject_Client_RestConnection;Project_Mobile"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RESTDATASNAP:Clean;procject_Client_RestConnection:Clean;Project_Mobile:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RESTDATASNAP:Make;procject_Client_RestConnection:Make;Project_Mobile:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

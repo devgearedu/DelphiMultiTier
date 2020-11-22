@@ -1,0 +1,179 @@
+object Form19: TForm19
+  Left = 0
+  Top = 0
+  Caption = 'Form19'
+  ClientHeight = 444
+  ClientWidth = 589
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object btnLoadData: TButton
+    Position.X = 24.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = #45936#51060#53944#47196#46300
+  end
+  object btnNewData: TButton
+    Position.X = 288.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = #49888#44508
+  end
+  object btnDeleteData: TButton
+    Position.X = 448.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = #49325#51228
+  end
+  object Label1: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 72.000000000000000000
+    Text = #51228#47785
+    TabOrder = 8
+  end
+  object Label2: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 128.000000000000000000
+    Text = #51200#51088
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 176.000000000000000000
+    Text = 'ISBN'
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 224.000000000000000000
+    Text = #44032#44201
+    TabOrder = 5
+  end
+  object Label5: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 272.000000000000000000
+    Text = #44288#47144#47553#53356
+    TabOrder = 4
+  end
+  object Label6: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 328.000000000000000000
+    Text = #49444#47749
+    TabOrder = 3
+  end
+  object edtTtile: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 13
+    Position.X = 280.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 289.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edtAuthor: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 12
+    Position.X = 280.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edtISBN: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 11
+    Position.X = 280.000000000000000000
+    Position.Y = 200.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edtProce: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 10
+    Position.X = 280.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edtLink: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 9
+    Position.X = 280.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 289.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object mmoDescription: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 280.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 289.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Viewport.Width = 285.000000000000000000
+    Viewport.Height = 61.000000000000000000
+  end
+  object ImageControl1: TImageControl
+    Position.X = 432.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 129.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 15
+  end
+  object btnSaveData: TButton
+    Position.X = 456.000000000000000000
+    Position.Y = 416.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Text = #51200#51109
+  end
+  object StringGrid1: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 16.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 257.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+    RowCount = 0
+    Viewport.Width = 237.000000000000000000
+    Viewport.Height = 232.000000000000000000
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = DM.BookList
+    ScopeMappings = <>
+    Left = 280
+    Top = 208
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = StringGrid1
+      Columns = <>
+    end
+  end
+end

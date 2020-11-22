@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{318B5A24-E652-49F8-9596-9F560C839352}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\project_server.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\Project_client.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="project_server">
+        <MSBuild Projects="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\project_server.dproj"/>
+    </Target>
+    <Target Name="project_server:Clean">
+        <MSBuild Projects="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\project_server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="project_server:Make">
+        <MSBuild Projects="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\project_server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project_client">
+        <MSBuild Projects="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\Project_client.dproj"/>
+    </Target>
+    <Target Name="Project_client:Clean">
+        <MSBuild Projects="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\Project_client.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project_client:Make">
+        <MSBuild Projects="E:\온라인교육\202010월_윈도우과정\분산처리\채널매니저를사용한콜백_업그레이드\Project_client.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="project_server;Project_client"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="project_server:Clean;Project_client:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="project_server:Make;Project_client:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

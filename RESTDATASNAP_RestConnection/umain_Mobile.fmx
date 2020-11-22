@@ -1,0 +1,224 @@
+object Form19: TForm19
+  Left = 0
+  Top = 0
+  Caption = 'Form19'
+  ClientHeight = 480
+  ClientWidth = 406
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 406.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Touch.GestureManager = GestureManager1
+      Size.Width = 406.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Text = '192.168.219.127'
+        Position.X = 264.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 124.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Button1: TButton
+        Position.X = 136.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 104.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'reverse'
+        OnClick = Button1Click
+      end
+    end
+    object TabControl1: TTabControl
+      Align = Client
+      Size.Width = 406.000000000000000000
+      Size.Height = 440.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 1
+      TabPosition = Dots
+      Sizes = (
+        406s
+        440s
+        406s
+        440s)
+      object TabItem1: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabItem1'
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        object Grid1: TGrid
+          Align = Client
+          CanFocus = True
+          ClipChildren = True
+          Size.Width = 406.000000000000000000
+          Size.Height = 440.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          RowCount = 0
+          Viewport.Width = 402.000000000000000000
+          Viewport.Height = 415.000000000000000000
+        end
+      end
+      object TabItem2: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabItem2'
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        object Grid2: TGrid
+          Align = Client
+          CanFocus = True
+          ClipChildren = True
+          Size.Width = 406.000000000000000000
+          Size.Height = 440.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          RowCount = 0
+          Viewport.Width = 402.000000000000000000
+          Viewport.Height = 415.000000000000000000
+        end
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 320
+    Top = 232
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 320
+    Top = 296
+    GestureData = <
+      item
+        Control = ToolBar1
+        Collection = <
+          item
+            Action = NextTabAction1
+            GestureID = sgiLeft
+          end
+          item
+            Action = PreviousTabAction1
+            GestureID = sgiRight
+          end>
+      end>
+  end
+  object DSRestConnection1: TDSRestConnection
+    Host = '192.168.219.127'
+    Port = 8080
+    LoginPrompt = False
+    ProxyPort = 8080
+    SecureProtocols = []
+    Left = 48
+    Top = 88
+    UniqueId = '{F678CD19-5983-43BE-BBD0-D5EE37ADFE2E}'
+  end
+  object Dept: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 48
+    Top = 144
+  end
+  object DeptSorce: TDataSource
+    DataSet = Dept
+    OnDataChange = DeptSorceDataChange
+    Left = 128
+    Top = 144
+  end
+  object Insa: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 48
+    Top = 200
+  end
+  object InsaSource: TDataSource
+    DataSet = Insa
+    Left = 128
+    Top = 200
+  end
+  object FDStanStorageJSONLink1: TFDStanStorageJSONLink
+    Left = 72
+    Top = 264
+  end
+  object FDStanStorageBinLink1: TFDStanStorageBinLink
+    Left = 200
+    Top = 264
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = Insa
+    ScopeMappings = <>
+    Left = 192
+    Top = 88
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid2
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDB2: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      GridControl = Grid1
+      Columns = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = Dept
+    ScopeMappings = <>
+    Left = 288
+    Top = 88
+  end
+end

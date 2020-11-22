@@ -1,0 +1,236 @@
+object Form20: TForm20
+  Left = 0
+  Top = 0
+  Caption = 'Form20'
+  ClientHeight = 480
+  ClientWidth = 402
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 402.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Touch.GestureManager = GestureManager1
+      Size.Width = 402.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Text = '192.168.219.127'
+        Position.X = 240.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 153.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Button1: TButton
+        Position.X = 144.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'ReverseString'
+        OnClick = Button1Click
+      end
+    end
+    object TabControl1: TTabControl
+      Align = Client
+      Size.Width = 402.000000000000000000
+      Size.Height = 432.000000000000000000
+      Size.PlatformDefault = False
+      TabHeight = 49.000000000000000000
+      TabIndex = 1
+      TabOrder = 1
+      TabPosition = Dots
+      Sizes = (
+        402s
+        432s
+        402s
+        432s)
+      object TabItem1: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabItem1'
+        object ListView1: TListView
+          ItemAppearanceClassName = 'TImageListItemBottomDetailAppearance'
+          ItemEditAppearanceClassName = 'TImageListItemBottomDetailShowCheckAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Client
+          Size.Width = 402.000000000000000000
+          Size.Height = 432.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+      object TabItem2: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabItem2'
+        object ListView2: TListView
+          ItemAppearanceClassName = 'TImageListItemBottomDetailAppearance'
+          ItemEditAppearanceClassName = 'TImageListItemBottomDetailShowCheckAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Client
+          Size.Width = 402.000000000000000000
+          Size.Height = 432.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object SQLConnection1: TSQLConnection
+    DriverName = 'DataSnap'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverUnit=Data.DbxDatasnap'
+      'HostName=192.168.219.127'
+      'Port=211'
+      'CommunicationProtocol=tcp/ip'
+      'DatasnapContext=datasnap/'
+      'Filters={}')
+    BeforeConnect = SQLConnection1BeforeConnect
+    Connected = True
+    Left = 40
+    Top = 64
+    UniqueId = '{EBB4C2C6-E879-4E76-A75F-7C5E52E5AB6A}'
+  end
+  object DSProviderConnection1: TDSProviderConnection
+    ServerClassName = 'TServerMethods1'
+    Connected = True
+    SQLConnection = SQLConnection1
+    Left = 200
+    Top = 64
+  end
+  object Dept: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'deptProvider'
+    RemoteServer = DSProviderConnection1
+    Left = 40
+    Top = 120
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = Dept
+    ScopeMappings = <>
+    Left = 200
+    Top = 120
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 44
+    Top = 5
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ListView2
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'NAME'
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'PHOTO'
+          ControlMemberName = 'Bitmap'
+        end
+        item
+          SourceMemberName = 'DEPT_CODE'
+          ControlMemberName = 'Detail'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'DEPT'
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'SECTION'
+          ControlMemberName = 'Detail'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object insa: TClientDataSet
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'CODE'
+        ParamType = ptInput
+      end>
+    ProviderName = 'InsaQueryProvider'
+    RemoteServer = DSProviderConnection1
+    Left = 40
+    Top = 208
+  end
+  object deptsource: TDataSource
+    DataSet = Dept
+    OnDataChange = deptsourceDataChange
+    Left = 96
+    Top = 120
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = insa
+    ScopeMappings = <>
+    Left = 200
+    Top = 184
+  end
+  object ActionList1: TActionList
+    Left = 304
+    Top = 224
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 304
+    Top = 288
+    GestureData = <
+      item
+        Control = ToolBar1
+        Collection = <
+          item
+            Action = NextTabAction1
+            GestureID = sgiLeft
+          end
+          item
+            Action = PreviousTabAction1
+            GestureID = sgiRight
+          end>
+      end>
+  end
+end

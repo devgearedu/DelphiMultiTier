@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3DE7FD54-E856-4BCF-9BD1-42BD93E07237}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Pweb_Leture.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\수강신청윈도우클라이언트\pLecture.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Pweb_Leture">
+        <MSBuild Projects="Pweb_Leture.dproj"/>
+    </Target>
+    <Target Name="Pweb_Leture:Clean">
+        <MSBuild Projects="Pweb_Leture.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Pweb_Leture:Make">
+        <MSBuild Projects="Pweb_Leture.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pLecture">
+        <MSBuild Projects="..\수강신청윈도우클라이언트\pLecture.dproj"/>
+    </Target>
+    <Target Name="pLecture:Clean">
+        <MSBuild Projects="..\수강신청윈도우클라이언트\pLecture.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pLecture:Make">
+        <MSBuild Projects="..\수강신청윈도우클라이언트\pLecture.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Pweb_Leture;pLecture"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Pweb_Leture:Clean;pLecture:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Pweb_Leture:Make;pLecture:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
