@@ -49,7 +49,7 @@ type
     { Private declarations }
   public
     { Public declarations }
-    Function  Reg_Accept(rpno:string):integer;
+    Function Reg_Accept(rpno:string):integer;
     function EchoString(Value: string): string;
   end;
 

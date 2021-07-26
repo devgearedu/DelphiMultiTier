@@ -1,6 +1,6 @@
 ﻿// 
 // Created by the DataSnap proxy generator.
-// 2020-11-20 오후 8:36:33
+// 2021-03-25 오후 4:11:06
 // 
 
 function DSAdmin(connectionInfo)

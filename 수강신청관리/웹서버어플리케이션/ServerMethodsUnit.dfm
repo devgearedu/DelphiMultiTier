@@ -5,8 +5,6 @@ object ServerMethods1: TServerMethods1
   object SQLConnection1: TSQLConnection
     ConnectionName = 'LECPROJECT'
     DriverName = 'INTERBASE'
-    GetDriverFunc = 'getSQLDriverINTERBASE'
-    LibraryName = 'dbxint.dll'
     LoginPrompt = False
     Params.Strings = (
       'DriverUnit=Data.DBXInterBase'
@@ -47,10 +45,8 @@ object ServerMethods1: TServerMethods1
       'user_name=sysdba'
       'waitonlocks=True'
       'trim char=False')
-    VendorLib = 'gds32.dll'
-    Connected = True
     Left = 56
-    Top = 40
+    Top = 32
   end
   object query_kindcount: TSQLQuery
     MaxBlobSize = -1
@@ -71,7 +67,7 @@ object ServerMethods1: TServerMethods1
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 256
+    Left = 248
     Top = 40
   end
   object Query_curriname: TSQLQuery
@@ -199,7 +195,7 @@ object ServerMethods1: TServerMethods1
     Params = <>
     StoreDefs = True
     Left = 248
-    Top = 120
+    Top = 128
     object CustomerCUSTNO: TStringField
       DisplayLabel = #44256#44061#48264#54840
       FieldName = 'CUSTNO'
@@ -274,8 +270,8 @@ object ServerMethods1: TServerMethods1
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 240
-    Top = 208
+    Left = 256
+    Top = 216
   end
   object Curri: TSQLTable
     MaxBlobSize = 1
